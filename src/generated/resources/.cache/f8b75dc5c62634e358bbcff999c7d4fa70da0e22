@@ -1,0 +1,16 @@
+// 1.20.1	2024-11-13T19:39:57.5124943	Registrate Provider for legendblade [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+1890b0e6c1cb18671871372d019ac48f2e128cf1 assets/legendblade/lang/en_ud.json
+6000d7ab933969ffb10fcf5a3f25fb1d9200e243 assets/legendblade/lang/en_us.json
+e9b2e93798ac18360871e1ace16f5d83a3f0d3db assets/legendblade/models/item/blood_tachi.json
+37343b4cf2a2ec71d60882210958f8a8bd697c30 assets/legendblade/models/item/crimsonjadeofuda.json
+1da21ed16ed481822eeb25fbf172a73f8ed801dc assets/legendblade/models/item/iron_tachi.json
+b96e5647edf643334a75256ed6560091f551d81b assets/legendblade/models/item/jadeofuda.json
+f53e89cf58d795f9bc04e9d36bb1b54e25695f60 assets/legendblade/models/item/lightpinkjadeofuda.json
+3d021e25c74ebb9e4cab7123cd0785769b7ad6bf assets/legendblade/models/item/lightred_tachi.json
+bad647f8b13383024cb6708cc5da8f3e514bdb4e assets/legendblade/models/item/pinkjadeofuda.json
+a5419ce5f8ed16a9cd3f5ba1e83cbc84f286a518 assets/legendblade/models/item/redjadeofuda.json
+b62d63e9eba74dd822a28e67cc00d94a580fc6fd assets/legendblade/models/item/red_tachi.json
+441ab4d0f58029f7f1fd06cabfac695d73f60375 assets/legendblade/models/item/scarletjadeofuda.json
+2b399d85f3efefa2fdac609ea71cce03d9b04f2f assets/legendblade/models/item/slightlyred_tachi.json
+3bdb7e02edfe3f59b613a59dd56bef862a5eed5f assets/legendblade/models/item/sored_tachi.json
+41a3a1974271325440037ad8b4d9432b643e8c94 assets/legendblade/models/item/tearfluorite.json
