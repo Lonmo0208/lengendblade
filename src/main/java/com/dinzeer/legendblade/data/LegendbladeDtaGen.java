@@ -1,6 +1,7 @@
 package com.dinzeer.legendblade.data;
 
 import com.dinzeer.legendblade.Legendblade;
+import com.tterrag.registrate.providers.ProviderType;
 import mods.flammpfeil.slashblade.registry.slashblade.SlashBladeDefinition;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -15,11 +16,14 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
+import static com.dinzeer.legendblade.Legendblade.REGISTRATE;
+
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class LegendbladeDtaGen {
     @SubscribeEvent
     public static void dataGen(GatherDataEvent event) {
         DataGenerator dataGenerator = event.getGenerator();
+        REGISTRATE.addDataGenerator(ProviderType.RECIPE, LegendBladeRecipeGen::onRecipeGen);
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         PackOutput packOutput = dataGenerator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();

@@ -28,6 +28,7 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
     }
     protected void buildRecipes(Consumer<FinishedRecipe> consumer){
 
+
         SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.NIHILEXFAKE.location())
                 .pattern("ABC")
                 .pattern("BDB")
