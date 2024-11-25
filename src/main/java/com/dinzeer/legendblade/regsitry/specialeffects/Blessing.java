@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber
 public class Blessing extends SpecialEffect {
     public Blessing() {
-        super(20,true,true);
+        super(20,false,false);
     }
 
     @SubscribeEvent
@@ -33,11 +33,10 @@ public class Blessing extends SpecialEffect {
 
             if(SpecialEffect.isEffective(LBSpecialEffectsRegistry.BLESSING.get(),level)){
                if (!player.hasEffect(MobEffects.HEALTH_BOOST)){
-                   player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 100, 2));
-                   player.heal(20);
+                   player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 300, 2));
                 }
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 2));
-                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1));
 
             }
         }

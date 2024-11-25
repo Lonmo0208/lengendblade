@@ -1,5 +1,6 @@
 package com.dinzeer.legendblade;
 
+import com.dinzeer.legendblade.Util.DashMessage;
 import com.dinzeer.legendblade.init.LBModItems;
 import com.dinzeer.legendblade.regsitry.*;
 import com.dinzeer.legendblade.regsitry.creativetab.ItemTab;
@@ -29,6 +30,8 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.network.NetworkRegistry;
+import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
@@ -53,6 +56,13 @@ public class Legendblade {
     public static final Registrate REGISTRATE = Registrate.create(MODID);
 
 
+    public static SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
+            new ResourceLocation(MODID, "main"),
+            () -> "1.0",
+            s -> true,
+            s -> true
+    );
+
 
 
     public Legendblade() {
@@ -69,7 +79,12 @@ public class Legendblade {
         LBslashArtRegsitry.SLASH_ARTS.register(modEventBus);
         LBModItems.register();
         ItemTab.REGISTRY.register(modEventBus);
-
+        int id = 0;
+        INSTANCE.messageBuilder(DashMessage.class, id++)
+                .encoder(DashMessage::encode)
+                .decoder(DashMessage::decode)
+                .consumerMainThread(DashMessage::handle)
+                .add();
     }
     public void register(RegisterEvent event) {
         LBEntiteRegristrys.register(event);

@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber
 public class BadBlood extends SpecialEffect {
     public BadBlood() {
-        super(60,true,true);
+        super(60,false,false);
     }
     @SubscribeEvent
     public static void onSlashBladeHit(SlashBladeEvent.HitEvent event) {
@@ -25,7 +25,7 @@ public class BadBlood extends SpecialEffect {
 
             Player player = (Player)event.getUser();
             int level = player.experienceLevel;
-            if (SpecialEffect.isEffective((SpecialEffect)LBSpecialEffectsRegistry.BAdBlood.get(), level)) {
+            if (SpecialEffect.isEffective(LBSpecialEffectsRegistry.BAdBlood.get(), level)) {
                 event.getTarget().addEffect(new MobEffectInstance(MobEffects.HARM, 10, 1));
                 event.getTarget().addEffect(new MobEffectInstance(MobEffects.POISON, 20, 1));
                 event.getTarget().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 60, 1));

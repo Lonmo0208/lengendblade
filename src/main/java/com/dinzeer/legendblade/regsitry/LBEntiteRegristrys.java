@@ -1,5 +1,6 @@
 package com.dinzeer.legendblade.regsitry;
 
+import com.dinzeer.legendblade.entity.DriveSummonEntity;
 import com.dinzeer.legendblade.entity.SumonSwordEntity;
 import com.google.common.base.CaseFormat;
 import mods.flammpfeil.slashblade.init.SBItems;
@@ -22,7 +23,8 @@ public class LBEntiteRegristrys {
 
     public static final ResourceLocation SSLOC = new ResourceLocation(MODID, classToString(SumonSwordEntity.class));
     public static EntityType<SumonSwordEntity> ss;
-
+    public static final ResourceLocation SDLOC = new ResourceLocation(MODID, classToString(DriveSummonEntity.class));
+    public static EntityType<DriveSummonEntity> sd;
 
     public static void register(RegisterEvent event){
 
@@ -35,6 +37,18 @@ public class LBEntiteRegristrys {
                         .setUpdateInterval(20).setCustomClientFactory(SumonSwordEntity::createInstance)
                         .build(SSLOC.toString());
                 helper.register(SSLOC, entity);
+            }
+
+        });
+        event.register(ForgeRegistries.Keys.ENTITY_TYPES, helper -> {
+            {
+                EntityType<DriveSummonEntity> entity = sd = EntityType.Builder
+                        .of(DriveSummonEntity::new, MobCategory.MISC)
+                        .sized(0.9F, 0.9F)
+                        .setTrackingRange(4)
+                        .setUpdateInterval(20).setCustomClientFactory(DriveSummonEntity::createInstance)
+                        .build(SDLOC.toString());
+                helper.register(SDLOC, entity);
             }
 
         });

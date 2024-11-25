@@ -1,0 +1,15 @@
+{
+  "name": "legendblade:beelzebubex",
+  "properties": {
+    "attack_base": 10.0,
+    "max_damage": 80,
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "model": "legendblade:model/bladeex/beelzebubex/beelzebubex.obj",
+    "summon_sword_color": 65298,
+    "texture": "legendblade:model/bladeex/beelzebubex/beelzebubex.png"
+  }
+}

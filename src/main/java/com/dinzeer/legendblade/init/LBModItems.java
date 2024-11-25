@@ -34,7 +34,19 @@ public class LBModItems {
 	public static final ItemEntry<Item> redjadeofuda;
 	public static final ItemEntry<Item> scarletjadeofuda;
 	public static final ItemEntry<Item> tearfluorite;
-    static {
+	public static ItemEntry<Item> acedia;
+	public static ItemEntry<Item> avaritia;
+	public static  ItemEntry<Item> gula;
+	public static  ItemEntry<Item> invidia;
+	public static  ItemEntry<Item> ira;
+	public static  ItemEntry<Item> luxuria;
+	public static  ItemEntry<Item> saligiaex;
+	public static  ItemEntry<Item> saligiasphere;
+	public static  ItemEntry<Item> superbia;
+
+
+
+	static {
 
 		slightlyred_tachi = iteminit("slightlyred_tachi");
 		iron_tachi = iteminit("iron_tachi");
@@ -49,7 +61,15 @@ public class LBModItems {
 		redjadeofuda=iteminit("redjadeofuda");
 		scarletjadeofuda=iteminit("scarletjadeofuda");
 		tearfluorite=iteminit("tearfluorite");
-
+		acedia= iteminit("acedia");
+		avaritia= iteminit("avaritia");
+		gula= iteminit("gula");
+		invidia= iteminit("invidia");
+		ira= iteminit("ira");
+		luxuria= iteminit("luxuria");
+		superbia= iteminit("superbia");
+		saligiaex= iteminit("saligiaex");
+		saligiasphere= iteminit("saligiasphere");
 
 }
 

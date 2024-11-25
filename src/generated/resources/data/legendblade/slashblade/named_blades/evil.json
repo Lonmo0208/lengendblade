@@ -1,0 +1,18 @@
+{
+  "name": "legendblade:evil",
+  "properties": {
+    "attack_base": 10.0,
+    "max_damage": 80,
+    "special_effects": [
+      "legendblade:sin"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "model": "legendblade:model/unnamed/evil.obj",
+    "summon_sword_color": 14540253,
+    "texture": "legendblade:model/unnamed/evil.png"
+  }
+}

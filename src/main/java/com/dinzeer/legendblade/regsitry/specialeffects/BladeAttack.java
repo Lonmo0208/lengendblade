@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber
 public class BladeAttack extends SpecialEffect {
     public BladeAttack() {
-        super(60,true,true);
+        super(60,false,false);
     }
 
 
