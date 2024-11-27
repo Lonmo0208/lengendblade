@@ -41,7 +41,16 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("se.legendblade.blade_attack","blade attack");
         REGISTRATE.addRawLang("se.legendblade.blessing","blessing");
         REGISTRATE.addRawLang("se.legendblade.sin","Sin");
-
+        REGISTRATE.addRawLang("se.legendblade.poison","poison");
+        REGISTRATE.addRawLang("se.legendblade.feastful","feastful");
+        REGISTRATE.addRawLang("se.legendblade.shackles","shackles");
+        REGISTRATE.addRawLang("se.legendblade.resentment","resentment");
+        REGISTRATE.addRawLang("se.legendblade.suppress","suppress");
+        REGISTRATE.addRawLang("se.legendblade.endless","endless");
+        REGISTRATE.addRawLang("se.legendblade.bloodthirsty","bloodthirsty");
+        REGISTRATE.addRawLang("se.legendblade.blessingsummonsword","blessing summon sword");
+        REGISTRATE.addRawLang("se.legendblade.summonsword","summon sword");
+        REGISTRATE.addRawLang("se.legendblade.foxbling","fox bling");
 
         REGISTRATE.addRawLang("slash_art.legendblade.heart_slash","all slash");
         REGISTRATE.addRawLang("slash_art.legendblade.heart_slashc","super attack");
@@ -54,5 +63,8 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("slash_art.legendblade.split_apart","split apart");
         REGISTRATE.addRawLang("slash_art.legendblade.greedy_grip","greedy grip");
         REGISTRATE.addRawLang("slash_art.legendblade.flurry","flurry");
+        REGISTRATE.addRawLang("slash_art.legendblade.mpss","monster power summon sword");
+        REGISTRATE.addRawLang("slash_art.legendblade.void_slash_plus","EXJudgementCut");
+        REGISTRATE.addRawLang("slash_art.legendblade.thrust","EX thrust");
     }
 }

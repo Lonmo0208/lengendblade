@@ -9,14 +9,6 @@
       "lvl": 3
     },
     {
-      "id": "minecraft:fortune",
-      "lvl": 4
-    },
-    {
-      "id": "minecraft:looting",
-      "lvl": 5
-    },
-    {
       "id": "minecraft:fire_protection",
       "lvl": 3
     },
@@ -34,11 +26,11 @@
   ],
   "name": "legendblade:neogodfox",
   "properties": {
-    "attack_base": 30.0,
+    "attack_base": 24.0,
     "max_damage": 80,
-    "slash_art": "legendblade:prowess",
+    "slash_art": "legendblade:mpss",
     "special_effects": [
-      "legendblade:blessing"
+      "legendblade:blessingsummonsword"
     ],
     "sword_type": [
       "bewitched"

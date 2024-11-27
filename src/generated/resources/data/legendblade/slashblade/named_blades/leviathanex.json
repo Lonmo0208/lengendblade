@@ -1,8 +1,27 @@
 {
+  "enchantments": [
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 5
+    },
+    {
+      "id": "minecraft:unbreaking",
+      "lvl": 5
+    },
+    {
+      "id": "minecraft:thorns",
+      "lvl": 7
+    }
+  ],
   "name": "legendblade:leviathanex",
   "properties": {
-    "attack_base": 10.0,
+    "attack_base": 19.0,
     "max_damage": 80,
+    "slash_art": "legendblade:flurry",
+    "special_effects": [
+      "legendblade:sin",
+      "legendblade:resentment"
+    ],
     "sword_type": [
       "bewitched"
     ]

@@ -185,5 +185,44 @@ public class LBComboRegsitry {
                             .build())
                     .addHitEffect(StunManager::setStun)
                     ::build);
+    public static final RegistryObject<ComboState> MPSS = COMBO_STATES.register("monster_power_sommonsword",
+            ComboState.Builder.newInstance().startAndEnd(400, 459).priority(50)
+                    .motionLoc(DefaultResources.ExMotionLocation)
+                    .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
+                    .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
+                    .addTickAction(ComboState.TimeLineTickAction.getBuilder()
+                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 0.1F))
+                            .put(3, MonsterPower::doSlash)
+                            .put(4, (entityIn) -> SommonSwordSommon.doSlash(entityIn,false,15,1F))
+                            .build())
+                    .addHitEffect(StunManager::setStun)
+                    ::build);
+
+    public static final RegistryObject<ComboState> VoidSlashPlus = COMBO_STATES.register("voidslashplus",
+            ComboState.Builder.newInstance().startAndEnd(400, 459).priority(50)
+                    .motionLoc(DefaultResources.ExMotionLocation)
+                    .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
+                    .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
+                    .addTickAction(ComboState.TimeLineTickAction.getBuilder()
+                            .put(1, JudgementCut::doJudgementCut)
+                            .put(5, JudgementCut::doJudgementCut)
+                            .build())
+                    .addHitEffect(StunManager::setStun)
+                    ::build);
+
+    public static final RegistryObject<ComboState> Thrust = COMBO_STATES.register("thrust",
+            ComboState.Builder.newInstance().startAndEnd(400, 459).priority(50)
+                    .motionLoc(DefaultResources.ExMotionLocation)
+                    .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
+                    .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
+                    .addTickAction(ComboState.TimeLineTickAction.getBuilder()
+                            .put(1, (entityIn) -> PhantomThrust.doSlash(entityIn,3F*3))
+                            .build())
+                    .addHitEffect(StunManager::setStun)
+                    ::build);
+
+
+
+
 
 }

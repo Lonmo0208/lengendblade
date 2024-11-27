@@ -1,6 +1,6 @@
-// 1.20.1	2024-11-25T16:20:00.4327364	Registrate Provider for legendblade [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
-d9b3c7d865e8b062dc7ea094be411e0f7fe35a1e assets/legendblade/lang/en_ud.json
-e93cf9bb3198540138b6addcb8382c3f7dac1bfb assets/legendblade/lang/en_us.json
+// 1.20.1	2024-11-27T22:42:38.3449417	Registrate Provider for legendblade [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+95d9a27ccc849adf66444ab485d112a5662db2c1 assets/legendblade/lang/en_ud.json
+901ed0a9623369906dc2689be7705384b9a5ce27 assets/legendblade/lang/en_us.json
 9e09c5f4757570fc342efd0b577d28b87ab85a9d assets/legendblade/models/item/acedia.json
 449459923874b6e9a5bd84a83fe9aa73eaeda5bd assets/legendblade/models/item/avaritia.json
 e9b2e93798ac18360871e1ace16f5d83a3f0d3db assets/legendblade/models/item/blood_tachi.json

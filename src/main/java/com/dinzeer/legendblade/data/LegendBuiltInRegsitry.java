@@ -226,16 +226,14 @@ public class LegendBuiltInRegsitry {
                                 .effectColor(15906304)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
-                                .addSpecialEffect(LBSpecialEffectsRegistry.BLESSING.getId())
-                                .slashArtsType(LBslashArtRegsitry.PROWESS.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.BlessingSummonSword.getId())
+                                .slashArtsType(LBslashArtRegsitry.MPSS.getId())
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(30)
+                                .baseAttackModifier(24)
                                 .maxDamage(80)
                                 .build(),
                         List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 10),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.KNOCKBACK), 3),
-                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_FORTUNE), 4),
-                                new EnchantmentDefinition(getEnchantmentID(Enchantments.MOB_LOOTING), 5),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_PROTECTION), 3),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.FALL_PROTECTION), 3),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
@@ -293,7 +291,8 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .baseAttackModifier(8)
+                                .slashArtsType(SlashArtsRegistry.NONE.getId())
                                 .addSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())
                                 .maxDamage(80)
                                 .build(),
@@ -308,10 +307,13 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.PhantomThrust.getId())
+                                .baseAttackModifier(15)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FALL_PROTECTION), 1))
                 ));
         bootstrap.register(
                 beelzebub, new SlashBladeDefinition(Legendblade.prefix("beelzebub"),
@@ -322,10 +324,13 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.HungerAbsorption.getId())
+                                .baseAttackModifier(16)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 1))
                 ));
         bootstrap.register(
                 belphegor, new SlashBladeDefinition(Legendblade.prefix("belphegor"),
@@ -336,10 +341,13 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .baseAttackModifier(15)
+                                .slashArtsType(LBslashArtRegsitry.soullock.getId())
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 4),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_EFFICIENCY), 2))
                 ));
 
         bootstrap.register(
@@ -351,10 +359,13 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.flurry.getId())
+                                .baseAttackModifier(15)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.THORNS), 2))
                 ));
         bootstrap.register(
                 lucifer, new SlashBladeDefinition(Legendblade.prefix("lucifer"),
@@ -365,10 +376,14 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.Thatcher.getId())
+                                .baseAttackModifier(16)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 2),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 1),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.KNOCKBACK), 2))
                 ));
 
         bootstrap.register(
@@ -380,11 +395,16 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.GreedyGrip.getId())
+                                .baseAttackModifier(16)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
-                ));
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 2),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 2),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.MOB_LOOTING), 2),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_FORTUNE), 1),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.PUNCH_ARROWS), 1)))
+                );
         bootstrap.register(
                 samael, new SlashBladeDefinition(Legendblade.prefix("samael"),
                         RenderDefinition.Builder.newInstance()
@@ -394,10 +414,15 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.Splitapart.getId())
+                                .baseAttackModifier(18)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 1),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 2),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 2),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_ASPECT), 1)
+                        )
                 ));
         bootstrap.register(
                 asmodeusex, new SlashBladeDefinition(Legendblade.prefix("asmodeusex"),
@@ -408,10 +433,16 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.PhantomThrust.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.poison.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())
+                                .baseAttackModifier(21)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FALL_PROTECTION), 3)
+                        )
                 ));
         bootstrap.register(
                 beelzebubex, new SlashBladeDefinition(Legendblade.prefix("beelzebubex"),
@@ -422,10 +453,16 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.HungerAbsorption.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Feastful.getId())
+                                .baseAttackModifier(20)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 5)
+                        )
                 ));
         bootstrap.register(
                 belphegorex, new SlashBladeDefinition(Legendblade.prefix("belphegorex"),
@@ -436,10 +473,16 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.soullock.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Shackles.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())
+                                .baseAttackModifier(16)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_EFFICIENCY), 3)
+                        )
                 ));
         bootstrap.register(
                 evilex, new SlashBladeDefinition(Legendblade.prefix("evilex"),
@@ -451,6 +494,8 @@ public class LegendBuiltInRegsitry {
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
                                 .baseAttackModifier(10)
+                                .slashArtsType(SlashArtsRegistry.DRIVE_VERTICAL.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())
                                 .maxDamage(80)
                                 .build(),
                         List.of()
@@ -464,10 +509,16 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.flurry.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Resentment.getId())
+                                .baseAttackModifier(19)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.THORNS), 7)
+                        )
                 ));
         bootstrap.register(
                 luciferex, new SlashBladeDefinition(Legendblade.prefix("luciferex"),
@@ -478,10 +529,17 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Suppress.getId())
+                                .slashArtsType(LBslashArtRegsitry.Thatcher.getId())
+                                .baseAttackModifier(18)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 6),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.KNOCKBACK), 7)
+                        )
                 ));
         bootstrap.register(
                 mammonex, new SlashBladeDefinition(Legendblade.prefix("mammonex"),
@@ -491,11 +549,19 @@ public class LegendBuiltInRegsitry {
                                 .effectColor(16737792)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
+                                .slashArtsType(LBslashArtRegsitry.GreedyGrip.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Endless.getId())
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .baseAttackModifier(20)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.PUNCH_ARROWS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.MENDING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.MOB_LOOTING), 7)
+                        )
                 ));
         bootstrap.register(
                 samaelex, new SlashBladeDefinition(Legendblade.prefix("samaelex"),
@@ -506,52 +572,84 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(LBslashArtRegsitry.Splitapart.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Bloodthirsty.getId())
+                                .baseAttackModifier(25)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 6),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 6),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_ASPECT), 7)
+                        )
                 ));
         bootstrap.register(
                 foxex, new SlashBladeDefinition(Legendblade.prefix("foxex"),
                         RenderDefinition.Builder.newInstance()
                                 .textureName(Legendblade.prefix("model/foxex/texture.png"))
                                 .modelName(Legendblade.prefix("model/foxex/model.obj"))
-                                .effectColor(16711697)
+                                .effectColor(16187647)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .addSpecialEffect(LBSpecialEffectsRegistry.FoxBlessing.getId())
+                                .slashArtsType(LBslashArtRegsitry.VoidSlashPlus.getId())
+                                .baseAttackModifier(22)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_ASPECT), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 3)
+                        )
                 ));
         bootstrap.register(
                 foxex2, new SlashBladeDefinition(Legendblade.prefix("foxex2"),
                         RenderDefinition.Builder.newInstance()
                                 .textureName(Legendblade.prefix("model/foxex/texture2.png"))
                                 .modelName(Legendblade.prefix("model/foxex/model.obj"))
-                                .effectColor(16711697)
+                                .effectColor(2633861)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .addSpecialEffect(LBSpecialEffectsRegistry.FoxBlessing.getId())
+                                .slashArtsType(LBslashArtRegsitry.Thrust.getId())
+                                .baseAttackModifier(22)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.MOB_LOOTING), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_ASPECT), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 3)
+                        )
                 ));
         bootstrap.register(
                 foxexfinal, new SlashBladeDefinition(Legendblade.prefix("foxexfinal"),
                         RenderDefinition.Builder.newInstance()
                                 .textureName(Legendblade.prefix("model/foxex/texture3.png"))
+                                .effectColor(16187647)
                                 .modelName(Legendblade.prefix("model/foxex/model2.obj"))
-                                .effectColor(16711697)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .slashArtsType(SlashArtsRegistry.CIRCLE_SLASH.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.SummonSword.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.FoxBlessing.getId())
+                                .baseAttackModifier(35)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_ASPECT), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 5)
+                        )
                 ));
         bootstrap.register(
                 wujiu, new SlashBladeDefinition(Legendblade.prefix("wujiu"),
@@ -562,7 +660,7 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(10)
+                                .baseAttackModifier(40)
                                 .maxDamage(80)
                                 .build(),
                         List.of()

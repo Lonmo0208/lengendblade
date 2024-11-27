@@ -11,15 +11,14 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
-public class Sin extends SpecialEffect {
-    public Sin() {
-        super(10,false,false);
+public class Bloodthirsty extends SpecialEffect {
+    public Bloodthirsty() {
+        super(30,false,false);
     }
-
     @SubscribeEvent
     public  static  void blaze(SlashBladeEvent.UpdateEvent event){
         ISlashBladeState state = event.getSlashBladeState();
-        if(state.hasSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())) {
+        if(state.hasSpecialEffect(LBSpecialEffectsRegistry.Bloodthirsty.getId())) {
             if (!(event.getEntity() instanceof Player)) {
                 return;
             }
@@ -31,13 +30,26 @@ public class Sin extends SpecialEffect {
 
             int level = player.experienceLevel;
 
-            if(SpecialEffect.isEffective(LBSpecialEffectsRegistry.Sin.get(),level)){
+            if(SpecialEffect.isEffective(LBSpecialEffectsRegistry.Bloodthirsty.get(),level)){
 
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0));
-                player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 100, 1));
-                player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 100, 0));
-
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 2));
             }
         }
+    }
+    @SubscribeEvent
+    public static void onSlashBladeHit(SlashBladeEvent.HitEvent event) {
+        ISlashBladeState state = event.getSlashBladeState();
+        if (state.hasSpecialEffect(LBSpecialEffectsRegistry.Bloodthirsty.getId())) {
+            if (!(event.getUser() instanceof Player)) {
+                return;
+            }
+
+            Player player = (Player)event.getUser();
+            int level = player.experienceLevel;
+            if (SpecialEffect.isEffective(LBSpecialEffectsRegistry.Bloodthirsty.get(), level)) {
+               player.heal(4);
+            }
+        }
+
     }
 }

@@ -38,7 +38,8 @@ public class CommonEventHandler {
             List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
             rareTrades.add(new VillagerSlashBladeListing(64, LegendBuiltInRegsitry.RUSTGODFOX.location(), 3, 5, 0.05F));
             rareTrades.add(new VillagerSlashBladeListing(64, SlashBladeBuiltInRegistry.SABIGATANA.location(), 3, 5, 0.05F));
-
+            rareTrades.add(new BasicItemListing(new ItemStack(Items.EMERALD, 6), new ItemStack(SBItems.proudsoul_tiny), 516, 5, 0.05f));
+            rareTrades.add(new BasicItemListing(new ItemStack(Items.EMERALD, 6), new ItemStack(SBItems.proudsoul), 256, 5, 0.05f));
         }
 
         public static void addVillageTrade(VillagerTradesEvent event, String villager, int level, VillagerTrades.ItemListing listing) {

@@ -25,25 +25,7 @@ import java.util.Random;
 @Mod.EventBusSubscriber
 public class entitydrop {
 
-/*    public static void onSlashBladeUpdate(SlashBladeEvent.UpdateEvent event) {
-        ISlashBladeState state = event.getSlashBladeState();
-        if(state.hasSpecialEffect(YASpecialEffectsRegistry.VERY_GREEN.getId())) {
-            if (!(event.getEntity() instanceof Player)) {
-                return;
-            }
 
-            if(!event.isSelected())
-                return;
-
-            Player player = (Player) event.getEntity();
-
-            int level = player.experienceLevel;
-
-            if(SpecialEffect.isEffective(YASpecialEffectsRegistry.VERY_GREEN.get(),level)){
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 1));
-            }
-        }
-    }*/
 public static boolean hasSpecialEffect(ItemStack stack, String effect) {
         CompoundTag tag = stack.getOrCreateTag(); // 获取或创建NBT标签
 

@@ -1,7 +1,7 @@
 {
   "name": "legendblade:wujiu",
   "properties": {
-    "attack_base": 10.0,
+    "attack_base": 40.0,
     "max_damage": 80,
     "sword_type": [
       "bewitched"

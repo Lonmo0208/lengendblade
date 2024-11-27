@@ -152,6 +152,31 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
                 ))
 
                 .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+//        SlashBladeShapedRecipeBuilder.shaped(SlashBladeAddonBuiltInRegistry.NIHILBX.location())
+//
+//                .pattern("ABA")
+//                .pattern("ACA")
+//                .pattern("ADA")
+//                .define('A', Items.DIAMOND_BLOCK)
+//                .define('B', SlashBladeIngredient.of(
+//                        RequestDefinition.Builder.newInstance()
+//                                .name(SlashBladeAddonBuiltInRegistry.NIHILUL.location())
+//                                .killCount(3000)
+//
+//                                .refineCount(20)
+//                                .build()
+//                ))
+//                .define('C', SlashBladeIngredient.of(
+//                        RequestDefinition.Builder.newInstance()
+//                                .name(LegendBuiltInRegsitry.NIHILEXFAKE.location())
+//                                .killCount(3000)
+//                                .refineCount(20)
+//                                .build()
+//                ))
+//                .define('D',SBItems.proudsoul_sphere)
+//
+//
+//                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
 
 
     }

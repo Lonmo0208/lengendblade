@@ -21,6 +21,9 @@ public class LBslashArtRegsitry {
     public static final RegistryObject<SlashArts> Splitapart;
     public static final RegistryObject<SlashArts> GreedyGrip;
     public static final RegistryObject<SlashArts> flurry;
+    public static final RegistryObject<SlashArts> MPSS;
+    public static final RegistryObject<SlashArts> VoidSlashPlus;
+    public static final RegistryObject<SlashArts> Thrust;
     static {
         PROWESS=SLASH_ARTS.register("prowess", () -> new SlashArts((e) ->
                 LBComboRegsitry.PROWESS.getId()));
@@ -42,5 +45,8 @@ public class LBslashArtRegsitry {
                 LBComboRegsitry.greedyGrip.getId()));
         flurry=SLASH_ARTS.register("flurry", () -> new SlashArts((e) ->
                 LBComboRegsitry.flurry.getId()));
+        MPSS=SLASH_ARTS.register("mpss", () -> new SlashArts((e) ->LBComboRegsitry.MPSS.getId()));
+        VoidSlashPlus=SLASH_ARTS.register("void_slash_plus", () -> new SlashArts((e) ->LBComboRegsitry.VoidSlashPlus.getId()));
+        Thrust=SLASH_ARTS.register("thrust", () -> new SlashArts((e) ->LBComboRegsitry.Thrust.getId()));
     }
 }

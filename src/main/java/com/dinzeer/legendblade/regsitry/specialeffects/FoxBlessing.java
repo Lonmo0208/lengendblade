@@ -11,15 +11,14 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
-public class Sin extends SpecialEffect {
-    public Sin() {
-        super(10,false,false);
+public class FoxBlessing extends SpecialEffect {
+    public FoxBlessing() {
+        super(60,false,false);
     }
-
     @SubscribeEvent
     public  static  void blaze(SlashBladeEvent.UpdateEvent event){
         ISlashBladeState state = event.getSlashBladeState();
-        if(state.hasSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())) {
+        if(state.hasSpecialEffect(LBSpecialEffectsRegistry.FoxBlessing.getId())) {
             if (!(event.getEntity() instanceof Player)) {
                 return;
             }
@@ -31,12 +30,11 @@ public class Sin extends SpecialEffect {
 
             int level = player.experienceLevel;
 
-            if(SpecialEffect.isEffective(LBSpecialEffectsRegistry.Sin.get(),level)){
+            if(SpecialEffect.isEffective(LBSpecialEffectsRegistry.FoxBlessing.get(),level)){
 
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0));
-                player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 100, 1));
-                player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 100, 0));
-
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 2));
             }
         }
     }

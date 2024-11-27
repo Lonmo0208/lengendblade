@@ -11,33 +11,24 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
-public class Sin extends SpecialEffect {
-    public Sin() {
-        super(10,false,false);
+public class Suppress extends SpecialEffect {
+    public Suppress() {
+        super(30,false,false);
     }
-
     @SubscribeEvent
-    public  static  void blaze(SlashBladeEvent.UpdateEvent event){
+    public static void onSlashBladeHit(SlashBladeEvent.HitEvent event) {
         ISlashBladeState state = event.getSlashBladeState();
-        if(state.hasSpecialEffect(LBSpecialEffectsRegistry.Sin.getId())) {
-            if (!(event.getEntity() instanceof Player)) {
+        if (state.hasSpecialEffect(LBSpecialEffectsRegistry.Suppress.getId())) {
+            if (!(event.getUser() instanceof Player)) {
                 return;
             }
 
-            if(!event.isSelected())
-                return;
-
-            Player player = (Player) event.getEntity();
-
+            Player player = (Player)event.getUser();
             int level = player.experienceLevel;
-
-            if(SpecialEffect.isEffective(LBSpecialEffectsRegistry.Sin.get(),level)){
-
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0));
-                player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 100, 1));
-                player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 100, 0));
-
+            if (SpecialEffect.isEffective(LBSpecialEffectsRegistry.Suppress.get(), level)) {
+                event.getTarget().addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 1));
             }
         }
+
     }
 }
