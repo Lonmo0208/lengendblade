@@ -13,6 +13,7 @@ import com.tterrag.registrate.Registrate;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -74,13 +75,13 @@ public class Legendblade {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         LangRegsitry.registerAddlang();
         // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::register);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
          LBEntiteRegristrys.register(modEventBus);
         LBComboRegsitry.COMBO_STATES.register(modEventBus);
         LBSpecialEffectsRegistry.REGISTRY_KEY2.register(modEventBus);
+        EffectAbout.REGISTRY.register(modEventBus);
         LBslashArtRegsitry.SLASH_ARTS.register(modEventBus);
         LBModItems.register();
         ItemTab.REGISTRY.register(modEventBus);
@@ -100,22 +101,10 @@ public class Legendblade {
 
 
     }
-    private void commonSetup(final FMLCommonSetupEvent event) {
-       }
+    public static class EffectAbout{
+        public static final DeferredRegister<MobEffect> REGISTRY = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Legendblade.MODID);
+        public static final RegistryObject<StrengthBoost> STRENGTH_BOOST = REGISTRY.register("strength_boost", StrengthBoost::new);
+        public static final RegistryObject<HitDamageEffect> HIT_DAMAGE = REGISTRY.register("hit_damage", HitDamageEffect::new);
 
-
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-
-    }
-
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-                 }
     }
 }
