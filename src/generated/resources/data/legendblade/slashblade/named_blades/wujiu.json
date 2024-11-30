@@ -1,8 +1,13 @@
 {
   "name": "legendblade:wujiu",
   "properties": {
-    "attack_base": 40.0,
+    "attack_base": 30.0,
     "max_damage": 80,
+    "slash_art": "legendblade:swordone",
+    "special_effects": [
+      "legendblade:liuli",
+      "legendblade:liulione"
+    ],
     "sword_type": [
       "bewitched"
     ]

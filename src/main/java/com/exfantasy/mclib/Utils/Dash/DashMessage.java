@@ -1,4 +1,4 @@
-package com.dinzeer.legendblade.Util;
+package com.exfantasy.mclib.Utils.Dash;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;

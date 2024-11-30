@@ -23,7 +23,7 @@ public class Prowess {
         public static void doSlash(LivingEntity playerIn,int colorCode)
         {
 
-            playerIn.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 100, 0));
+            playerIn.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 0));
             playerIn.addEffect(new MobEffectInstance(MobEffects.JUMP, 100, 1));
             playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 2));
             playerIn.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 2));

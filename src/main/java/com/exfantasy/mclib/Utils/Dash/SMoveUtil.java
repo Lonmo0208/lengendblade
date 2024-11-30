@@ -1,7 +1,7 @@
-package com.dinzeer.legendblade.Util;
+package com.exfantasy.mclib.Utils.Dash;
+
 
 import com.dinzeer.legendblade.Legendblade;
-
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.network.PacketDistributor;

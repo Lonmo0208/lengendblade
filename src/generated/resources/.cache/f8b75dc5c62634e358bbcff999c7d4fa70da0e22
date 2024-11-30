@@ -1,6 +1,6 @@
-// 1.20.1	2024-11-27T22:42:38.3449417	Registrate Provider for legendblade [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
-95d9a27ccc849adf66444ab485d112a5662db2c1 assets/legendblade/lang/en_ud.json
-901ed0a9623369906dc2689be7705384b9a5ce27 assets/legendblade/lang/en_us.json
+// 1.20.1	2024-11-30T20:51:02.4172016	Registrate Provider for legendblade [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+d1073b8b2563f67c0fc2a512f10d07ee873f360d assets/legendblade/lang/en_ud.json
+450068a5bb4d9325f222235ae599f4867c621332 assets/legendblade/lang/en_us.json
 9e09c5f4757570fc342efd0b577d28b87ab85a9d assets/legendblade/models/item/acedia.json
 449459923874b6e9a5bd84a83fe9aa73eaeda5bd assets/legendblade/models/item/avaritia.json
 e9b2e93798ac18360871e1ace16f5d83a3f0d3db assets/legendblade/models/item/blood_tachi.json
@@ -23,5 +23,5 @@ b62d63e9eba74dd822a28e67cc00d94a580fc6fd assets/legendblade/models/item/red_tach
 3bdb7e02edfe3f59b613a59dd56bef862a5eed5f assets/legendblade/models/item/sored_tachi.json
 d7fa07cf49e53e5de8b68e8c59dc56260ff6caad assets/legendblade/models/item/superbia.json
 41a3a1974271325440037ad8b4d9432b643e8c94 assets/legendblade/models/item/tearfluorite.json
-983e2cc908ef7dd863d1ebba99334e6dfbe0a994 data/legendblade/advancements/recipes/misc/saligiasphere.json
-e52e32d1b9bdcf3c8451c5581ec8dc488dc4f438 data/legendblade/recipes/saligiasphere.json
+993316f62cf444c6526130c0ab24795fe421e80f data/legendblade/advancements/recipes/misc/saligiaex.json
+aba4190d924a767d03f9dfda202ae810cf6be4e2 data/legendblade/recipes/saligiaex.json

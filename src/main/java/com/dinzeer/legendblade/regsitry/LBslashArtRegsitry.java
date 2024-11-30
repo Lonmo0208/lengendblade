@@ -24,6 +24,9 @@ public class LBslashArtRegsitry {
     public static final RegistryObject<SlashArts> MPSS;
     public static final RegistryObject<SlashArts> VoidSlashPlus;
     public static final RegistryObject<SlashArts> Thrust;
+    public static final RegistryObject<SlashArts> SAKURAENDEX;
+    public static final RegistryObject<SlashArts> swordone;
+    public static final RegistryObject<SlashArts> swordoneex;
     static {
         PROWESS=SLASH_ARTS.register("prowess", () -> new SlashArts((e) ->
                 LBComboRegsitry.PROWESS.getId()));
@@ -48,5 +51,8 @@ public class LBslashArtRegsitry {
         MPSS=SLASH_ARTS.register("mpss", () -> new SlashArts((e) ->LBComboRegsitry.MPSS.getId()));
         VoidSlashPlus=SLASH_ARTS.register("void_slash_plus", () -> new SlashArts((e) ->LBComboRegsitry.VoidSlashPlus.getId()));
         Thrust=SLASH_ARTS.register("thrust", () -> new SlashArts((e) ->LBComboRegsitry.Thrust.getId()));
-    }
+        SAKURAENDEX=SLASH_ARTS.register("sakura_endex", () -> new SlashArts((e) ->LBComboRegsitry.SAKURA_END_LEFTEX.getId()));
+        swordone=SLASH_ARTS.register("swordone", () -> new SlashArts((e) ->LBComboRegsitry.swordone.getId()));
+        swordoneex=SLASH_ARTS.register("swordoneex", () -> new SlashArts((e) ->LBComboRegsitry.swordoneex.getId()));
+     }
 }

@@ -16,6 +16,7 @@ public class LegendbladeClient {
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(LBEntiteRegristrys.ss, SummonedSwordRenderer::new);
         event.registerEntityRenderer(LBEntiteRegristrys.sd, DriveRenderer::new);
-
+        event.registerEntityRenderer(LBEntiteRegristrys.ssex, SummonedSwordRenderer::new);
+        event.registerEntityRenderer(LBEntiteRegristrys.ssdo, DriveRenderer::new);
     }
 }

@@ -3,6 +3,7 @@ package com.dinzeer.legendblade.data;
 import com.dinzeer.legendblade.Legendblade;
 import com.dinzeer.legendblade.regsitry.LBSpecialEffectsRegistry;
 import com.dinzeer.legendblade.regsitry.LBslashArtRegsitry;
+import com.dinzeer.legendblade.regsitry.linkage.SBALBSlashArtRegsitry;
 import mods.flammpfeil.slashblade.item.SwordType;
 import mods.flammpfeil.slashblade.registry.SlashArtsRegistry;
 import mods.flammpfeil.slashblade.registry.slashblade.EnchantmentDefinition;
@@ -77,6 +78,14 @@ public class LegendBuiltInRegsitry {
     public static final ResourceKey<SlashBladeDefinition> foxexfinal;
     //无九
     public static final ResourceKey<SlashBladeDefinition> wujiu;
+    //原罪交响曲·贝尔西普
+    public static final ResourceKey<SlashBladeDefinition> belphebubex;
+    //乌卡EX
+    public static final ResourceKey<SlashBladeDefinition> waterex;
+    //阿贝EX
+    public static final ResourceKey<SlashBladeDefinition> fireex;
+    //坎娜EX
+    public static final ResourceKey<SlashBladeDefinition> lightningex;
     static {
         SHINKU=register("shinku");
         BLOODKATANA=register("bloodkatana");
@@ -107,6 +116,10 @@ public class LegendBuiltInRegsitry {
         NEOGODFOX=register("neogodfox");
         WHITEGODFOX=register("whitegodfox");
         wujiu=register("wujiu");
+        belphebubex=register("belphebubex");
+        waterex=register("waterex");
+        fireex=register("fireex");
+        lightningex=register("lightningex");
     }
     public static void registerAll(BootstapContext<SlashBladeDefinition> bootstrap) {
 
@@ -637,10 +650,10 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .slashArtsType(SlashArtsRegistry.CIRCLE_SLASH.getId())
+                                .slashArtsType(LBslashArtRegsitry.SAKURAENDEX.getId())
                                 .addSpecialEffect(LBSpecialEffectsRegistry.SummonSword.getId())
                                 .addSpecialEffect(LBSpecialEffectsRegistry.FoxBlessing.getId())
-                                .baseAttackModifier(35)
+                                .baseAttackModifier(30)
                                 .maxDamage(80)
                                 .build(),
                         List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 10),
@@ -660,15 +673,92 @@ public class LegendBuiltInRegsitry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(40)
+                                .slashArtsType(LBslashArtRegsitry.swordone.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Liuli.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Liulione.getId())
+                                .baseAttackModifier(30)
                                 .maxDamage(80)
                                 .build(),
                         List.of()
                 ));
 
+        bootstrap.register(
+                belphebubex, new SlashBladeDefinition(Legendblade.prefix("belphebubex"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/bladeex/beelzebubex/beelzebubexex_export.png"))
+                                .modelName(Legendblade.prefix("model/bladeex/beelzebubex/beelzebubex.obj"))
+                                .effectColor(65298)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(LBslashArtRegsitry.HungerAbsorption.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Feastful.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.Shackles.getId())
+                                .baseAttackModifier(25)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 5)
+                        )
+                ));
 
-
-
+        bootstrap.register(
+                waterex, new SlashBladeDefinition(Legendblade.prefix("waterex"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/kaumyex/water.png"))
+                                .modelName(Legendblade.prefix("model/kaumyex/kamuyex.obj"))
+                                .effectColor(8703)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(SBALBSlashArtRegsitry.terrifyingwavesSA.getId())
+                                .addSpecialEffect(SBALBSlashArtRegsitry.Terrifyingwaves.getId())
+                                .baseAttackModifier(20)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 5)
+                        )
+                ));
+        bootstrap.register(
+                fireex, new SlashBladeDefinition(Legendblade.prefix("fireex"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/kaumyex/fire.png"))
+                                .modelName(Legendblade.prefix("model/kaumyex/kamuyex.obj"))
+                                .effectColor(16711680)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(SBALBSlashArtRegsitry.DanceSA.getId())
+                                .addSpecialEffect(SBALBSlashArtRegsitry.FireDancy.getId())
+                                .baseAttackModifier(20)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 5)
+                        )
+                ));
+        bootstrap.register(
+                lightningex, new SlashBladeDefinition(Legendblade.prefix("lightningex"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/kaumyex/lightning.png"))
+                                .modelName(Legendblade.prefix("model/kaumyex/kamuyex.obj"))
+                                .effectColor(16766720)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(SBALBSlashArtRegsitry.lightingsumSA.getId())
+                                .addSpecialEffect(SBALBSlashArtRegsitry.Lightingsum.getId())
+                                .baseAttackModifier(20)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 15),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7)
+                        )
+                ));
     }
 
 

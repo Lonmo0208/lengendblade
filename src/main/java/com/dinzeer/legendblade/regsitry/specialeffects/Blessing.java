@@ -35,8 +35,8 @@ public class Blessing extends SpecialEffect {
                if (!player.hasEffect(MobEffects.HEALTH_BOOST)){
                    player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 300, 2));
                 }
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 1));
-                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 2));
 
             }
         }

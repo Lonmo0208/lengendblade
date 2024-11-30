@@ -1,9 +1,13 @@
 package com.dinzeer.legendblade;
 
-import com.dinzeer.legendblade.Util.DashMessage;
+import cn.mmf.slashblade_addon.SlashBladeAddon;
+import com.exfantasy.mclib.Utils.Dash.DashMessage;
+import com.dinzeer.legendblade.effect.HitDamageEffect;
+import com.dinzeer.legendblade.effect.StrengthBoost;
 import com.dinzeer.legendblade.init.LBModItems;
 import com.dinzeer.legendblade.regsitry.*;
 import com.dinzeer.legendblade.regsitry.creativetab.ItemTab;
+import com.dinzeer.legendblade.regsitry.linkage.SBALBSlashArtRegsitry;
 import com.mojang.logging.LogUtils;
 import com.tterrag.registrate.Registrate;
 import net.minecraft.client.Minecraft;
@@ -24,6 +28,7 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -79,6 +84,9 @@ public class Legendblade {
         LBslashArtRegsitry.SLASH_ARTS.register(modEventBus);
         LBModItems.register();
         ItemTab.REGISTRY.register(modEventBus);
+        if (ModList.get().isLoaded(SlashBladeAddon.MODID)){
+            SBALBSlashArtRegsitry.register(modEventBus);
+        }
         int id = 0;
         INSTANCE.messageBuilder(DashMessage.class, id++)
                 .encoder(DashMessage::encode)
@@ -88,6 +96,9 @@ public class Legendblade {
     }
     public void register(RegisterEvent event) {
         LBEntiteRegristrys.register(event);
+
+
+
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
        }

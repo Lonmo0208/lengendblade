@@ -35,6 +35,10 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("item.legendblade.samael","samael");
         REGISTRATE.addRawLang("item.legendblade.samaelex","samael ex");
         REGISTRATE.addRawLang("item.legendblade.wujiu","wujiuex");
+        REGISTRATE.addRawLang("item.legendblade.belphebubex","belphebubex");
+        REGISTRATE.addRawLang("item.legendblade.waterex","water ex");
+        REGISTRATE.addRawLang("item.legendblade.fireex","fire ex");
+        REGISTRATE.addRawLang("item.legendblade.lightningex","lightning ex");
 
         REGISTRATE.addRawLang("item_group.legendblade.legendbladeitem","lengend blade item");
         REGISTRATE.addRawLang("se.legendblade.bad_blood","bad blood");
@@ -51,6 +55,11 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("se.legendblade.blessingsummonsword","blessing summon sword");
         REGISTRATE.addRawLang("se.legendblade.summonsword","summon sword");
         REGISTRATE.addRawLang("se.legendblade.foxbling","fox bling");
+        REGISTRATE.addRawLang("se.legendblade.terrifying_waves","terrifying waves drive");
+        REGISTRATE.addRawLang("se.legendblade.liuli","liuli");
+        REGISTRATE.addRawLang("se.legendblade.liulione","liuli Sword One");
+        REGISTRATE.addRawLang("se.legendblade.lighting_sum","lighting sum");
+        REGISTRATE.addRawLang("se.legendblade.fire_dancy","fire dancy");
 
         REGISTRATE.addRawLang("slash_art.legendblade.heart_slash","all slash");
         REGISTRATE.addRawLang("slash_art.legendblade.heart_slashc","super attack");
@@ -66,5 +75,11 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("slash_art.legendblade.mpss","monster power summon sword");
         REGISTRATE.addRawLang("slash_art.legendblade.void_slash_plus","EXJudgementCut");
         REGISTRATE.addRawLang("slash_art.legendblade.thrust","EX thrust");
+        REGISTRATE.addRawLang("slash_art.legendblade.sakura_endex","EX Sakura end");
+        REGISTRATE.addRawLang("slash_art.legendblade.terrifyingwaves","terrifying waves drive");
+        REGISTRATE.addRawLang("slash_art.legendblade.lighting_swordsex","lighting swordsex");
+        REGISTRATE.addRawLang("slash_art.legendblade.fire_dance","fire dance");
+        REGISTRATE.addRawLang("slash_art.legendblade.swordone","one sword");
+        REGISTRATE.addRawLang("slash_art.legendblade.swordoneex","one sword EX");
     }
 }

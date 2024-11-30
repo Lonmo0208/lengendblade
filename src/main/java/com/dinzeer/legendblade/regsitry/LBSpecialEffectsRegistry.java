@@ -23,6 +23,8 @@ public class LBSpecialEffectsRegistry {
     public static final RegistryObject<SpecialEffect> BlessingSummonSword;
     public static final RegistryObject<SpecialEffect> SummonSword;
     public static final RegistryObject<SpecialEffect> FoxBlessing;
+    public static final RegistryObject<SpecialEffect> Liuli;
+    public static final RegistryObject<SpecialEffect> Liulione;
     public LBSpecialEffectsRegistry() {
     }
 
@@ -42,5 +44,7 @@ public class LBSpecialEffectsRegistry {
         BlessingSummonSword=REGISTRY_KEY2.register("blessingsummonsword", BlessingSummonSword::new);
         SummonSword=REGISTRY_KEY2.register("summonsword", SummonSword::new);
         FoxBlessing=REGISTRY_KEY2.register("foxbling", FoxBlessing::new);
+        Liuli=REGISTRY_KEY2.register("liuli", Liuli::new);
+        Liulione=REGISTRY_KEY2.register("liulione", Liulione::new);
     }
 }

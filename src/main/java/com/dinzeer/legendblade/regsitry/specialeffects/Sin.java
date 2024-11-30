@@ -1,8 +1,11 @@
 package com.dinzeer.legendblade.regsitry.specialeffects;
 
 import com.dinzeer.legendblade.regsitry.LBSpecialEffectsRegistry;
+import com.exfantasy.mclib.Utils.SlashBlade.SlashEffectUtils;
+import com.exfantasy.mclib.Utils.SlashBlade.SlashbladeUtils;
 import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
 import mods.flammpfeil.slashblade.event.SlashBladeEvent;
+import mods.flammpfeil.slashblade.registry.SlashArtsRegistry;
 import mods.flammpfeil.slashblade.registry.specialeffects.SpecialEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -31,9 +34,9 @@ public class Sin extends SpecialEffect {
 
             int level = player.experienceLevel;
 
-            if(SpecialEffect.isEffective(LBSpecialEffectsRegistry.Sin.get(),level)){
+            if(SpecialEffect.isEffective(LBSpecialEffectsRegistry.Sin.get(),level)) {
 
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0));
+                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0));
                 player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 100, 1));
                 player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 100, 0));
 

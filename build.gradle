@@ -148,6 +148,9 @@ repositories {
         }
         mavenLocal()
     }
+     flatDir {
+         dir 'libs'
+     }
 }
 
 dependencies {
@@ -185,6 +188,12 @@ dependencies {
     //REG
     implementation fg.deobf("com.tterrag.registrate:Registrate:MC1.20-1.3.11")
     jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC1.20,1.3.3)")
+
+
+//    implementation fg.deobf(jarJar("com.exfantasy.mclib:mclib:1.0.0")) {
+//        transitive = false
+//        jarJar.ranged(it, "[1.0.0,)")
+//    }
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

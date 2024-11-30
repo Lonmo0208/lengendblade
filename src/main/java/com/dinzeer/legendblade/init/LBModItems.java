@@ -75,21 +75,6 @@ public class LBModItems {
 
 
 
-//	public static final RegistryObject<Item> UNREDTACHI = regmaker("unred_tachi");
-//	public static final RegistryObject<Item> IRONTACHI = regmaker("iron_tachi");
-//	public static final RegistryObject<Item> NREDTACHI = regmaker("nred_tachi");
-//	public static final RegistryObject<Item> REDTACHI = regmaker("red_tachi");
-//	public static final RegistryObject<Item> SOREDTACHI = regmaker("sored_tachi");
-//	public static final RegistryObject<Item> SOSOREDTACHI = regmaker("sosored_tachi");
-//	public static final RegistryObject<Item> crimsonjadeofuda = regmaker("cfuda");
-//	public static final RegistryObject<Item> jadeofuda = regmaker("jadefuda");
-//	public static final RegistryObject<Item> lightpinkjadeofuda = regmaker("lightfuda");
-//	public static final RegistryObject<Item> pinkjadeofuda = regmaker("pinkfuda");
-//	public static final RegistryObject<Item> redjadeofuda= regmaker("redfuda");
-//	public static final RegistryObject<Item> scarletjadeofuda= regmaker("scarletjadeofuda");
-//	public static final RegistryObject<Item> tearfluorite= regmaker("tearfluorite");
-
-
 
 
 

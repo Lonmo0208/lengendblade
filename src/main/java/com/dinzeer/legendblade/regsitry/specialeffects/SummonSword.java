@@ -1,8 +1,6 @@
 package com.dinzeer.legendblade.regsitry.specialeffects;
 
-import com.dinzeer.legendblade.Util.GetNumUtil;
 import com.dinzeer.legendblade.regsitry.LBSpecialEffectsRegistry;
-import com.dinzeer.legendblade.specialattack.BlessingsummonSword;
 import com.dinzeer.legendblade.specialattack.SommonSwordSommon;
 import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
 import mods.flammpfeil.slashblade.event.SlashBladeEvent;
@@ -30,9 +28,7 @@ public class SummonSword extends SpecialEffect {
             int level = player.experienceLevel;
             if (SpecialEffect.isEffective(LBSpecialEffectsRegistry.SummonSword.get(), level)) {
 
-                    SommonSwordSommon.doSlash(player,14540253,false, 0.5,1F);
-                    SommonSwordSommon.doSlash(player,14540253,false, 0.5,1F);
-
+                    SommonSwordSommon.doSlash(player,14540253,false, 2,1F,1);
 
             }
         }

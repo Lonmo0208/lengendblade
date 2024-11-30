@@ -14,11 +14,17 @@ import java.util.function.BiFunction;
 
 public class LegendBladeRecipeGen {
     public static void onRecipeGen(RegistrateRecipeProvider pvd) {
-        unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, LBModItems.saligiasphere, 1)::unlockedBy, Items.IRON_INGOT)
-                .pattern(" IN").pattern(" SI").pattern("S  ")
-                .define('I', Items.IRON_INGOT)
-                .define('S', Items.STICK)
-                .define('N',Items.IRON_NUGGET)
+        unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, LBModItems.saligiaex, 1)::unlockedBy, Items.IRON_INGOT)
+                .pattern("ABC")
+                .pattern(" D ")
+                .pattern("EFG")
+                .define('A', LBModItems.acedia)
+                .define('B',LBModItems.avaritia)
+                .define('C',LBModItems.gula)
+                .define('D', LBModItems.ira)
+                .define('E', LBModItems.invidia)
+                .define('F',LBModItems.superbia)
+                .define('G', LBModItems.luxuria)
                 .save(pvd);
 
 //        unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CFItems.FORGE_TABLE.get().asItem(), 1)::unlockedBy, Items.IRON_INGOT)

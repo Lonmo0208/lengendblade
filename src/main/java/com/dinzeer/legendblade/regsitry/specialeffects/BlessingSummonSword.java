@@ -1,9 +1,10 @@
 package com.dinzeer.legendblade.regsitry.specialeffects;
 
 import cn.mmf.slashblade_addon.registry.SBASpecialEffectsRegistry;
-import com.dinzeer.legendblade.Util.GetNumUtil;
+
 import com.dinzeer.legendblade.regsitry.LBSpecialEffectsRegistry;
 import com.dinzeer.legendblade.specialattack.BlessingsummonSword;
+import com.exfantasy.mclib.Utils.attrbute.GetplayerattrUtil;
 import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
 import mods.flammpfeil.slashblade.event.SlashBladeEvent;
 import mods.flammpfeil.slashblade.registry.specialeffects.SpecialEffect;
@@ -31,9 +32,9 @@ public class BlessingSummonSword extends SpecialEffect {
             RandomSource random = player.getRandom();
             int level = player.experienceLevel;
             if (SpecialEffect.isEffective(LBSpecialEffectsRegistry.BlessingSummonSword.get(), level)) {
-                if (random.nextInt(100) >= 70){
-                    BlessingsummonSword.doSlash(player,false, GetNumUtil.getdamage(player),1F);
-                }
+
+                    BlessingsummonSword.doSlash(player,false, GetplayerattrUtil.getdamage(player),1F);
+
 
             }
         }

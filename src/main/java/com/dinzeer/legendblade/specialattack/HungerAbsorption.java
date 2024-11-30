@@ -1,6 +1,6 @@
 package com.dinzeer.legendblade.specialattack;
 
-import com.dinzeer.legendblade.Util.SMoveUtil;
+import com.exfantasy.mclib.Utils.Dash.SMoveUtil;
 import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import net.minecraft.world.effect.MobEffectInstance;
