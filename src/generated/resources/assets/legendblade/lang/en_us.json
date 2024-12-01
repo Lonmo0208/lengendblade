@@ -1,4 +1,8 @@
 {
+  "effect.legendblade.hit_damage": "hit damage",
+  "effect.legendblade.strength_damage": "strength damage",
+  "enchantment.level.10": "X",
+  "enchantment.level.15": "XV",
   "item.legendblade.acedia": "Acedia",
   "item.legendblade.asmodeus": "asmodeus",
   "item.legendblade.asmodeusex": "asmodeus ex",
@@ -55,6 +59,7 @@
   "item.legendblade.whitegodfox": "white god fox",
   "item.legendblade.wujiu": "wujiuex",
   "item_group.legendblade.legendbladeitem": "lengend blade item",
+  "legendblade.message.liuli": "liuli eat %s effect",
   "se.legendblade.bad_blood": "bad blood",
   "se.legendblade.blade_attack": "blade attack",
   "se.legendblade.blessing": "blessing",

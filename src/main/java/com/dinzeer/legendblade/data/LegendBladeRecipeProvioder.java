@@ -2,6 +2,7 @@ package com.dinzeer.legendblade.data;
 
 import cn.mmf.slashblade_addon.data.SlashBladeAddonBuiltInRegistry;
 import com.dinzeer.legendblade.init.LBModItems;
+import mods.flammpfeil.slashblade.data.builtin.SlashBladeBuiltInRegistry;
 import mods.flammpfeil.slashblade.init.SBItems;
 import mods.flammpfeil.slashblade.recipe.RequestDefinition;
 import mods.flammpfeil.slashblade.recipe.SlashBladeIngredient;
@@ -463,6 +464,185 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
                 .define('E',SlashBladeIngredient.of(
                         RequestDefinition.Builder.newInstance()
                                 .name(LegendBuiltInRegsitry.evilex.location())
+                                .build()
+                ))
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.foxex.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("ACA")
+                .define('A', Items.GLOWSTONE)
+                .define('B', Items.NETHER_STAR)
+                .define('C', Items.DIAMOND_BLOCK)
+                .define('D',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeBuiltInRegistry.FOX_WHITE.location())
+                                .killCount(1000)
+                                .proudSoul(12000)
+                                .refineCount(6)
+                                .build()
+                ))
+
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.foxex2.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("ACA")
+                .define('A', Items.GLOWSTONE)
+                .define('B', Items.NETHER_STAR)
+                .define('C', Items.DIAMOND_BLOCK)
+                .define('D',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeBuiltInRegistry.FOX_BLACK.location())
+                                .killCount(1000)
+                                .proudSoul(12000)
+                                .refineCount(6)
+                                .build()
+                ))
+
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.foxexfinal.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("AEA")
+                .define('E', Items.GLOWSTONE)
+                .define('B', Items.DRAGON_EGG)
+                .define('A', Items.DIAMOND_BLOCK)
+                .define('D',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.foxex.location())
+                                .killCount(4500)
+                                .proudSoul(24000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('C',Items.OBSIDIAN)
+
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.wujiu.location())
+                .pattern("CAB")
+                .pattern("ABA")
+                .pattern("DAC")
+                .define('A', Items.NETHER_STAR)
+                .define('B', Items.NETHERITE_INGOT)
+                .define('C', SBItems.proudsoul_trapezohedron)
+                .define('D',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeBuiltInRegistry.MURAMASA.location())
+                                .killCount(10000)
+                                .proudSoul(30000)
+                                .refineCount(100)
+                                .build()
+                ))
+
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.belphebubex.location())
+                .pattern("ADC")
+                .pattern("BEB")
+                .pattern("CFA")
+                .define('A', LBModItems.gula)
+                .define('B', LBModItems.saligiaex)
+                .define('C', LBModItems.acedia)
+                .define('D',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.belphegor.location())
+                                .proudSoul(3000)
+                                .refineCount(10)
+                                .build()
+                ))
+                .define('F',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.beelzebub.location())
+                                .proudSoul(3000)
+                                .refineCount(10)
+                                .build()
+                ))
+                .define('E',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.evilex.location())
+                                .killCount(2000)
+                                .proudSoul(3000)
+                                .refineCount(10)
+                                .build()
+                ))
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.waterex.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("AEA")
+                .define('A', SBItems.proudsoul_sphere)
+                .define('D', Items.DIAMOND_BLOCK)
+                .define('C', Items .NETHER_STAR)
+
+
+                .define('B',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.KAMUY_WATER.location())
+                                .killCount(3000)
+                                .proudSoul(3000)
+                                .refineCount(10)
+                                .build()
+                ))
+                .define('E',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.KIRISAYA.location())
+                                .killCount(3000)
+                                .proudSoul(3000)
+                                .refineCount(10)
+                                .build()
+                ))
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.fireex.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("AEA")
+                .define('A', SBItems.proudsoul_sphere)
+                .define('D', Items.DIAMOND_BLOCK)
+                .define('C', Items.NETHER_STAR)
+
+
+                .define('B',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.KAMUY_FIRE.location())
+                                .killCount(3000)
+                                .proudSoul(3000)
+                                .refineCount(10)
+                                .build()
+                ))
+                .define('E',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.LAEMMLE.location())
+                                .killCount(3000)
+                                .proudSoul(3000)
+                                .refineCount(10)
+                                .build()
+                ))
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.lightningex.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("AEA")
+                .define('A', SBItems.proudsoul_sphere)
+                .define('D', Items.DIAMOND_BLOCK)
+                .define('C', Items.NETHER_STAR)
+
+
+                .define('B',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.KAMUY_LIGHTING.location())
+                                .killCount(3000)
+                                .proudSoul(3000)
+                                .refineCount(10)
+                                .build()
+                ))
+                .define('E',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.GREEN_MIST.location())
+                                .killCount(3000)
+                                .proudSoul(3000)
+                                .refineCount(10)
                                 .build()
                 ))
                 .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);

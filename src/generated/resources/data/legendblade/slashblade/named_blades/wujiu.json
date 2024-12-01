@@ -1,4 +1,22 @@
 {
+  "enchantments": [
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 5
+    },
+    {
+      "id": "minecraft:power",
+      "lvl": 10
+    },
+    {
+      "id": "minecraft:protection",
+      "lvl": 5
+    },
+    {
+      "id": "minecraft:thorns",
+      "lvl": 5
+    }
+  ],
   "name": "legendblade:wujiu",
   "properties": {
     "attack_base": 30.0,
@@ -14,7 +32,7 @@
   },
   "render": {
     "model": "legendblade:model/yaoxing/wujiu.obj",
-    "summon_sword_color": 16711697,
+    "summon_sword_color": 12434877,
     "texture": "legendblade:model/yaoxing/wujiu.png"
   }
 }

@@ -81,5 +81,11 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("slash_art.legendblade.fire_dance","fire dance");
         REGISTRATE.addRawLang("slash_art.legendblade.swordone","one sword");
         REGISTRATE.addRawLang("slash_art.legendblade.swordoneex","one sword EX");
+
+        REGISTRATE.addRawLang("enchantment.level.15","XV");
+        REGISTRATE.addRawLang("enchantment.level.10","X");
+        REGISTRATE.addRawLang("effect.legendblade.hit_damage","hit damage");
+        REGISTRATE.addRawLang("effect.legendblade.strength_damage","strength damage");
+        REGISTRATE.addRawLang("legendblade.message.liuli","liuli eat %s effect");
     }
 }

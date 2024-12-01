@@ -94,6 +94,8 @@
   "slash_art.legendblade.thatcher": "§e卓尔不凡",
   "slash_art.legendblade.thrust": "§8平突·§1改",
   "slash_art.legendblade.void_slash_plus": "§c次元斩·§1改",
+  "enchantment.level.15": "「§e神威级§r」",
+  "enchantment.level.10": "「§6极限级§r」",
   "effect.legendblade.hit_damage": "撞击伤害",
   "effect.legendblade.strength_damage": "琉璃",
   "legendblade.message.liuli": "琉璃吞噬了%s个效果"

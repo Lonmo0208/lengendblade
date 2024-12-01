@@ -672,7 +672,7 @@ public class LegendBuiltInRegsitry {
                         RenderDefinition.Builder.newInstance()
                                 .textureName(Legendblade.prefix("model/yaoxing/wujiu.png"))
                                 .modelName(Legendblade.prefix("model/yaoxing/wujiu.obj"))
-                                .effectColor(16711697)
+                                .effectColor(12434877)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
@@ -682,7 +682,12 @@ public class LegendBuiltInRegsitry {
                                 .baseAttackModifier(30)
                                 .maxDamage(80)
                                 .build(),
-                        List.of()
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.ALL_DAMAGE_PROTECTION), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.THORNS), 5)
+
+                        )
                 ));
 
         bootstrap.register(
