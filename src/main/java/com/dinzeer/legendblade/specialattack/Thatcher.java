@@ -1,7 +1,6 @@
 package com.dinzeer.legendblade.specialattack;
 
 
-import com.dinzeer.legendblade.Util.SMoveUtil;
 import com.dinzeer.legendblade.entity.DriveSummonEntity;
 import com.dinzeer.legendblade.entity.SumonSwordEntity;
 import com.dinzeer.legendblade.regsitry.LBEntiteRegristrys;

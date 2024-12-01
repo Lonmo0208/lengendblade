@@ -20,30 +20,24 @@ public class Config
 {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    private static final ForgeConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
-            .comment("Whether to log the dirt block on common setup")
-            .define("logDirtBlock", true);
-
-    private static final ForgeConfigSpec.IntValue MAGIC_NUMBER = BUILDER
-            .comment("A magic number")
-            .defineInRange("magicNumber", 42, 0, Integer.MAX_VALUE);
-
-    public static final ForgeConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
-            .comment("What you want the introduction message to be for the magic number")
-            .define("magicNumberIntroduction", "The magic number is... ");
-
-    // a list of strings that are treated as resource locations for items
-    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS = BUILDER
-            .comment("A list of items to log on common setup.")
-            .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), Config::validateItemName);
+    private static final ForgeConfigSpec.BooleanValue open_damege_fix = BUILDER
+            .comment("Whether to enable abnormal damage repair")
+            .comment("是否启用平衡捍卫者")
+            .define("open_damege_fix", false);
+    private static final ForgeConfigSpec.ConfigValue<Double> damegeadd = BUILDER
+            .comment("The forging number affects the sa and se ratio, with a default forging ratio of 1 and an additional ratio of 0.1")
+            .comment("锻数影响sa、se倍率，默认1锻造：0.1额外倍率")
+            .define("damegeadd", 0.1);
+    private static final ForgeConfigSpec.ConfigValue<Double> damegeaddmax = BUILDER
+            .comment("The forging number affects the sa and se ratio, with a default forging ratio of 1 and an additional ratio of 0.1")
+            .comment("锻数影响sa、se倍率，默认1锻造：0.1额外倍率")
+            .define("damegeaddmax", 50.0);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
-    public static boolean logDirtBlock;
-    public static int magicNumber;
-    public static String magicNumberIntroduction;
-    public static Set<Item> items;
-
+    public static boolean Open_damege_fix;
+    public static double damegeaddd;
+    public static double damegeadddmaX;
     private static boolean validateItemName(final Object obj)
     {
         return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(new ResourceLocation(itemName));
@@ -52,13 +46,8 @@ public class Config
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
     {
-        logDirtBlock = LOG_DIRT_BLOCK.get();
-        magicNumber = MAGIC_NUMBER.get();
-        magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();
-
-        // convert the list of strings into a set of items
-        items = ITEM_STRINGS.get().stream()
-                .map(itemName -> ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)))
-                .collect(Collectors.toSet());
+        Open_damege_fix = open_damege_fix.get();
+        damegeaddd=damegeadd.get();
+        damegeadddmaX=damegeaddmax.get();
     }
 }

@@ -84,6 +84,8 @@ public class Legendblade {
         EffectAbout.REGISTRY.register(modEventBus);
         LBslashArtRegsitry.SLASH_ARTS.register(modEventBus);
         LBModItems.register();
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
         ItemTab.REGISTRY.register(modEventBus);
         if (ModList.get().isLoaded(SlashBladeAddon.MODID)){
             SBALBSlashArtRegsitry.register(modEventBus);

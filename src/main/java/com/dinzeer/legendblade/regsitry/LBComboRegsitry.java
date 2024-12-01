@@ -1,6 +1,7 @@
 package com.dinzeer.legendblade.regsitry;
 
 import com.dinzeer.legendblade.Legendblade;
+import com.exfantasy.mclib.Utils.SlashBlade.SlashEffectUtils;
 import com.exfantasy.mclib.Utils.SlashBlade.SlashbladeUtils;
 import com.dinzeer.legendblade.specialattack.*;
 import com.dinzeer.legendblade.specialattack.HungerAbsorption;
@@ -41,7 +42,7 @@ public class LBComboRegsitry {
                     .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
                     .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
                     .addTickAction(ComboState.TimeLineTickAction.getBuilder()
-                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 0.1F))
+                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
                             .put(3, Prowess::doSlash).build())
                     .addHitEffect(StunManager::setStun)
                     ::build);
@@ -51,7 +52,7 @@ public class LBComboRegsitry {
                     .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
                     .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
                     .addTickAction(ComboState.TimeLineTickAction.getBuilder()
-                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 0.1F))
+                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
                             .put(3, MonsterPower::doSlash).build())
                     .addHitEffect(StunManager::setStun)
                     ::build);
@@ -62,14 +63,14 @@ public class LBComboRegsitry {
                     .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
                     .addTickAction(ComboState.TimeLineTickAction.getBuilder()
                             .put(1,(entityIn) -> SommonSwordSommon.doSlash(entityIn,false,10,1F))
-                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 1F))
-                            .put(3, (entityIn) -> Drive.doSlash(entityIn,0,20,Vec3.ZERO,false,5F,1F))
-                            .put(4, (entityIn) -> AttackManager.doSlash(entityIn, 30F, Vec3.ZERO, false, false, 1F))
-                            .put(5, (entityIn) -> Drive.doSlash(entityIn,90,20,Vec3.ZERO,false,5F,1F))
-                            .put(6, (entityIn) -> AttackManager.doSlash(entityIn, 180F, Vec3.ZERO, false, false, 1F))
-                            .put(7, (entityIn) -> Drive.doSlash(entityIn,45,20,Vec3.ZERO,false,5F,1F))
-                            .put(8,(entityIn) -> SommonSwordSommon.doSlash(entityIn,false,10,1F))
-                            .put(9,(entityIn) -> SommonSwordSommon.doSlash(entityIn,false,10,1F))
+                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
+                            .put(3, (entityIn) -> Drive.doSlash(entityIn,0,20,Vec3.ZERO,false,SlashEffectUtils.addslashbladesaDamage(entityIn,5),1F))
+                            .put(4, (entityIn) -> AttackManager.doSlash(entityIn, 30F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
+                            .put(5, (entityIn) -> Drive.doSlash(entityIn,90,20,Vec3.ZERO,false,SlashEffectUtils.addslashbladesaDamage(entityIn,5),1F))
+                            .put(6, (entityIn) -> AttackManager.doSlash(entityIn, 180F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
+                            .put(7, (entityIn) -> Drive.doSlash(entityIn,45,20,Vec3.ZERO,false,SlashEffectUtils.addslashbladesaDamage(entityIn,5),1F))
+                            .put(8,(entityIn) -> SommonSwordSommon.doSlash(entityIn,false,SlashEffectUtils.addslashbladesaDamage(entityIn,10),1F))
+                            .put(9,(entityIn) -> SommonSwordSommon.doSlash(entityIn,false,SlashEffectUtils.addslashbladesaDamage(entityIn,10),1F))
                             .build())
                     .addHitEffect(StunManager::setStun)
                     ::build);
@@ -80,14 +81,14 @@ public class LBComboRegsitry {
                     .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
                     .addTickAction(ComboState.TimeLineTickAction.getBuilder()
                             .put(1,(entityIn) -> SommonSwordSommon.doSlash(entityIn,false,15,1F))
-                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 1F))
-                            .put(3, (entityIn) -> Drive.doSlash(entityIn,0,20,Vec3.ZERO,false,5F,1F))
-                            .put(4, (entityIn) -> AttackManager.doSlash(entityIn, 30F, Vec3.ZERO, false, false, 1F))
-                            .put(5, (entityIn) -> Drive.doSlash(entityIn,90,20,Vec3.ZERO,false,5F,1F))
-                            .put(6, (entityIn) -> AttackManager.doSlash(entityIn, 180F, Vec3.ZERO, false, false, 1F))
-                            .put(7, (entityIn) -> Drive.doSlash(entityIn,45,20,Vec3.ZERO,false,5F,1F))
-                            .put(8, (entityIn) -> AttackManager.doSlash(entityIn, 90F, Vec3.ZERO, false, false, 1F))
-                            .put(9, (entityIn) -> Drive.doSlash(entityIn,-45,20,Vec3.ZERO,false,5F,1F))
+                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
+                            .put(3, (entityIn) -> Drive.doSlash(entityIn,0,20,Vec3.ZERO,false,SlashEffectUtils.addslashbladesaDamage(entityIn,5),1F))
+                            .put(4, (entityIn) -> AttackManager.doSlash(entityIn, 30F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
+                            .put(5, (entityIn) -> Drive.doSlash(entityIn,90,20,Vec3.ZERO,false,SlashEffectUtils.addslashbladesaDamage(entityIn,5),1F))
+                            .put(6, (entityIn) -> AttackManager.doSlash(entityIn, 180F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
+                            .put(7, (entityIn) -> Drive.doSlash(entityIn,45,20,Vec3.ZERO,false,SlashEffectUtils.addslashbladesaDamage(entityIn,5),1F))
+                            .put(8, (entityIn) -> AttackManager.doSlash(entityIn, 90F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
+                            .put(9, (entityIn) -> Drive.doSlash(entityIn,-45,20,Vec3.ZERO,false,SlashEffectUtils.addslashbladesaDamage(entityIn,5),1F))
                             .build())
                     .addHitEffect(StunManager::setStun)
                     ::build);
@@ -97,7 +98,7 @@ public class LBComboRegsitry {
                     .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
                     .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
                     .addTickAction(ComboState.TimeLineTickAction.getBuilder()
-                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 0.1F))
+                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
                             .put(3, (entityIn) -> PhantomThrust.doSlash(entityIn,2F*3))
                             .put(9, (entityIn) -> PhantomThrust.doSlash(entityIn,2F*-3))
                             .build())
@@ -109,7 +110,7 @@ public class LBComboRegsitry {
                     .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
                     .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
                     .addTickAction(ComboState.TimeLineTickAction.getBuilder()
-                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 0.1F))
+                            .put(2, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
                             .put(3, (entityIn) -> PhantomThrust.doSlash(entityIn,2F*-3))
                             .build())
                     .addHitEffect(StunManager::setStun)
