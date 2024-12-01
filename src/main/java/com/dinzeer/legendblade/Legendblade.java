@@ -46,7 +46,7 @@ import org.slf4j.Logger;
 
 
 @Mod(Legendblade.MODID)
-public class Legendblade {
+                   public class Legendblade {
 
 
     public static ResourceLocation prefix(String path) {

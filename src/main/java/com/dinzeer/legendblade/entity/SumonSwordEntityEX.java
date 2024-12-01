@@ -9,6 +9,7 @@ import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.util.KnockBacks;
 import mods.flammpfeil.slashblade.util.RayTraceHelper;
 import mods.flammpfeil.slashblade.util.TargetSelector;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -22,12 +23,15 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
 import org.joml.Vector3f;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -38,21 +42,18 @@ public class SumonSwordEntityEX extends EntityAbstractSummonedSword {
     private static final EntityDataAccessor<Vector3f> OFFSET = SynchedEntityData.defineId(SumonSwordEntityEX.class, EntityDataSerializers.VECTOR3);
     long fireTime = -1;
 
-    public SumonSwordEntityEX(EntityType<? extends Projectile> entityTypeIn, Level worldIn)
-    {
+    public SumonSwordEntityEX(EntityType<? extends Projectile> entityTypeIn, Level worldIn) {
         super(entityTypeIn, worldIn);
 
         this.setPierce((byte) 5);
     }
 
-    public static SumonSwordEntityEX createInstance(PlayMessages.SpawnEntity packet, Level worldIn)
-    {
+    public static SumonSwordEntityEX createInstance(PlayMessages.SpawnEntity packet, Level worldIn) {
         return new SumonSwordEntityEX(LBEntiteRegristrys.ss, worldIn);
     }
 
     @Override
-    protected void defineSynchedData()
-    {
+    protected void defineSynchedData() {
         super.defineSynchedData();
 
         this.entityData.define(IT_FIRED, false);
@@ -60,46 +61,67 @@ public class SumonSwordEntityEX extends EntityAbstractSummonedSword {
         this.entityData.define(OFFSET, Vec3.ZERO.toVector3f());
     }
 
-    public void doFire()
-    {
+    public void doFire() {
         this.getEntityData().set(IT_FIRED, true);
     }
 
-    public boolean itFired()
-    {
+    public boolean itFired() {
         return this.getEntityData().get(IT_FIRED);
     }
 
-    public void setSpeed(float speed)
-    {
+    public void setSpeed(float speed) {
         this.getEntityData().set(SPEED, speed);
     }
 
-    public float getSpeed() {return this.getEntityData().get(SPEED);}
+    public float getSpeed() {
+        return this.getEntityData().get(SPEED);
+    }
 
-    public void setOffset(Vec3 offset)
-    {
+    public void setOffset(Vec3 offset) {
         this.getEntityData().set(OFFSET, offset.toVector3f());
     }
 
-    public Vec3 getOffset() {return new Vec3(this.getEntityData().get(OFFSET));}
+    public Vec3 getOffset() {
+        return new Vec3(this.getEntityData().get(OFFSET));
+    }
 
     @Override
-    public void tick()
-    {
+    public void tick() {
         if (!itFired() && level().isClientSide() && getVehicle() == null)
-        {
             startRiding(this.getOwner(), true);
-        }
+
 
         super.tick();
     }
 
     @Override
-    public void rideTick()
-    {
+    public void rideTick() {
         if (itFired() && fireTime <= tickCount)
         {
+            final Vec3 _center = new Vec3(this.getX(), this.getY(), this.getZ());
+            List<Entity> _entfound = this.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(16 / 2d), a -> true)
+                    .stream()
+                    .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+                    .toList();
+
+            Entity entityiterator = _entfound.stream()
+                    .filter(e -> e instanceof LivingEntity && e != getOwner() && e != this)
+                    .findFirst()
+                    .orElse(null);
+
+            if (entityiterator != null) {
+                if (entityiterator != this) {
+                    if (entityiterator instanceof LivingEntity) {
+                        //this.lookAt(EntityAnchorArgument.An//chor.EYES, entityiterator.positione.LOGGER.debug("1");
+                        // 计算朝向单位向量
+                        Vec3 lookVec = this.getLookAngle();
+                        this.lookAt(EntityAnchorArgument.Anchor.EYES, entityiterator.position().add(0, 1, 0));
+                        // this.shoot(lookVec.x , lookVec.y , lookVec.z,getSpeed(),1f );
+
+                    }
+                }
+            }
+
             faceEntityStandby();
             Entity vehicle = getVehicle();
             Vec3 dir = this.getViewVector(0);
@@ -180,43 +202,43 @@ public class SumonSwordEntityEX extends EntityAbstractSummonedSword {
         }
     }
 
-    protected void faceEntityStandby()
-    {
-        Vec3 pos = this.getVehicle().position();
-        Vec3 offset = this.getOffset();
 
-        if (this.getVehicle() == null)
+        protected void faceEntityStandby ()
         {
-            doFire();
-            return;
+            Vec3 pos = this.getVehicle().position();
+            Vec3 offset = this.getOffset();
+
+            if (this.getVehicle() == null) {
+                doFire();
+                return;
+            }
+
+            offset = offset.xRot((float) Math.toRadians(-this.getVehicle().getXRot()));
+            offset = offset.yRot((float) Math.toRadians(-this.getVehicle().getYRot()));
+
+            pos = pos.add(offset);
+
+            this.xRotO = this.getXRot();
+            this.yRotO = this.getYRot();
+
+
+            setPos(pos);
+            setRot(-this.getVehicle().getYRot(), -this.getVehicle().getXRot());
         }
 
-        offset = offset.xRot((float) Math.toRadians(-this.getVehicle().getXRot()));
-        offset = offset.yRot((float) Math.toRadians(-this.getVehicle().getYRot()));
-
-        pos = pos.add(offset);
-
-        this.xRotO = this.getXRot();
-        this.yRotO = this.getYRot();
-
-        setPos(pos);
-        setRot(-this.getVehicle().getYRot(), -this.getVehicle().getXRot());
-    }
-
-    @Override
-    protected void onHitEntity(EntityHitResult result)
-    {
-
-        Entity targetEntity = result.getEntity();
-        if (targetEntity instanceof LivingEntity)
+        @Override
+        protected void onHitEntity (EntityHitResult result)
         {
-            KnockBacks.cancel.action.accept((LivingEntity) targetEntity);
-            StunManager.setStun((LivingEntity) targetEntity);
+
+            Entity targetEntity = result.getEntity();
+            if (targetEntity instanceof LivingEntity) {
+                KnockBacks.cancel.action.accept((LivingEntity) targetEntity);
+                StunManager.setStun((LivingEntity) targetEntity);
+            }
+            if (targetEntity instanceof LivingEntity lv) {
+                lv.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 1));
+            }
+            super.onHitEntity(result);
         }
-        if (targetEntity instanceof LivingEntity lv) {
-            lv.addEffect(new MobEffectInstance(MobEffects.WITHER,60,1));
-        }
-        super.onHitEntity(result);
-    }
 
 }

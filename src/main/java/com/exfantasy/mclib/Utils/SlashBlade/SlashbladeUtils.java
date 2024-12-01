@@ -1,10 +1,14 @@
 package com.exfantasy.mclib.Utils.SlashBlade;
 
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
 
 public class SlashbladeUtils {
+    public static final String RepairCounter = "RepairCounter";
     public static int getcolor(Entity entity) {
         if (entity == null)
             return 0;
