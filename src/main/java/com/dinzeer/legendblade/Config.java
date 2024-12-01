@@ -26,12 +26,12 @@ public class Config
             .define("open_damege_fix", false);
     private static final ForgeConfigSpec.ConfigValue<Double> damegeadd = BUILDER
             .comment("The forging number affects the sa and se ratio, with a default forging ratio of 1 and an additional ratio of 0.1")
-            .comment("锻数影响sa、se倍率，默认1锻造：0.1额外倍率")
-            .define("damegeadd", 0.1);
+            .comment("锻数影响sa倍率，默认1锻造：0.1额外倍率")
+            .define("damegeadd", 0.0);
     private static final ForgeConfigSpec.ConfigValue<Double> damegeaddmax = BUILDER
-            .comment("The forging number affects the sa and se ratio, with a default forging ratio of 1 and an additional ratio of 0.1")
-            .comment("锻数影响sa、se倍率，默认1锻造：0.1额外倍率")
-            .define("damegeaddmax", 50.0);
+            .comment("damegeadd max if 0 is off")
+            .comment("锻造数影响倍率上限，0为关闭")
+            .define("damegeaddmax", 0.0);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
