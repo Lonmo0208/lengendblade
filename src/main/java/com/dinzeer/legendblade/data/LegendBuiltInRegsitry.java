@@ -3,7 +3,7 @@ package com.dinzeer.legendblade.data;
 import com.dinzeer.legendblade.Legendblade;
 import com.dinzeer.legendblade.regsitry.LBSpecialEffectsRegistry;
 import com.dinzeer.legendblade.regsitry.LBslashArtRegsitry;
-import com.dinzeer.legendblade.regsitry.linkage.SBALBSlashArtRegsitry;
+import com.dinzeer.legendblade.regsitry.compat.SBALBSlashArtRegsitry;
 import mods.flammpfeil.slashblade.item.SwordType;
 import mods.flammpfeil.slashblade.registry.SlashArtsRegistry;
 import mods.flammpfeil.slashblade.registry.slashblade.EnchantmentDefinition;

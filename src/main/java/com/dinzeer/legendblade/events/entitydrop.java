@@ -1,14 +1,8 @@
-package com.dinzeer.legendblade.event;
+package com.dinzeer.legendblade.events;
 
-import com.dinzeer.legendblade.init.LBModItems;
+import com.dinzeer.legendblade.regsitry.LBModItems;
 import com.dinzeer.legendblade.regsitry.LBSpecialEffectsRegistry;
-import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
-import mods.flammpfeil.slashblade.event.SlashBladeEvent;
 import mods.flammpfeil.slashblade.registry.specialeffects.SpecialEffect;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;

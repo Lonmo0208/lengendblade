@@ -1,7 +1,7 @@
 package com.dinzeer.legendblade.specialattack;
 
 import com.dinzeer.legendblade.Legendblade;
-import com.dinzeer.legendblade.init.LBSounds;
+import com.dinzeer.legendblade.regsitry.LBSounds;
 import com.exfantasy.mclib.Utils.Dash.SMoveUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;

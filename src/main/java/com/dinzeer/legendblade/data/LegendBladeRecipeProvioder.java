@@ -1,7 +1,7 @@
 package com.dinzeer.legendblade.data;
 
 import cn.mmf.slashblade_addon.data.SlashBladeAddonBuiltInRegistry;
-import com.dinzeer.legendblade.init.LBModItems;
+import com.dinzeer.legendblade.regsitry.LBModItems;
 import mods.flammpfeil.slashblade.data.builtin.SlashBladeBuiltInRegistry;
 import mods.flammpfeil.slashblade.init.SBItems;
 import mods.flammpfeil.slashblade.recipe.RequestDefinition;
@@ -16,8 +16,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
 

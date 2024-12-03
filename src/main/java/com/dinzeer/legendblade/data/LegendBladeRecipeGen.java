@@ -1,12 +1,11 @@
 package com.dinzeer.legendblade.data;
 
-import com.dinzeer.legendblade.init.LBModItems;
+import com.dinzeer.legendblade.regsitry.LBModItems;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 

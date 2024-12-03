@@ -1,15 +1,13 @@
-package com.dinzeer.legendblade.regsitry.specialeffects.linkage;
+package com.dinzeer.legendblade.regsitry.specialeffects.compat;
 
 import cn.mmf.slashblade_addon.SlashBladeAddon;
 import cn.mmf.slashblade_addon.specialattacks.FireSpiral;
-import cn.mmf.slashblade_addon.specialattacks.WaterDrive;
-import com.dinzeer.legendblade.regsitry.linkage.SBALBSlashArtRegsitry;
+import com.dinzeer.legendblade.regsitry.compat.SBALBSlashArtRegsitry;
 import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
 import mods.flammpfeil.slashblade.event.SlashBladeEvent;
 import mods.flammpfeil.slashblade.registry.specialeffects.SpecialEffect;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;

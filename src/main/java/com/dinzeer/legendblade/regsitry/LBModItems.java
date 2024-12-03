@@ -2,19 +2,14 @@
 /*
  *    MCreator note: This file will be REGENERATED on each build.
  */
-package com.dinzeer.legendblade.init;
+package com.dinzeer.legendblade.regsitry;
 
 
 import com.dinzeer.legendblade.regsitry.creativetab.ItemTab;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.world.item.Rarity;
 
 import net.minecraft.world.item.Item;
 
-
-import java.util.function.BiFunction;
-import java.util.function.Supplier;
 
 import static com.dinzeer.legendblade.Legendblade.REGISTRATE;
 

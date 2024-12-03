@@ -1,9 +1,8 @@
-package com.dinzeer.legendblade.regsitry.specialeffects.linkage;
+package com.dinzeer.legendblade.regsitry.specialeffects.compat;
 
 import cn.mmf.slashblade_addon.SlashBladeAddon;
-import cn.mmf.slashblade_addon.specialattacks.FireSpiral;
 import cn.mmf.slashblade_addon.specialattacks.LightingSwords;
-import com.dinzeer.legendblade.regsitry.linkage.SBALBSlashArtRegsitry;
+import com.dinzeer.legendblade.regsitry.compat.SBALBSlashArtRegsitry;
 import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
 import mods.flammpfeil.slashblade.event.SlashBladeEvent;
 import mods.flammpfeil.slashblade.registry.specialeffects.SpecialEffect;

@@ -1,4 +1,4 @@
-package com.dinzeer.legendblade.init;
+package com.dinzeer.legendblade.regsitry;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;

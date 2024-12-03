@@ -1,9 +1,7 @@
-package com.dinzeer.legendblade.regsitry.linkage;
+package com.dinzeer.legendblade.regsitry.compat;
 
 import cn.mmf.slashblade_addon.specialattacks.WaterDrive;
 import com.dinzeer.legendblade.Legendblade;
-import com.dinzeer.legendblade.regsitry.LBComboRegsitry;
-import com.dinzeer.legendblade.specialattack.Prowess;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.ability.StunManager;
 import mods.flammpfeil.slashblade.init.DefaultResources;
@@ -16,7 +14,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import cn.mmf.slashblade_addon.specialattacks.*;
-import com.dinzeer.legendblade.regsitry.specialeffects.linkage.*;
+import com.dinzeer.legendblade.regsitry.specialeffects.compat.*;
 import static com.dinzeer.legendblade.Legendblade.MODID;
 
 public class SBALBSlashArtRegsitry {
