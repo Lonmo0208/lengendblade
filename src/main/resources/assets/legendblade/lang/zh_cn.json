@@ -1,4 +1,8 @@
 {
+  "effect.legendblade.hit_damage": "撞击伤害",
+  "effect.legendblade.strength_damage": "琉璃",
+  "enchantment.level.10": "「§6极限级§r」",
+  "enchantment.level.15": "「§e神威级§r」",
   "item.legendblade.acedia": "§1懒惰精魄",
   "item.legendblade.asmodeus": "§5原罪「色欲」",
   "item.legendblade.asmodeusex": "§5原罪神「阿斯莫德」",
@@ -17,6 +21,7 @@
   "item.legendblade.foxex": "§d狐月刀「仙狐」",
   "item.legendblade.foxex2": "§9狐月刀「灵狐」",
   "item.legendblade.foxexfinal": "§6§l灵刃§d「狐月刀」",
+  "item.legendblade.godbird": "§2棘羽「毕方」",
   "item.legendblade.godfox": "§6妖刀「神狐」",
   "item.legendblade.gula": "§2暴食精魄",
   "item.legendblade.invidia": "§5嫉妒精魄",
@@ -55,6 +60,7 @@
   "item.legendblade.whitegodfox": "§r木鞘「神狐」",
   "item.legendblade.wujiu": "§8无九",
   "item_group.legendblade.legendbladeitem": "§e传§4§l世§6§l之§e§l刃§5§l物§f§l品",
+  "legendblade.message.liuli": "琉璃吞噬了%s个效果",
   "se.legendblade.bad_blood": "§4§l坏血",
   "se.legendblade.blade_attack": "§4§l刃噬",
   "se.legendblade.blessing": "§6§l神佑",
@@ -74,6 +80,7 @@
   "se.legendblade.summonsword": "§6§l幻影破魔矢",
   "se.legendblade.suppress": "§6§l压制",
   "se.legendblade.terrifying_waves": "§1§l§l惊涛觉醒·神威爆裂",
+  "slash_art.legendblade.birdthrust": "§2裂霄",
   "slash_art.legendblade.fire_dance": "§c§lEX·极焰之舞",
   "slash_art.legendblade.flurry": "§b影刃乱舞",
   "slash_art.legendblade.greedy_grip": "§6贪婪之握",
@@ -93,10 +100,5 @@
   "slash_art.legendblade.terrifyingwaves": "§b惊涛幻影刃",
   "slash_art.legendblade.thatcher": "§e卓尔不凡",
   "slash_art.legendblade.thrust": "§8平突·§1改",
-  "slash_art.legendblade.void_slash_plus": "§c次元斩·§1改",
-  "enchantment.level.15": "「§e神威级§r」",
-  "enchantment.level.10": "「§6极限级§r」",
-  "effect.legendblade.hit_damage": "撞击伤害",
-  "effect.legendblade.strength_damage": "琉璃",
-  "legendblade.message.liuli": "琉璃吞噬了%s个效果"
+  "slash_art.legendblade.void_slash_plus": "§c次元斩·§1改"
 }

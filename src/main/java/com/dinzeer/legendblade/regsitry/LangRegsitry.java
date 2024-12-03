@@ -14,7 +14,6 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("item.legendblade.whitegodfox","white god fox");
         REGISTRATE.addRawLang("item.legendblade.rustgodfox","rust godfox");
         REGISTRATE.addRawLang("item.legendblade.shinku","shinku");
-
         REGISTRATE.addRawLang("item.legendblade.asmodeus","asmodeus");
         REGISTRATE.addRawLang("item.legendblade.asmodeusex","asmodeus ex");
         REGISTRATE.addRawLang("item.legendblade.beelzebub","beelzebub");
@@ -39,6 +38,7 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("item.legendblade.waterex","water ex");
         REGISTRATE.addRawLang("item.legendblade.fireex","fire ex");
         REGISTRATE.addRawLang("item.legendblade.lightningex","lightning ex");
+        REGISTRATE.addRawLang("item.legendblade.godbird","The Blade of the Divine Bird");
 
         REGISTRATE.addRawLang("item_group.legendblade.legendbladeitem","lengend blade item");
         REGISTRATE.addRawLang("se.legendblade.bad_blood","bad blood");
@@ -81,6 +81,7 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("slash_art.legendblade.fire_dance","fire dance");
         REGISTRATE.addRawLang("slash_art.legendblade.swordone","one sword");
         REGISTRATE.addRawLang("slash_art.legendblade.swordoneex","one sword EX");
+        REGISTRATE.addRawLang("slash_art.legendblade.birdthrust","bird thrust");
 
         REGISTRATE.addRawLang("enchantment.level.15","XV");
         REGISTRATE.addRawLang("enchantment.level.10","X");

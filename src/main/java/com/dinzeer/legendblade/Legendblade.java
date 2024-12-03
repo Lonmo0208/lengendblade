@@ -1,6 +1,7 @@
 package com.dinzeer.legendblade;
 
 import cn.mmf.slashblade_addon.SlashBladeAddon;
+import com.dinzeer.legendblade.init.LBSounds;
 import com.exfantasy.mclib.Utils.Dash.DashMessage;
 import com.dinzeer.legendblade.effect.HitDamageEffect;
 import com.dinzeer.legendblade.effect.StrengthBoost;
@@ -84,6 +85,7 @@ import org.slf4j.Logger;
         EffectAbout.REGISTRY.register(modEventBus);
         LBslashArtRegsitry.SLASH_ARTS.register(modEventBus);
         LBModItems.register();
+        LBSounds.REGISTRY.register(modEventBus);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         ItemTab.REGISTRY.register(modEventBus);

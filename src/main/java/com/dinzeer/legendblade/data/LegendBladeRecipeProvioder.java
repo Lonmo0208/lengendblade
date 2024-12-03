@@ -646,6 +646,20 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
                                 .build()
                 ))
                 .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.godbird.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("ABA")
+                .define('A', Items.VINE)
+                .define('B', Items.FEATHER)
+                .define('C', SBItems.proudsoul_sphere)
+
+
+                .define('D',SlashBladeIngredient.of(
+                        SBItems.slashblade_white, RequestDefinition.Builder.newInstance()
+                                .killCount(2000).refineCount(15).proudSoul(15000).build()
+                ))
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
 
     }
 

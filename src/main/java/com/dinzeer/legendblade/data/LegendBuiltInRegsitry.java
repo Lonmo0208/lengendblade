@@ -88,6 +88,10 @@ public class LegendBuiltInRegsitry {
     public static final ResourceKey<SlashBladeDefinition> lightningex;
     //魔刀千刃
     public static final ResourceKey<SlashBladeDefinition> sevensword;
+    //毕方
+    public static final ResourceKey<SlashBladeDefinition> godbird;
+    //荧光惊异
+
     static {
         SHINKU=register("shinku");
         BLOODKATANA=register("bloodkatana");
@@ -123,6 +127,7 @@ public class LegendBuiltInRegsitry {
         fireex=register("fireex");
         lightningex=register("lightningex");
         sevensword=register("sevensword");
+        godbird=register("godbird");
     }
     public static void registerAll(BootstapContext<SlashBladeDefinition> bootstrap) {
 
@@ -783,6 +788,31 @@ public class LegendBuiltInRegsitry {
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7)
                         )
                 ));
+        bootstrap.register(
+                godbird, new SlashBladeDefinition(Legendblade.prefix("godbird"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/godbird/texture.png"))
+                                .modelName(Legendblade.prefix("model/godbird/model.obj"))
+                                .effectColor(65343)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .slashArtsType(LBslashArtRegsitry.Thrusts.getId())
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(15)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.THORNS), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FALL_PROTECTION), 10)
+                        )
+                ));
+
+
+
+
+
     }
 
 

@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-01T17:43:04.8609336	Recipes
+// 1.20.1	2024-12-02T17:50:55.1498333	Recipes
 f5d5fce438adda6745d3783380994a704c905568 data/legendblade/advancements/recipes/combat/asmodeus.json
 cc8a742dba613e3a638d56cc4f39930df29aa343 data/legendblade/advancements/recipes/combat/asmodeusex.json
 7b85ddb54a3a935cf56aa5233e38e6faebe0b47d data/legendblade/advancements/recipes/combat/beelzebub.json
@@ -13,6 +13,7 @@ c392c8d1d7285cbeb609b1b54d2ebd577698a4ce data/legendblade/advancements/recipes/c
 eb817268d494c3bbd40c19296195fde8486a7935 data/legendblade/advancements/recipes/combat/foxex.json
 c504cd6294e52838f139083e67f65f724f677a4f data/legendblade/advancements/recipes/combat/foxex2.json
 db1512e93f5d5d660b179eb2d5cbaa6d5e042002 data/legendblade/advancements/recipes/combat/foxexfinal.json
+b9aa83c97e83a833ebfa0cfb4e270885a0534c6e data/legendblade/advancements/recipes/combat/godbird.json
 2ace3314fc3a1a0e548b7f42c741c2aadbcbeb79 data/legendblade/advancements/recipes/combat/godfox.json
 5b616bbc6f72aa77c63f209b3b738bd0d6440c4a data/legendblade/advancements/recipes/combat/leviathan.json
 95d489087b615df0bb005453bdc71598657bc8be data/legendblade/advancements/recipes/combat/leviathanex.json
@@ -45,6 +46,7 @@ eaf2730fb251c96735291d727e5ff3ba7cb3b12a data/legendblade/recipes/fireex.json
 17d5bc0907f33161f5bb1da155ac623fb72c9fc2 data/legendblade/recipes/foxex.json
 5a69c1c243e2f03eed15401c129d6b4bc9b144b9 data/legendblade/recipes/foxex2.json
 fba42161f4993d639b4566e4341f78170427bb8a data/legendblade/recipes/foxexfinal.json
+d59502dff014e68726d6cc952c7b7b3cc8a4e32e data/legendblade/recipes/godbird.json
 d335a08ee693b4abe32e073eaeaa5b1976955e6f data/legendblade/recipes/godfox.json
 b3ff65967d7fc4e161b88df3bf8e85ae61105f90 data/legendblade/recipes/leviathan.json
 a4dbc4ea82f43e07e1ec5a1c5621251b5d51cfe1 data/legendblade/recipes/leviathanex.json

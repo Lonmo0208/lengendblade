@@ -220,7 +220,9 @@ public class LBComboRegsitry {
                     .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
                     .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
                     .addTickAction(ComboState.TimeLineTickAction.getBuilder()
-                            .put(1, (entity)-> Swordone.doSlash(entity,false,SlashEffectUtils.addslashbladesaDamage(entity,10),2F,Vec3.ZERO))
+                            .put(1, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 0.1F))
+
+                            .put(2, (entity)-> Swordone.doSlash(entity,false,SlashEffectUtils.addslashbladesaDamage(entity,10),2F,Vec3.ZERO))
                             .build())
                     .addHitEffect(StunManager::setStun)
                     ::build);
@@ -249,11 +251,22 @@ public class LBComboRegsitry {
                     .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
                     .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
                     .addTickAction(ComboState.TimeLineTickAction.getBuilder()
-                            .put(1, (entityIn) -> PhantomThrust.doSlash(entityIn,3F*3))
+                            .put(1, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 0.1F))
+                            .put(2, (entityIn) -> PhantomThrust.doSlash(entityIn,3F*3,2))
                             .build())
                     .addHitEffect(StunManager::setStun)
                     ::build);
-
+    public static final RegistryObject<ComboState> Thrusta = COMBO_STATES.register("birdthrust",
+            ComboState.Builder.newInstance().startAndEnd(400, 459).priority(50)
+                    .motionLoc(DefaultResources.ExMotionLocation)
+                    .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
+                    .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
+                    .addTickAction(ComboState.TimeLineTickAction.getBuilder()
+                            .put(1, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 0.1F))
+                            .put(2, (entityIn) -> Thrusts.doSlash(entityIn,3F))
+                            .build())
+                    .addHitEffect(StunManager::setStun)
+                    ::build);
 
     public static final RegistryObject<ComboState> SAKURA_END_LEFTEX = COMBO_STATES.register("sakura_end_left_ex",
             ComboState.Builder.newInstance().startAndEnd(1816, 1859).speed(6F).priority(50)

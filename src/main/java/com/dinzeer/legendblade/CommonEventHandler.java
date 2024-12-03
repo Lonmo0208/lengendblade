@@ -31,10 +31,14 @@ public class CommonEventHandler {
         public static void onVillagerTrades(VillagerTradesEvent event) {
             addVillageTrade(event, "weaponsmith", 2, new VillagerSlashBladeListing(64, LegendBuiltInRegsitry.RUSTGODFOX.location(), 3, 5, 0.05F));
             addVillageTrade(event, "weaponsmith", 2, new VillagerSlashBladeListing(64, SlashBladeBuiltInRegistry.SABIGATANA.location(), 3, 5, 0.05F));
-            event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.EMERALD, 12), new ItemStack(SBItems.proudsoul), 128, 5, 0.05f));
-            event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.EMERALD, 6), new ItemStack(SBItems.proudsoul_tiny), 256, 5, 0.05f));
-            if(ModList.get().isLoaded(SlashBladeAddon.MODID)){
-                addVillageTrade(event, "weaponsmith", 4, new VillagerSlashBladeListing(64, SlashBladeAddonBuiltInRegistry.DARK_RAVEN.location(), 3, 5, 0.05F));
+            if (event.getType() == VillagerProfession.WEAPONSMITH) {
+
+                event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.EMERALD, 12), new ItemStack(SBItems.proudsoul), 128, 5, 0.05f));
+                event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.EMERALD, 6), new ItemStack(SBItems.proudsoul_tiny), 256, 5, 0.05f));
+
+                if (ModList.get().isLoaded(SlashBladeAddon.MODID)) {
+                    addVillageTrade(event, "weaponsmith", 4, new VillagerSlashBladeListing(64, SlashBladeAddonBuiltInRegistry.DARK_RAVEN.location(), 3, 5, 0.05F));
+                }
             }
         }
 
