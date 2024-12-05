@@ -28,7 +28,7 @@ public class LBslashArtRegsitry {
     public static final RegistryObject<SlashArts> swordone;
     public static final RegistryObject<SlashArts> swordoneex;
     public static final RegistryObject<SlashArts> Thrusts;
-
+    public static final RegistryObject<SlashArts> SlashShine;
     static {
         PROWESS=SLASH_ARTS.register("prowess", () -> new SlashArts((e) ->
                 LBComboRegsitry.PROWESS.getId()));
@@ -57,5 +57,6 @@ public class LBslashArtRegsitry {
         swordone=SLASH_ARTS.register("swordone", () -> new SlashArts((e) ->LBComboRegsitry.swordone.getId()));
         swordoneex=SLASH_ARTS.register("swordoneex", () -> new SlashArts((e) ->LBComboRegsitry.swordoneex.getId()));
         Thrusts=SLASH_ARTS.register("birdthrust", () -> new SlashArts((e) ->LBComboRegsitry.Thrusta.getId()));
+        SlashShine=SLASH_ARTS.register("slashshine",() -> new SlashArts((e) ->LBComboRegsitry.SlashShine.getId()));
      }
 }

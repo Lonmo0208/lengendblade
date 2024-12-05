@@ -13,13 +13,16 @@
   "properties": {
     "attack_base": 20.0,
     "max_damage": 80,
+    "special_effects": [
+      "legendblade:fragmentededge"
+    ],
     "sword_type": [
       "bewitched"
     ]
   },
   "render": {
     "model": "legendblade:model/sevensword/model.obj",
-    "summon_sword_color": 16766720,
+    "summon_sword_color": 10289407,
     "texture": "legendblade:model/sevensword/texture.png"
   }
 }

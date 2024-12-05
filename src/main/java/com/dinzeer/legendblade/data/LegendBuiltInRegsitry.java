@@ -90,8 +90,14 @@ public class LegendBuiltInRegsitry {
     public static final ResourceKey<SlashBladeDefinition> sevensword;
     //毕方
     public static final ResourceKey<SlashBladeDefinition> godbird;
+    //红樱ex
+    public static final ResourceKey<SlashBladeDefinition> crimsoncherryex;
     //荧光惊异
-
+    public static final ResourceKey<SlashBladeDefinition> amazedshine;
+    //狱刀ex
+    public static final ResourceKey<SlashBladeDefinition> nihilulex;
+    //炼狱刀死念ex
+    public static final ResourceKey<SlashBladeDefinition> nihilbxex;
     static {
         SHINKU=register("shinku");
         BLOODKATANA=register("bloodkatana");
@@ -128,6 +134,10 @@ public class LegendBuiltInRegsitry {
         lightningex=register("lightningex");
         sevensword=register("sevensword");
         godbird=register("godbird");
+        crimsoncherryex=register("crimsoncherryex");
+        amazedshine=register("amazedshine");
+        nihilulex=register("nihilulex");
+        nihilbxex=register("nihilbxex");
     }
     public static void registerAll(BootstapContext<SlashBladeDefinition> bootstrap) {
 
@@ -661,12 +671,12 @@ public class LegendBuiltInRegsitry {
                                 .slashArtsType(LBslashArtRegsitry.SAKURAENDEX.getId())
                                 .addSpecialEffect(LBSpecialEffectsRegistry.SummonSword.getId())
                                 .addSpecialEffect(LBSpecialEffectsRegistry.FoxBlessing.getId())
-                                .baseAttackModifier(30)
+                                .baseAttackModifier(35)
                                 .maxDamage(80)
                                 .build(),
                         List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 10),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 10),
-                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 10),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_ASPECT), 5),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 5)
@@ -809,10 +819,88 @@ public class LegendBuiltInRegsitry {
                         )
                 ));
 
-
-
-
-
+        bootstrap.register(
+                crimsoncherryex, new SlashBladeDefinition(Legendblade.prefix("crimsoncherryex"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/nihill/crimsoncherry.png"))
+                                .modelName(Legendblade.prefix("model/nihill/nihilbloodex.obj"))
+                                .effectColor(16711680)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(SlashArtsRegistry.SAKURA_END.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.EndSakuraRiseUp.getId())
+                                .baseAttackModifier(20)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_ASPECT), 5)
+                        )
+                ));
+        bootstrap.register(
+                amazedshine, new SlashBladeDefinition(Legendblade.prefix("amazedshine"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/testmyability/testmyability.png"))
+                                .modelName(Legendblade.prefix("model/testmyability/testmyability.obj"))
+                                .effectColor(16769536)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(LBslashArtRegsitry.SlashShine.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.TheShineSummonSword.getId())
+                                .baseAttackModifier(23)
+                                .maxDamage(300)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.INFINITY_ARROWS), 10)
+                        )
+                ));
+        bootstrap.register(
+                nihilulex, new SlashBladeDefinition(Legendblade.prefix("nihilulex"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/nihill/nihilul.png"))
+                                .modelName(Legendblade.prefix("model/nihill/nihilbloodex.obj"))
+                                .effectColor(16187647)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(SlashArtsRegistry.WAVE_EDGE.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.WaveEdgeRiseUp.getId())
+                                .baseAttackModifier(20)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.MOB_LOOTING), 5)
+                        )
+                ));
+        bootstrap.register(
+                nihilbxex, new SlashBladeDefinition(Legendblade.prefix("nihilbxex"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/nihill/nihilbx.png"))
+                                .modelName(Legendblade.prefix("model/nihill/nihilbloodex.obj"))
+                                .effectColor(16711680)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(LBslashArtRegsitry.SAKURAENDEX.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.EndSakuraRiseUp.getId())
+                                .addSpecialEffect(LBSpecialEffectsRegistry.WaveEdgeRiseUp.getId())
+                                .baseAttackModifier(35)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 15),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.MOB_LOOTING), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_ASPECT), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.MENDING), 10)
+                        )
+                ));
     }
 
 

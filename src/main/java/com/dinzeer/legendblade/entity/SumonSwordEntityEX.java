@@ -49,7 +49,7 @@ public class SumonSwordEntityEX extends EntityAbstractSummonedSword {
     }
 
     public static SumonSwordEntityEX createInstance(PlayMessages.SpawnEntity packet, Level worldIn) {
-        return new SumonSwordEntityEX(LBEntiteRegristrys.ss, worldIn);
+        return new SumonSwordEntityEX(LBEntiteRegristrys.ssex, worldIn);
     }
 
     @Override

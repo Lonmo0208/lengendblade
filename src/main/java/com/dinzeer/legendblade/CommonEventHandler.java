@@ -33,8 +33,8 @@ public class CommonEventHandler {
             addVillageTrade(event, "weaponsmith", 2, new VillagerSlashBladeListing(64, SlashBladeBuiltInRegistry.SABIGATANA.location(), 3, 5, 0.05F));
             if (event.getType() == VillagerProfession.WEAPONSMITH) {
 
-                event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.EMERALD, 12), new ItemStack(SBItems.proudsoul), 128, 5, 0.05f));
-                event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.EMERALD, 6), new ItemStack(SBItems.proudsoul_tiny), 256, 5, 0.05f));
+                event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.EMERALD, 12), new ItemStack(SBItems.proudsoul), 1024, 5, 0.05f));
+                event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.EMERALD, 3), new ItemStack(SBItems.proudsoul_tiny), 2048, 5, 0.05f));
 
                 if (ModList.get().isLoaded(SlashBladeAddon.MODID)) {
                     addVillageTrade(event, "weaponsmith", 4, new VillagerSlashBladeListing(64, SlashBladeAddonBuiltInRegistry.DARK_RAVEN.location(), 3, 5, 0.05F));
@@ -47,8 +47,8 @@ public class CommonEventHandler {
             List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
             rareTrades.add(new VillagerSlashBladeListing(64, LegendBuiltInRegsitry.RUSTGODFOX.location(), 3, 5, 0.05F));
             rareTrades.add(new VillagerSlashBladeListing(64, SlashBladeBuiltInRegistry.SABIGATANA.location(), 3, 5, 0.05F));
-            rareTrades.add(new BasicItemListing(new ItemStack(Items.EMERALD, 6), new ItemStack(SBItems.proudsoul_tiny), 516, 5, 0.05f));
-            rareTrades.add(new BasicItemListing(new ItemStack(Items.EMERALD, 6), new ItemStack(SBItems.proudsoul), 256, 5, 0.05f));
+            rareTrades.add(new BasicItemListing(new ItemStack(Items.EMERALD, 6), new ItemStack(SBItems.proudsoul_tiny), 4056, 5, 0.05f));
+            rareTrades.add(new BasicItemListing(new ItemStack(Items.EMERALD, 6), new ItemStack(SBItems.proudsoul), 2048, 5, 0.05f));
             if(ModList.get().isLoaded(SlashBladeAddon.MODID)){
                 rareTrades.add(new VillagerSlashBladeListing(64, LegendBuiltInRegsitry.RUSTGODFOX.location(), 3, 5, 0.05F));
             }

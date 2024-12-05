@@ -10,6 +10,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.Objects;
+
 @Mod.EventBusSubscriber
 public class Blessing extends SpecialEffect {
     public Blessing() {
@@ -32,11 +34,19 @@ public class Blessing extends SpecialEffect {
             int level = player.experienceLevel;
 
             if(SpecialEffect.isEffective(LBSpecialEffectsRegistry.BLESSING.get(),level)){
-               if (!player.hasEffect(MobEffects.HEALTH_BOOST)){
-                   player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 300, 2));
+               if (!player.hasEffect(MobEffects.REGENERATION)){
+                   player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 2));
+                }else
+                if (player.getEffect(MobEffects.REGENERATION).getDuration()<=5*20){
+                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 2));
                 }
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 2));
-                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 2));
+                if (!player.hasEffect(MobEffects.ABSORPTION)){
+                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 300, 5));
+                }else
+                if (player.getEffect(MobEffects.ABSORPTION).getDuration()<=5*20){
+                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 300, 5));
+                }
 
             }
         }

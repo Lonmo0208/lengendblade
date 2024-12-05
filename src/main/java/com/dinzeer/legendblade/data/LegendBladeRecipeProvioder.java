@@ -4,6 +4,7 @@ import cn.mmf.slashblade_addon.data.SlashBladeAddonBuiltInRegistry;
 import com.dinzeer.legendblade.regsitry.LBModItems;
 import mods.flammpfeil.slashblade.data.builtin.SlashBladeBuiltInRegistry;
 import mods.flammpfeil.slashblade.init.SBItems;
+import mods.flammpfeil.slashblade.item.SwordType;
 import mods.flammpfeil.slashblade.recipe.RequestDefinition;
 import mods.flammpfeil.slashblade.recipe.SlashBladeIngredient;
 import mods.flammpfeil.slashblade.recipe.SlashBladeShapedRecipeBuilder;
@@ -658,8 +659,128 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
                                 .killCount(2000).refineCount(15).proudSoul(15000).build()
                 ))
                 .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.crimsoncherryex.location())
+                .pattern("ABA")
+                .pattern("CDE")
+                .pattern("AFA")
+                .define('A', Items.DIAMOND_BLOCK)
+                .define('B',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.CRIMSONCHERRY.location())
+                                .killCount(3000)
+                                .proudSoul(30000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('F',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.NIHILEXFAKE.location())
+                                .killCount(3000)
+                                .proudSoul(30000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('C',LBModItems.blood_tachi)
+                .define('E',LBModItems.scarletjadeofuda)
+                .define('D',Items.NETHERITE_INGOT)
 
-    }
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.amazedshine.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("BAB")
+                .define('A', Items.BEACON)
+                .define('B',Items.BOOKSHELF)
+                .define('D',SlashBladeIngredient.of(
+                        SBItems.slashblade_silverbamboo, RequestDefinition.Builder.newInstance()
+                                .refineCount(80).addSwordType(SwordType.BROKEN).build()
+                ))
+                .define('C',SBItems.proudsoul_sphere)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.nihilulex.location())
+                .pattern("ABA")
+                .pattern("CDE")
+                .pattern("AFA")
+                .define('A', Items.DIAMOND_BLOCK)
+                .define('B',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.CRIMSONCHERRY.location())
+                                .killCount(3000)
+                                .proudSoul(30000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('F',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.NIHILEXFAKE.location())
+                                .killCount(6000)
+                                .proudSoul(30000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('C',LBModItems.blood_tachi)
+                .define('E',LBModItems.scarletjadeofuda)
+                .define('D',Items.NETHERITE_INGOT)
+
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.nihilbxex.location())
+                .pattern("ABA")
+                .pattern("ACA")
+                .pattern("ADA")
+                .define('A', Items.DIAMOND_BLOCK)
+                .define('B',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.nihilulex.location())
+                                .killCount(8000)
+                                .proudSoul(50000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.NIHILBX.location())
+                                .killCount(8000)
+                                .proudSoul(30000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('D',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.crimsoncherryex.location())
+                                .killCount(8000)
+                                .proudSoul(50000)
+                                .refineCount(20)
+                                .build()
+                ))
+
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.sevensword.location())
+                .pattern("ABA")
+                .pattern("DCD")
+                .pattern("AEA")
+                .define('A', Items.NETHERITE_BLOCK)
+                .define('B',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.NIHILEXFAKE.location())
+                                .killCount(10000)
+                                .proudSoul(50000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.KIRISAYA.location())
+                                .killCount(10000)
+                                .proudSoul(30000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('D',Items.DRAGON_EGG)
+                .define('E',LBModItems.blood_tachi)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+                    }
 
 
 

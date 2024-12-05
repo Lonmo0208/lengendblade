@@ -11,14 +11,14 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
-public class SummonSword extends SpecialEffect {
-    public SummonSword() {
-        super(60,false,false);
+public class TheShine extends SpecialEffect {
+    public TheShine() {
+        super(30,false, false);
     }
     @SubscribeEvent
     public static void onDoingSlash(SlashBladeEvent.DoSlashEvent event) {
         ISlashBladeState state = event.getSlashBladeState();
-        if (state.hasSpecialEffect(LBSpecialEffectsRegistry.SummonSword.getId())) {
+        if (state.hasSpecialEffect(LBSpecialEffectsRegistry.TheShineSummonSword.getId())) {
             if (!(event.getUser() instanceof Player)) {
                 return;
             }
@@ -26,9 +26,9 @@ public class SummonSword extends SpecialEffect {
             Player player = (Player)event.getUser();
             RandomSource random = player.getRandom();
             int level = player.experienceLevel;
-            if (SpecialEffect.isEffective(LBSpecialEffectsRegistry.SummonSword.get(), level)) {
+            if (SpecialEffect.isEffective(LBSpecialEffectsRegistry.TheShineSummonSword.get(), level)) {
 
-                    SommonSwordSommon.doSlash(player,16777215,false, 1,3F,5,10);
+                SommonSwordSommon.doSlash(player,16749312,false, 2,3F,5,5);
 
             }
         }

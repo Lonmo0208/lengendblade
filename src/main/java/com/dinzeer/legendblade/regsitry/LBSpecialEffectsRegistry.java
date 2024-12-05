@@ -25,14 +25,18 @@ public class LBSpecialEffectsRegistry {
     public static final RegistryObject<SpecialEffect> FoxBlessing;
     public static final RegistryObject<SpecialEffect> Liuli;
     public static final RegistryObject<SpecialEffect> Liulione;
+    public static final RegistryObject<SpecialEffect> EndSakuraRiseUp;
+    public static final RegistryObject<SpecialEffect> TheShineSummonSword;
+    public static final RegistryObject<SpecialEffect> WaveEdgeRiseUp;
+    public static final RegistryObject<SpecialEffect> FragmentedEdge;
     public LBSpecialEffectsRegistry() {
     }
 
     static {
         REGISTRY_KEY2 = DeferredRegister.create(SpecialEffect.REGISTRY_KEY, MODID);
-        BLESSING=REGISTRY_KEY2.register("blessing", Blessing::new);
-        BLadeAttack=REGISTRY_KEY2.register("blade_attack", BladeAttack::new);
-        BAdBlood=REGISTRY_KEY2.register("bad_blood", BadBlood::new);
+        BLESSING=REGISTRY_KEY2.register("blessing", Blessing::new);//神佑
+        BLadeAttack=REGISTRY_KEY2.register("blade_attack", BladeAttack::new);//刃噬
+        BAdBlood=REGISTRY_KEY2.register("bad_blood", BadBlood::new);//坏血
         Sin=REGISTRY_KEY2.register("sin", Sin::new);
         poison=REGISTRY_KEY2.register("poison", Poison::new);
         Feastful=REGISTRY_KEY2.register("feastful", Feastful::new);
@@ -46,5 +50,9 @@ public class LBSpecialEffectsRegistry {
         FoxBlessing=REGISTRY_KEY2.register("foxbling", FoxBlessing::new);
         Liuli=REGISTRY_KEY2.register("liuli", Liuli::new);
         Liulione=REGISTRY_KEY2.register("liulione", Liulione::new);
+        EndSakuraRiseUp=REGISTRY_KEY2.register("endsakurateriseup", EndSakuraRiseUp::new);
+        WaveEdgeRiseUp=REGISTRY_KEY2.register("waveedgeriseup", WaveEdgeRiseUp::new);//波刀龙胆se
+        TheShineSummonSword=REGISTRY_KEY2.register("theshine",TheShine::new);
+        FragmentedEdge=REGISTRY_KEY2.register("fragmentededge", FragmentedEdge::new);
     }
 }

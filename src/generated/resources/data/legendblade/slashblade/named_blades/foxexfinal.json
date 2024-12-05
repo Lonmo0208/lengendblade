@@ -10,7 +10,7 @@
     },
     {
       "id": "minecraft:sharpness",
-      "lvl": 7
+      "lvl": 10
     },
     {
       "id": "minecraft:fire_aspect",
@@ -27,7 +27,7 @@
   ],
   "name": "legendblade:foxexfinal",
   "properties": {
-    "attack_base": 30.0,
+    "attack_base": 35.0,
     "max_damage": 80,
     "slash_art": "legendblade:sakura_endex",
     "special_effects": [

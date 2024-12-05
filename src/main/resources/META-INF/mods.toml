@@ -4,9 +4,9 @@ loaderVersion="${loader_version_range}" #mandatory This is typically bumped ever
 license="${mod_license}"
 [[mods]]
 modId="legendblade"
-version="1.1.0"
+version="1.1.6"
 displayName="legendblade"
-authors="Dinzeer and TheFlareStar"
+authors="Dinzeer and TheFlareStar and tianyi and canyuesama"
 description='''Integrate and release three slavhblade addons from the Chinese MINECRAFT forum in versions 1.12.2 and 1.7.10 to version 1.20.1'''
 [[dependencies.legendblade]] #optional
    # the modid of the dependency

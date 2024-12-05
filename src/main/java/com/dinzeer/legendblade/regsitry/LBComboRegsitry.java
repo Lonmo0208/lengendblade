@@ -302,5 +302,22 @@ public class LBComboRegsitry {
                             .put(12 - 3 + 5, (entityIn) -> UserPoseOverrider.resetRot(entityIn)).build())
                     .addHitEffect(StunManager::setStun)::build);
 
+    public static final RegistryObject<ComboState> SlashShine  = COMBO_STATES.register("slashshine",
+            ComboState.Builder.newInstance().startAndEnd(400, 459).priority(50)
+                    .motionLoc(DefaultResources.ExMotionLocation)
+                    .next(ComboState.TimeoutNext.buildFromFrame(15, entity -> SlashBlade.prefix("none")))
+                    .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
+                    .addTickAction(ComboState.TimeLineTickAction.getBuilder()
+                            .put(1, (entityIn) -> AttackManager.doSlash(entityIn, 30F, Vec3.ZERO, false, false, SlashEffectUtils.addslashbladesaDamage(entityIn,1)))
+                            .put(2, (entityIn) -> DriveSumon.doSlash(entityIn, 45F, 20, Vec3.ZERO, false, SlashEffectUtils.addslashbladesaDamage(entityIn,15), 1f, 1f, 2, SlashbladeUtils.getcolor(entityIn)))
+                            .put(3, (entityIn) -> DriveSumon.doSlash(entityIn, -45F, 20, Vec3.ZERO, false,SlashEffectUtils.addslashbladesaDamage(entityIn,15), 1f, 1f, 2, SlashbladeUtils.getcolor(entityIn)))
+                            .put(4, (entityIn) -> DriveSumon.doSlash(entityIn, 90F, 20, Vec3.ZERO, false, SlashEffectUtils.addslashbladesaDamage(entityIn,15), 1f, 1f, 2,SlashbladeUtils.getcolor(entityIn)))
+                            .put(5, (entityIn) -> SommonSwordSommon.doSlash(entityIn,false,10,5F))
+
+                            .put(10, (entityIn) -> DriveSumon.doSlash(entityIn, 90F, 20, Vec3.ZERO, false, SlashEffectUtils.addslashbladesaDamage(entityIn,15), 1f, 1f, 2,SlashbladeUtils.getcolor(entityIn)))
+
+                            .build())
+                    .addHitEffect(StunManager::setStun)
+                    ::build);
 
 }

@@ -10,8 +10,8 @@ import net.minecraftforge.network.NetworkEvent;
 import java.util.function.Supplier;
 
 public class DashMessage {
-    private final double dy;
-private final double dashDistance;
+    final double dy;
+final double dashDistance;
 
     public DashMessage(double dy, double dashDistance) {
         this.dy = dy;
@@ -21,26 +21,28 @@ private final double dashDistance;
     public static void encode(DashMessage msg, FriendlyByteBuf buffer) {
         buffer.writeDouble(msg.dy);
 buffer.writeDouble(msg.dashDistance);
-    }
 
+    }
+    public static void handle(DashMessage msg, Supplier<NetworkEvent.Context> ctx) {
+//        ctx.get().enqueueWork(() -> {
+//            // 在这里调用vmove方法
+//            if (ctx.get().getDirection().getReceptionSide() == LogicalSide.CLIENT ) {
+//                // 获取实体
+//                LivingEntity entity = Minecraft.getInstance().player;
+//
+//                if (entity != null) {
+//                    vmove(entity, msg.dy, msg.dashDistance);
+//                }
+//            }
+//        });
+        ctx.get().enqueueWork(()->ClientPacketHandler.handledash(msg));
+        ctx.get().setPacketHandled(true);
+    }
     public static DashMessage decode(FriendlyByteBuf buffer) {
         return new DashMessage( buffer.readDouble(), buffer.readDouble());
     }
 
-    public static void handle(DashMessage msg, Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().enqueueWork(() -> {
-            // 在这里调用vmove方法
-            if (ctx.get().getDirection().getReceptionSide() == LogicalSide.CLIENT ) {
-                // 获取实体
-                LivingEntity entity = Minecraft.getInstance().player;
 
-                if (entity != null) {
-                    vmove(entity, msg.dy, msg.dashDistance);
-                }
-            }
-        });
-        ctx.get().setPacketHandled(true);
-    }
 
     public static void vmove(LivingEntity livingEntity, double dy, double dashDistance) {
         float yaw = livingEntity.getYRot();
