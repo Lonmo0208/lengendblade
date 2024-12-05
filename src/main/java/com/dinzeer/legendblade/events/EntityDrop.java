@@ -19,7 +19,7 @@ import java.util.Random;
 import static com.exfantasy.mclib.Utils.SlashBlade.SlashEffectUtils.hasSpecialEffect;
 
 @Mod.EventBusSubscriber
-public class entitydrop {
+public class EntityDrop {
 
 
 

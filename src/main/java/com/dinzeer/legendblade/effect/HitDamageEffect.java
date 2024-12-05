@@ -33,7 +33,7 @@ public class HitDamageEffect extends MobEffect {
     public void applyEffectTick(@NotNull LivingEntity entity, int p_19468_) {
         super.applyEffectTick(entity, p_19468_);
         final Vec3 _center = entity.position();
-        if (entity.level() instanceof ServerLevel l) Liuli.sendParticleCircle(l, entity, ParticleTypes.FLAME, 4, 10);
+        if (entity.level() instanceof ServerLevel l) Liuli.sendParticleCircle(l, entity, ParticleTypes.ENCHANT, 1, 5);
         List<Entity> _entfound = entity.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), a -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
         for (Entity entityiterator : _entfound) {
             if (entityiterator != entity) {
@@ -42,8 +42,11 @@ public class HitDamageEffect extends MobEffect {
                         ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.WITHER, 20, 1, (false), (false)));
                         ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 60, 2, (false), (false)));
                         ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60, 2, (false), (false)));
-                        if (entityiterator.level() instanceof ServerLevel l) Liuli.sendParticleCircle(l, entityiterator, ParticleTypes.END_ROD, 2, 10);
-                        if (entityiterator.invulnerableTime <=0) entity.playSound(SoundEvents.ANVIL_PLACE);
+                        if (entityiterator.invulnerableTime <=0) {
+                            if (entityiterator.level() instanceof ServerLevel l)
+                                Liuli.sendParticleCircle(l, entityiterator, ParticleTypes.END_ROD, 2, 10);
+                            entity.playSound(SoundEvents.ANVIL_PLACE);
+                        }
                         entityiterator.hurt(new DamageSource(entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity), ((float) (entity.getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.2f * (p_19468_ + 1))));
                     }
                 }

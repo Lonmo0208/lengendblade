@@ -787,12 +787,13 @@ public class LegendBuiltInRegsitry {
                         RenderDefinition.Builder.newInstance()
                                 .textureName(Legendblade.prefix("model/sevensword/texture.png"))
                                 .modelName(Legendblade.prefix("model/sevensword/model.obj"))
-                                .effectColor(16766720)
+                                .effectColor(10289407)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
                                 .baseAttackModifier(20)
                                 .maxDamage(80)
+                                .addSpecialEffect(LBSpecialEffectsRegistry.FragmentedEdge.getId())
                                 .build(),
                         List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 15),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7)

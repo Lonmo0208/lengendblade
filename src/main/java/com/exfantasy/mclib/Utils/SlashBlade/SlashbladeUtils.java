@@ -7,7 +7,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
-public class SlashbladeUtils {
+public class  SlashbladeUtils {
     public static final String RepairCounter = "RepairCounter";
     public static int getcolor(Entity entity) {
         if (entity == null)
@@ -60,6 +60,17 @@ public class SlashbladeUtils {
 
         }
         return "";
+
+    }
+    public static void setStringNBT(CompoundTag tag , String key , String value){
+
+        if (tag.contains("bladeState")) { // 检查是否存在ForgeCaps标签
+            CompoundTag forgeCaps = tag.getCompound("bladeState");
+            tag.putString(key,value);
+            forgeCaps.putString(key,value);
+
+
+        }
 
     }
 }

@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "legendblade.refmap.json",
   "mixins": [
+    "MoDaoMixin"
   ],
   "client": [
   ],

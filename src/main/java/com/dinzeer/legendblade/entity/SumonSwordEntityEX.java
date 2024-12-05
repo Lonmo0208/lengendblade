@@ -95,33 +95,10 @@ public class SumonSwordEntityEX extends EntityAbstractSummonedSword {
     }
 
     @Override
-    public void rideTick() {
+    public void rideTick()
+    {
         if (itFired() && fireTime <= tickCount)
         {
-            final Vec3 _center = new Vec3(this.getX(), this.getY(), this.getZ());
-            List<Entity> _entfound = this.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(16 / 2d), a -> true)
-                    .stream()
-                    .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-                    .toList();
-
-            Entity entityiterator = _entfound.stream()
-                    .filter(e -> e instanceof LivingEntity && e != getOwner() && e != this)
-                    .findFirst()
-                    .orElse(null);
-
-            if (entityiterator != null) {
-                if (entityiterator != this) {
-                    if (entityiterator instanceof LivingEntity) {
-                        //this.lookAt(EntityAnchorArgument.An//chor.EYES, entityiterator.positione.LOGGER.debug("1");
-                        // 计算朝向单位向量
-                        Vec3 lookVec = this.getLookAngle();
-                        this.lookAt(EntityAnchorArgument.Anchor.EYES, entityiterator.position().add(0, 1, 0));
-                        // this.shoot(lookVec.x , lookVec.y , lookVec.z,getSpeed(),1f );
-
-                    }
-                }
-            }
-
             faceEntityStandby();
             Entity vehicle = getVehicle();
             Vec3 dir = this.getViewVector(0);
@@ -137,35 +114,24 @@ public class SumonSwordEntityEX extends EntityAbstractSummonedSword {
             this.tickCount = 0;
 
             Level worldIn = sender.level();
-            Entity lockTarget = null;
-            if (sender instanceof LivingEntity)
-            {
-                lockTarget = sender.getMainHandItem().getCapability(ItemSlashBlade.BLADESTATE)
-                        .filter(state -> state.getTargetEntity(worldIn) != null)
-                        .map(state -> state.getTargetEntity(worldIn)).orElse(null);
-            }
 
-            Optional<Entity> foundTarget = Stream
-                    .of(Optional.ofNullable(lockTarget),
-                            RayTraceHelper
-                                    .rayTrace(sender.level(), sender, sender.getEyePosition(1.0f), sender.getLookAngle(), 12, 12, (e) -> true)
-                                    .filter(r -> r.getType() == HitResult.Type.ENTITY).filter(r ->
-                                    {
-                                        EntityHitResult er = (EntityHitResult) r;
-                                        Entity target = er.getEntity();
 
-                                        boolean isMatch = true;
-                                        if (target instanceof LivingEntity)
-                                            isMatch = TargetSelector.lockon.test(sender, (LivingEntity) target);
 
-                                        if (target instanceof IShootable)
-                                            isMatch = ((IShootable) target).getShooter() != sender;
 
-                                        return isMatch;
-                                    }).map(r -> ((EntityHitResult) r).getEntity()))
-                    .filter(Optional::isPresent).map(Optional::get).findFirst();
 
-            Vec3 targetPos = foundTarget.map((e) -> new Vec3(e.getX(), e.getY() + e.getEyeHeight() * 0.5, e.getZ()))
+
+
+
+            final Vec3 _center = new Vec3(this.getX(), this.getY(), this.getZ());
+            List<Entity> _entfound = this.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(60 / 2d), a -> true)
+                    .stream()
+                    .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+                    .toList();
+
+            Optional<Entity> entityiterator = _entfound.stream()
+                    .filter(e -> e instanceof LivingEntity && ((LivingEntity) e).getHealth() > 0 && e != getOwner() && e != this)
+                    .findFirst();
+            Vec3 targetPos = entityiterator.map((e) -> new Vec3(e.getX(), e.getY() + e.getEyeHeight() * 0.5, e.getZ()))
                     .orElseGet(() ->
                     {
                         Vec3 start = sender.getEyePosition(1.0f);
@@ -173,11 +139,13 @@ public class SumonSwordEntityEX extends EntityAbstractSummonedSword {
                         HitResult result = worldIn.clip(new ClipContext(start, end, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, sender));
                         return result.getLocation();
                     });
+                Vec3 pos = this.getPosition(0.0f);
+                dir = targetPos.subtract(pos).normalize();
+                this.shoot(dir.x , dir.y , dir.z,getSpeed(),1f );
 
-            Vec3 pos = this.getPosition(0.0f);
-            dir = targetPos.subtract(pos).normalize();
 
-            this.shoot(dir.x, dir.y, dir.z, getSpeed(), 1.0f);
+            if (canUpdate()) this.baseTick();
+
             if (sender instanceof ServerPlayer)
             {
                 ((ServerPlayer) sender).playNotifySound(SoundEvents.ENDER_DRAGON_FLAP, SoundSource.PLAYERS, 1.0F, 1.0F);
