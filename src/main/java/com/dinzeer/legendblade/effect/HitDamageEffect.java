@@ -1,6 +1,6 @@
 package com.dinzeer.legendblade.effect;
 
-import com.dinzeer.legendblade.regsitry.specialeffects.Liuli;
+import com.dinzeer.legendblade.specialeffects.versionone.Liuli;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;

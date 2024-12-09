@@ -1,15 +1,10 @@
 package com.dinzeer.legendblade.entity;
 
-import com.dinzeer.legendblade.regsitry.LBEntiteRegristrys;
+import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
 import mods.flammpfeil.slashblade.ability.StunManager;
 import mods.flammpfeil.slashblade.entity.EntityAbstractSummonedSword;
-import mods.flammpfeil.slashblade.entity.IShootable;
 import mods.flammpfeil.slashblade.entity.Projectile;
-import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.util.KnockBacks;
-import mods.flammpfeil.slashblade.util.RayTraceHelper;
-import mods.flammpfeil.slashblade.util.TargetSelector;
-import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -33,7 +28,6 @@ import org.joml.Vector3f;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 public class SumonSwordEntityEX extends EntityAbstractSummonedSword {
     private static final EntityDataAccessor<Boolean> IT_FIRED = SynchedEntityData.defineId(SumonSwordEntityEX.class, EntityDataSerializers.BOOLEAN);
@@ -194,19 +188,6 @@ public class SumonSwordEntityEX extends EntityAbstractSummonedSword {
             setRot(-this.getVehicle().getYRot(), -this.getVehicle().getXRot());
         }
 
-        @Override
-        protected void onHitEntity (EntityHitResult result)
-        {
 
-            Entity targetEntity = result.getEntity();
-            if (targetEntity instanceof LivingEntity) {
-                KnockBacks.cancel.action.accept((LivingEntity) targetEntity);
-                StunManager.setStun((LivingEntity) targetEntity);
-            }
-            if (targetEntity instanceof LivingEntity lv) {
-                lv.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 1));
-            }
-            super.onHitEntity(result);
-        }
 
 }

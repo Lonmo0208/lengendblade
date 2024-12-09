@@ -1,6 +1,6 @@
 package com.dinzeer.legendblade.entity;
 
-import com.dinzeer.legendblade.regsitry.LBEntiteRegristrys;
+import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
 import com.exfantasy.mclib.Utils.SlashBlade.SlashbladeUtils;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.entity.EntityDrive;

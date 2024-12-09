@@ -1,20 +1,19 @@
 package com.dinzeer.legendblade.events;
 
 import com.dinzeer.legendblade.Legendblade;
-import com.dinzeer.legendblade.data.LegendBuiltInRegsitry;
-import com.dinzeer.legendblade.regsitry.LBSpecialEffectsRegistry;
+import com.dinzeer.legendblade.entity.SevenSkillField;
+import com.dinzeer.legendblade.regsitry.slashblade.LBSpecialEffectsRegistry;
+import com.exfantasy.mclib.Utils.Dash.DashMessage;
 import com.exfantasy.mclib.Utils.Dash.SMoveUtil;
 import com.exfantasy.mclib.Utils.EntityPointer;
 import com.exfantasy.mclib.Utils.PathGenerator;
 import com.exfantasy.mclib.Utils.SlashBlade.SlashbladeUtils;
+import com.exfantasy.mclib.Utils.TeleportHelper;
 import mods.flammpfeil.slashblade.SlashBlade;
-import mods.flammpfeil.slashblade.data.builtin.SlashBladeBuiltInRegistry;
 import mods.flammpfeil.slashblade.entity.EntityDrive;
 import mods.flammpfeil.slashblade.event.SlashBladeEvent;
-import mods.flammpfeil.slashblade.registry.slashblade.SlashBladeDefinition;
 import mods.flammpfeil.slashblade.util.VectorHelper;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
-import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -29,7 +28,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -158,6 +156,77 @@ public class SevenSwordSkill {
 
 
 
+    }
+        public static void a(LivingEntity entity,ItemStack stack,LivingEntity tartget2) {
+
+            if (!stack.getTag().getBoolean("UnLock")) return;
+            if (SlashbladeUtils.hasSpecialEffect(stack, (LBSpecialEffectsRegistry.FragmentedEdge.getId()).toString())) {
+                if (entity.hasEffect(Legendblade.EffectAbout.MO_DAO.get()))return;
+                LivingEntity target = EntityPointer.raycastForEntityTo(entity.level(), entity, 32, true);
+                if (target == null) {
+                    Optional<LivingEntity> targetedEntity = EntityPointer.findTargetedEntity(entity, 10);
+                    if (targetedEntity.isEmpty()) return;
+                    target = targetedEntity.get();
+                }
+                Vec3 pos = entity.position().add(0.0D, (double) entity.getEyeHeight() * 0.75D, 0.0D)
+                        .add(entity.getLookAngle().scale(0.3f));
+                Vec3 centerOffset = new Vec3(0.0D, 0.0D, 0.0D);
+                pos = pos.add(VectorHelper.getVectorForRotation(-90.0F, entity.getViewYRot(0)).scale(centerOffset.y))
+                        .add(VectorHelper.getVectorForRotation(0, entity.getViewYRot(0) + 90).scale(centerOffset.z))
+                        .add(entity.getLookAngle().scale(centerOffset.z));
+                EntityDrive drive = new EntityDrive(SlashBlade.RegistryEvents.Drive, entity.level());
+
+                entity.level().addFreshEntity(drive);
+
+                drive.setBaseSize(50);
+                drive.getDimensions(Pose.STANDING).scale(18, 18);
+                drive.getPersistentData().putBoolean("modao", true);
+
+
+                drive.setPos(pos.x, pos.y, pos.z);
+                drive.setDamage(5f);
+                drive.setSpeed(1.2f);
+                drive.shoot(entity.getLookAngle().x, entity.getLookAngle().y, entity.getLookAngle().z, drive.getSpeed(), 0);
+                drive.setColor(5177599);
+                drive.setOwner(entity);
+
+                drive.setLifetime(60);
+                List<Vec3> vl = PathGenerator.generatePath(Vec3.atCenterOf(entity.blockPosition()), Vec3.atCenterOf(target.blockPosition()));
+                for (Vec3 v : vl) {
+                    if (entity.level() instanceof ServerLevel serverLevel) {
+                        serverLevel.sendParticles(ParticleTypes.DRAGON_BREATH, v.x(), v.y(), v.z(), 4, 0.3, 0.3, 0.3, 0.1);
+                        {
+                            final Vec3 _center = v;
+                            List<Entity> _entfound = serverLevel.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), a -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+                            for (Entity entityiterator : _entfound) {
+                                if (entityiterator != entity) {
+                                    if (entityiterator instanceof LivingEntity) {
+                                        entity.heal((float) (entity.getMaxHealth() * 0.01));
+                                        entityiterator.invulnerableTime = 0;
+                                        entityiterator.hurt(new DamageSource(serverLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity), (float) (entity.getAttributeValue(Attributes.ATTACK_DAMAGE) * 1.5 + 2));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                entity.teleportTo(target.getX(), target.getY(), target.getZ());
+                if (entity instanceof Player player) {SMoveUtil.sendDashMessage(player, 0, 1.4);}
+                else {
+                   DashMessage.vmove(entity,0,1.4);
+                }
+                // player.lookAt(EntityAnchorArgument.Anchor.EYES, target.position().add(0,0.5,0));
+
+                entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 2));
+                entity.addEffect(new MobEffectInstance(Legendblade.EffectAbout.HIT_DAMAGE.get(), 25, 2));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 3));
+                entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 100, 2));
+                entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 30, 5));
+                entity.addEffect(new MobEffectInstance(MobEffects.UNLUCK, 30, 5));
+                entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 2));
+
+            }
         }
     }
-}
+
+

@@ -1,7 +1,7 @@
 package com.dinzeer.legendblade.entity;
 
 
-import com.dinzeer.legendblade.regsitry.LBEntiteRegristrys;
+import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
 import mods.flammpfeil.slashblade.entity.EntityDrive;
 import mods.flammpfeil.slashblade.entity.Projectile;
 import net.minecraft.world.entity.Entity;

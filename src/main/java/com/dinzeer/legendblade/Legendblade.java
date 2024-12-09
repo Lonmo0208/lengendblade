@@ -1,16 +1,28 @@
 package com.dinzeer.legendblade;
 
 import cn.mmf.slashblade_addon.SlashBladeAddon;
-import com.dinzeer.legendblade.regsitry.LBSounds;
+import com.dinzeer.legendblade.effect.MoDaoEffect;
+import com.dinzeer.legendblade.effect.SumeruEffect;
+import com.dinzeer.legendblade.regsitry.compat.ICFEntiyRegsitry;
+import com.dinzeer.legendblade.regsitry.compat.ICFLBcompatRegsitry;
+import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
+import com.dinzeer.legendblade.regsitry.other.LBSounds;
+import com.dinzeer.legendblade.regsitry.compat.L2LBcompatRegsitry;
+import com.dinzeer.legendblade.regsitry.other.LangRegsitry;
+import com.dinzeer.legendblade.regsitry.slashblade.LBComboRegsitry;
+import com.dinzeer.legendblade.regsitry.slashblade.LBComboRegsitryA;
+import com.dinzeer.legendblade.regsitry.slashblade.LBSpecialEffectsRegistry;
+import com.dinzeer.legendblade.regsitry.slashblade.LBslashArtRegsitry;
 import com.exfantasy.mclib.Utils.Dash.DashMessage;
 import com.dinzeer.legendblade.effect.HitDamageEffect;
 import com.dinzeer.legendblade.effect.StrengthBoost;
-import com.dinzeer.legendblade.regsitry.LBModItems;
-import com.dinzeer.legendblade.regsitry.*;
+import com.dinzeer.legendblade.regsitry.other.LBModItems;
 import com.dinzeer.legendblade.regsitry.creativetab.ItemTab;
 import com.dinzeer.legendblade.regsitry.compat.SBALBSlashArtRegsitry;
+import com.github.alexthe666.iceandfire.IceAndFire;
 import com.mojang.logging.LogUtils;
 import com.tterrag.registrate.Registrate;
+import dev.xkmc.l2hostility.init.L2Hostility;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.common.MinecraftForge;
@@ -64,10 +76,16 @@ import org.slf4j.Logger;
         MinecraftForge.EVENT_BUS.register(this);
          LBEntiteRegristrys.register(modEventBus);
         LBComboRegsitry.COMBO_STATES.register(modEventBus);
+        LBComboRegsitryA.COMBO_STATES.register(modEventBus);
         LBSpecialEffectsRegistry.REGISTRY_KEY2.register(modEventBus);
         EffectAbout.REGISTRY.register(modEventBus);
         LBslashArtRegsitry.SLASH_ARTS.register(modEventBus);
         LBModItems.register();
+        if (ModList.get().isLoaded(IceAndFire.MODID)){
+
+            new ICFEntiyRegsitry().register(modEventBus);
+            ICFLBcompatRegsitry.register(modEventBus);
+        }
         LBSounds.REGISTRY.register(modEventBus);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 

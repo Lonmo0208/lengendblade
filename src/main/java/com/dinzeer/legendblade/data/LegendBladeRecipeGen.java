@@ -1,6 +1,6 @@
 package com.dinzeer.legendblade.data;
 
-import com.dinzeer.legendblade.regsitry.LBModItems;
+import com.dinzeer.legendblade.regsitry.other.LBModItems;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;

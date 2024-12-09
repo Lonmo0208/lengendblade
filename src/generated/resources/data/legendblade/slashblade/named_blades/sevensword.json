@@ -6,13 +6,14 @@
     },
     {
       "id": "minecraft:unbreaking",
-      "lvl": 7
+      "lvl": 10
     }
   ],
   "name": "legendblade:sevensword",
   "properties": {
-    "attack_base": 20.0,
+    "attack_base": 30.0,
     "max_damage": 80,
+    "slash_art": "legendblade:sevenbladeslash",
     "special_effects": [
       "legendblade:fragmentededge"
     ],
@@ -23,6 +24,6 @@
   "render": {
     "model": "legendblade:model/sevensword/model.obj",
     "summon_sword_color": 10289407,
-    "texture": "legendblade:model/sevensword/texture.png"
+    "texture": "legendblade:model/sevensword/texture0.png"
   }
 }

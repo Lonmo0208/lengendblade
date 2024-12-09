@@ -1,7 +1,7 @@
 package com.dinzeer.legendblade.events;
 
-import com.dinzeer.legendblade.regsitry.LBModItems;
-import com.dinzeer.legendblade.regsitry.LBSpecialEffectsRegistry;
+import com.dinzeer.legendblade.regsitry.other.LBModItems;
+import com.dinzeer.legendblade.regsitry.slashblade.LBSpecialEffectsRegistry;
 import mods.flammpfeil.slashblade.registry.specialeffects.SpecialEffect;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;

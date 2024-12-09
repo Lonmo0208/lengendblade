@@ -1,6 +1,6 @@
 package com.dinzeer.legendblade.entity;
 
-import com.dinzeer.legendblade.regsitry.LBEntiteRegristrys;
+import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
 
 import mods.flammpfeil.slashblade.ability.StunManager;
 import mods.flammpfeil.slashblade.entity.EntityAbstractSummonedSword;
@@ -204,19 +204,5 @@ public class SumonSwordEntity extends EntityAbstractSummonedSword {
         setRot(-this.getVehicle().getYRot(), -this.getVehicle().getXRot());
     }
 
-    @Override
-    protected void onHitEntity(EntityHitResult result)
-    {
 
-        Entity targetEntity = result.getEntity();
-        if (targetEntity instanceof LivingEntity)
-        {
-            KnockBacks.cancel.action.accept((LivingEntity) targetEntity);
-            StunManager.setStun((LivingEntity) targetEntity);
-        }
-        if (targetEntity instanceof LivingEntity lv) {
-            lv.addEffect(new MobEffectInstance(MobEffects.WITHER,60,1));
-        }
-        super.onHitEntity(result);
-    }
 }

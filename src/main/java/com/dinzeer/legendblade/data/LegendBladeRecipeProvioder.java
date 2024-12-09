@@ -1,7 +1,10 @@
 package com.dinzeer.legendblade.data;
 
 import cn.mmf.slashblade_addon.data.SlashBladeAddonBuiltInRegistry;
-import com.dinzeer.legendblade.regsitry.LBModItems;
+import com.dinzeer.legendblade.regsitry.other.LBModItems;
+import com.github.alexthe666.iceandfire.item.IafItemRegistry;
+import dev.xkmc.l2complements.init.registrate.LCItems;
+import dev.xkmc.l2hostility.init.registrate.LHItems;
 import mods.flammpfeil.slashblade.data.builtin.SlashBladeBuiltInRegistry;
 import mods.flammpfeil.slashblade.init.SBItems;
 import mods.flammpfeil.slashblade.item.SwordType;
@@ -704,7 +707,7 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
                 .define('A', Items.DIAMOND_BLOCK)
                 .define('B',SlashBladeIngredient.of(
                         RequestDefinition.Builder.newInstance()
-                                .name(SlashBladeAddonBuiltInRegistry.CRIMSONCHERRY.location())
+                                .name(SlashBladeAddonBuiltInRegistry.NIHILUL.location())
                                 .killCount(3000)
                                 .proudSoul(30000)
                                 .refineCount(20)
@@ -780,7 +783,159 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
                 .define('D',Items.DRAGON_EGG)
                 .define('E',LBModItems.blood_tachi)
                 .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
-                    }
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.ark.location())
+                .pattern("ABA")
+                .pattern("DCD")
+                .pattern("ABA")
+                .define('A', Items.LAPIS_BLOCK)
+                .define('B', LCItems.CURSED_DROPLET)
+                .define('C',SlashBladeIngredient.of(
+
+                        SBItems.slashblade_silverbamboo, RequestDefinition.Builder.newInstance()
+                                .killCount(100)
+                                .proudSoul(500)
+                                .refineCount(10).build()
+                ))
+                .define('D',Items.SPIDER_EYE)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.neo.location())
+                .pattern("BEA")
+                .pattern("FCF")
+                .pattern("DEB")
+                .define('A', LHItems.MIRACLE_INGOT)
+                .define('B', LHItems.CHAOS_INGOT)
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.ark.location())
+                                .killCount(5000)
+                                .proudSoul(55000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('D',LBModItems.saligiasphere)
+                .define('E',LCItems.CURSED_DROPLET)
+                .define('F',LHItems.WITCH_DROPLET)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.administrator.location())
+                .pattern("AAA")
+                .pattern("BCB")
+                .pattern("DED")
+                .define('A', Items.NETHER_STAR)
+                .define('B', SBItems.proudsoul_sphere)
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.KIRISAYA.location())
+                                .killCount(50000)
+                                .proudSoul(55000)
+                                .refineCount(100)
+                                .build()
+                ))
+                .define('D',Items.LAPIS_BLOCK)
+                .define('E',Items.DRAGON_EGG)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.fire.location())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("DBA")
+                .define('A', IafItemRegistry.FIRE_DRAGON_BLOOD.get())
+                .define('B', IafItemRegistry.DRAGON_BONE.get())
+                .define('C',SBItems.slashblade)
+                .define('D',IafItemRegistry.DRAGONBONE_SWORD_FIRE.get())
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.ice.location())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("DBA")
+                .define('A', IafItemRegistry.ICE_DRAGON_BLOOD.get())
+                .define('B', IafItemRegistry.DRAGON_BONE.get())
+                .define('C',SBItems.slashblade)
+                .define('D',IafItemRegistry.DRAGONBONE_SWORD_ICE.get())
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.lightning.location())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("DBA")
+                .define('A', IafItemRegistry.LIGHTNING_DRAGON_BLOOD.get())
+                .define('B', IafItemRegistry.DRAGON_BONE.get())
+                .define('C',SBItems.slashblade)
+                .define('D',IafItemRegistry.DRAGONBONE_SWORD_LIGHTNING.get())
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.blaze.location())
+                .pattern("ADA")
+                .pattern("BCB")
+                .pattern("ADA")
+                .define('A', IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get())
+                .define('B', IafItemRegistry.FIRE_DRAGON_BLOOD.get())
+                .define('C',SlashBladeIngredient.of(
+                                RequestDefinition.Builder.newInstance()
+                                        .name(LegendBuiltInRegsitry.fire.location())
+                                        .killCount(3000)
+                                        .proudSoul(65000)
+                                        .refineCount(20)
+                                        .build()
+                ))
+                .define('D', IafItemRegistry.DRAGON_SKULL_FIRE.get())
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.foreverice.location())
+                .pattern("ADA")
+                .pattern("BCB")
+                .pattern("ADA")
+                .define('A', IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get())
+                .define('B', IafItemRegistry.ICE_DRAGON_BLOOD.get())
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.ice.location())
+                                .killCount(3000)
+                                .proudSoul(65000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('D', IafItemRegistry.DRAGON_SKULL_ICE.get())
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.zerogalaxy.location())
+                .pattern("ADA")
+                .pattern("BCB")
+                .pattern("ADA")
+                .define('A', IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get())
+                .define('B', IafItemRegistry.LIGHTNING_DRAGON_BLOOD.get())
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.lightning.location())
+                                .killCount(3000)
+                                .proudSoul(65000)
+                                .refineCount(20)
+                                .build()
+                ))
+                .define('D', IafItemRegistry.DRAGON_SKULL_LIGHTNING.get())
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.truebloodfox.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("AEA")
+                .define('A', LBModItems.ira)
+                .define('C', LBModItems.tearfluorite)
+                .define('B', Items.NETHER_STAR)
+                .define('E', LBModItems.scarletjadeofuda)
+                .define('D',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.GODFOX.location())
+                                .killCount(6200)
+                                .proudSoul(30000)
+                                .refineCount(20)
+                                .build()
+                ))
+
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+
+
+    }
 
 
 

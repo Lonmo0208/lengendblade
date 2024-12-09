@@ -1,6 +1,6 @@
 package com.dinzeer.legendblade.regsitry.creativetab;
 
-import com.dinzeer.legendblade.regsitry.LBModItems;
+import com.dinzeer.legendblade.regsitry.other.LBModItems;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;

@@ -14,7 +14,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import cn.mmf.slashblade_addon.specialattacks.*;
-import com.dinzeer.legendblade.regsitry.specialeffects.compat.*;
+
 import static com.dinzeer.legendblade.Legendblade.MODID;
 
 public class SBALBSlashArtRegsitry {
@@ -105,8 +105,8 @@ public class SBALBSlashArtRegsitry {
         terrifyingwavesSA=SLASH_ARTS.register("terrifyingwaves", () -> new SlashArts((e) -> terrifyingwaves.getId()));
         lightingsumSA=SLASH_ARTS.register("lighting_swordsex", () -> new SlashArts((e) -> lightinggwaves.getId()));
         DanceSA=SLASH_ARTS.register("fire_dance", () -> new SlashArts((e) -> Dance.getId()));
-        Terrifyingwaves=REGISTRY_KEY2.register("terrifying_waves",Terrifyingwaves::new);
-        FireDancy=REGISTRY_KEY2.register("fire_dancy",FireDancy::new);
-        Lightingsum=REGISTRY_KEY2.register("lighting_sum",Lightingsum::new);
+        Terrifyingwaves=REGISTRY_KEY2.register("terrifying_waves", com.dinzeer.legendblade.specialeffects.compat.slashbladeaddon.Terrifyingwaves::new);
+        FireDancy=REGISTRY_KEY2.register("fire_dancy", com.dinzeer.legendblade.specialeffects.compat.slashbladeaddon.FireDancy::new);
+        Lightingsum=REGISTRY_KEY2.register("lighting_sum", com.dinzeer.legendblade.specialeffects.compat.slashbladeaddon.Lightingsum::new);
     }
 }

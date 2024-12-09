@@ -1,8 +1,10 @@
 package com.dinzeer.legendblade.data;
 
 import com.dinzeer.legendblade.Legendblade;
-import com.dinzeer.legendblade.regsitry.LBSpecialEffectsRegistry;
-import com.dinzeer.legendblade.regsitry.LBslashArtRegsitry;
+import com.dinzeer.legendblade.regsitry.compat.ICFLBcompatRegsitry;
+import com.dinzeer.legendblade.regsitry.slashblade.LBSpecialEffectsRegistry;
+import com.dinzeer.legendblade.regsitry.slashblade.LBslashArtRegsitry;
+import com.dinzeer.legendblade.regsitry.compat.L2LBcompatRegsitry;
 import com.dinzeer.legendblade.regsitry.compat.SBALBSlashArtRegsitry;
 import mods.flammpfeil.slashblade.item.SwordType;
 import mods.flammpfeil.slashblade.registry.SlashArtsRegistry;
@@ -98,6 +100,30 @@ public class LegendBuiltInRegsitry {
     public static final ResourceKey<SlashBladeDefinition> nihilulex;
     //炼狱刀死念ex
     public static final ResourceKey<SlashBladeDefinition> nihilbxex;
+    //恶太刀「破法」
+    public static final ResourceKey<SlashBladeDefinition> ark;
+    //破法EX
+    public static final ResourceKey<SlashBladeDefinition> neo;
+    //管理员之刃「伪物」
+    public static final ResourceKey<SlashBladeDefinition> administrator;
+    //血羽「邪凤」
+    public static final ResourceKey<SlashBladeDefinition> demonbird;
+    //龙骨刀「烈火」
+    public static final ResourceKey<SlashBladeDefinition> fire;
+    //龙骨刀「怒雷」
+    public static final ResourceKey<SlashBladeDefinition> ice;
+    //龙骨刀「天寒」
+    public static final ResourceKey<SlashBladeDefinition> lightning;
+    //柱子的刀
+    public static final ResourceKey<SlashBladeDefinition> zhuzi;
+    //龙钢猎刃「怒焰」
+    public static final ResourceKey<SlashBladeDefinition> blaze;
+    //龙钢猎刃「天霆」
+    public static final ResourceKey<SlashBladeDefinition> zerogalaxy;
+    //龙钢猎刃「永霜」
+    public static final ResourceKey<SlashBladeDefinition> foreverice;
+    //妖魔刀「血狐」
+    public static final ResourceKey<SlashBladeDefinition> truebloodfox;
     static {
         SHINKU=register("shinku");
         BLOODKATANA=register("bloodkatana");
@@ -138,6 +164,19 @@ public class LegendBuiltInRegsitry {
         amazedshine=register("amazedshine");
         nihilulex=register("nihilulex");
         nihilbxex=register("nihilbxex");
+        ark=register("ark");
+        neo=register("neo");
+
+        administrator=register("administrator");
+        demonbird=register("demonbird");
+        fire=register("dragon_fire");
+        ice=register("dragon_ice");
+        lightning=register("dragon_lightning");
+        zhuzi=register("zhuzi");
+        blaze=register("blaze");
+        zerogalaxy=register("zerogalaxy");
+        foreverice=register("foreverice");
+        truebloodfox=register("truebloodfox");
     }
     public static void registerAll(BootstapContext<SlashBladeDefinition> bootstrap) {
 
@@ -785,18 +824,19 @@ public class LegendBuiltInRegsitry {
         bootstrap.register(
                 sevensword, new SlashBladeDefinition(Legendblade.prefix("sevensword"),
                         RenderDefinition.Builder.newInstance()
-                                .textureName(Legendblade.prefix("model/sevensword/texture.png"))
+                                .textureName(Legendblade.prefix("model/sevensword/texture0.png"))
                                 .modelName(Legendblade.prefix("model/sevensword/model.obj"))
                                 .effectColor(10289407)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-                                .baseAttackModifier(20)
+                                .baseAttackModifier(30)
+                                .slashArtsType(LBslashArtRegsitry.sevenbladeslash.getId())
                                 .maxDamage(80)
                                 .addSpecialEffect(LBSpecialEffectsRegistry.FragmentedEdge.getId())
                                 .build(),
                         List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 15),
-                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7)
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10)
                         )
                 ));
         bootstrap.register(
@@ -900,6 +940,227 @@ public class LegendBuiltInRegsitry {
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.MOB_LOOTING), 10),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_ASPECT), 10),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.MENDING), 10)
+                        )
+                ));
+        bootstrap.register(
+                ark, new SlashBladeDefinition(Legendblade.prefix("ark"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/ark/ark.png"))
+                                .modelName(Legendblade.prefix("model/ark/ark.obj"))
+                                .effectColor(10289407)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .addSpecialEffect(L2LBcompatRegsitry.HosSword.getId())
+                                .slashArtsType(L2LBcompatRegsitry.HosSwords.getId())
+                                .baseAttackModifier(15)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(
+                        )
+                ));
+        bootstrap.register(
+                neo, new SlashBladeDefinition(Legendblade.prefix("neo"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/ark/neo.png"))
+                                .modelName(Legendblade.prefix("model/icfcompat/icf/model.obj"))
+                                .effectColor(10289407)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(L2LBcompatRegsitry.HosSwords.getId())
+                                .addSpecialEffect(L2LBcompatRegsitry.HosSword.getId())
+                                .addSpecialEffect(L2LBcompatRegsitry.ARK.getId())
+                                .baseAttackModifier(20)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(
+                                new EnchantmentDefinition(getEnchantmentID(LCEnchantments.FLAME_BLADE.get()), 3),
+                                new EnchantmentDefinition(getEnchantmentID(LCEnchantments.SHARP_BLADE.get()), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 10)
+
+                        )
+
+                ));
+        bootstrap.register(
+                administrator, new SlashBladeDefinition(Legendblade.prefix("administrator"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/administrator/administrator.png"))
+                                .modelName(Legendblade.prefix("model/administrator/administrator.obj"))
+                                .effectColor(14591)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(20)
+                                .slashArtsType(LBslashArtRegsitry.delete.getId())
+                                .maxDamage(80)
+                                .build(),
+                        List.of(
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10)
+
+                        )
+                ));
+        bootstrap.register(
+                demonbird, new SlashBladeDefinition(Legendblade.prefix("demonbird"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/blood/demonbird/texture.png"))
+                                .modelName(Legendblade.prefix("model/godbird/model.obj"))
+                                .effectColor(16711680)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .slashArtsType(LBslashArtRegsitry.BloodThrusts.getId())
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(20)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 3)
+                        )
+                ));
+        bootstrap.register(
+                fire, new SlashBladeDefinition(Legendblade.prefix("dragon_fire"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/icfcompat/icf/fire.png"))
+                                .modelName(Legendblade.prefix("model/icfcompat/icf/model.obj"))
+                                .effectColor(16477711)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .addSpecialEffect(ICFLBcompatRegsitry.fire.getId())
+                                .slashArtsType(ICFLBcompatRegsitry.Firesummonsword.getId())
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(13)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10)
+                        )
+                ));
+        bootstrap.register(
+                ice, new SlashBladeDefinition(Legendblade.prefix("dragon_ice"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/icfcompat/icf/ice.png"))
+                                .modelName(Legendblade.prefix("model/icfcompat/icf/model.obj"))
+                                .effectColor(46079)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .addSpecialEffect(ICFLBcompatRegsitry.ice.getId())
+                                .slashArtsType(ICFLBcompatRegsitry.Icesummonsword.getId())
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(13)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(  new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10))
+                ));
+        bootstrap.register(
+                lightning, new SlashBladeDefinition(Legendblade.prefix("dragon_lightning"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/icfcompat/icf/lightning.png"))
+                                .modelName(Legendblade.prefix("model/icfcompat/icf/model.obj"))
+                                .effectColor(8847615)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .addSpecialEffect(ICFLBcompatRegsitry.lightning.getId())
+                                .slashArtsType(ICFLBcompatRegsitry.lightningsummonsword.getId())
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(13)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(  new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10))
+                ));
+        bootstrap.register(
+                zhuzi, new SlashBladeDefinition(Legendblade.prefix("zhuzi"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/mrzhu/sange.png"))
+                                .modelName(Legendblade.prefix("model/named/rustgodfox/model.obj"))
+                                .effectColor(1834752)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(13)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(  new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3))
+                ));
+        bootstrap.register(
+                blaze, new SlashBladeDefinition(Legendblade.prefix("blaze"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/icfcompat/icfex/fire.png"))
+                                .modelName(Legendblade.prefix("model/icfcompat/icfex/terra.obj"))
+                                .effectColor(16477711)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .slashArtsType(ICFLBcompatRegsitry.Firesummonsword.getId())
+                                .addSpecialEffect(ICFLBcompatRegsitry.fire.getId())
+                                .addSpecialEffect(ICFLBcompatRegsitry.icfbreaker.getId())
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(30)
+                                .maxDamage(800)
+                                .build(),
+                        List.of( new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 10)
+                        )
+                ));
+        bootstrap.register(
+                zerogalaxy, new SlashBladeDefinition(Legendblade.prefix("zerogalaxy"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/icfcompat/icfex/lightning.png"))
+                                .modelName(Legendblade.prefix("model/icfcompat/icfex/terra.obj"))
+                                .effectColor(8847615)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .slashArtsType(ICFLBcompatRegsitry.Lightningsummonsword.getId())
+                                .addSpecialEffect(ICFLBcompatRegsitry.lightning.getId())
+                                .addSpecialEffect(ICFLBcompatRegsitry.icfbreaker.getId())
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(30)
+                                .maxDamage(800)
+                                .build(),
+                        List.of( new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 10)
+                        )
+                ));
+
+        bootstrap.register(
+                foreverice, new SlashBladeDefinition(Legendblade.prefix("foreverice"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/icfcompat/icfex/ice.png"))
+                                .modelName(Legendblade.prefix("model/icfcompat/icfex/terra.obj"))
+                                .effectColor(46079)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .slashArtsType(ICFLBcompatRegsitry.Icesummonsword.getId())
+                                .addSpecialEffect(ICFLBcompatRegsitry.ice.getId())
+                                .addSpecialEffect(ICFLBcompatRegsitry.icfbreaker.getId())
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(30)
+                                .maxDamage(800)
+                                .build(),
+                        List.of( new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 10)
+                        )
+                ));
+        bootstrap.register(
+                truebloodfox, new SlashBladeDefinition(Legendblade.prefix("truebloodfox"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/blood/demonfox/demonfox.png"))
+                                .modelName(Legendblade.prefix("model/named/truegodfox/model.obj"))
+                                .effectColor(16711697)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .addSpecialEffect(LBSpecialEffectsRegistry.bloodfox.getId())
+                                .slashArtsType(LBslashArtRegsitry.Splitapart.getId())
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(25)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.KNOCKBACK), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_FORTUNE), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.MOB_LOOTING), 5)
                         )
                 ));
     }
