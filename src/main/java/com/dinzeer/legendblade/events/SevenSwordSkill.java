@@ -32,6 +32,7 @@ import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -91,69 +92,45 @@ public class SevenSwordSkill {
             }
         }*/
 
-        Player player = (Player) event.getUser();
+        LivingEntity entity = event.getUser();
         ItemStack stack =event.getBlade();
-        if (!stack.getTag().getBoolean("UnLock"))return;
-        var blade = event.getSlashBladeState();
-        if( blade.hasSpecialEffect(LBSpecialEffectsRegistry.FragmentedEdge.getId())){
-            Optional<LivingEntity> targetedEntity = EntityPointer.findTargetedEntity(player, 10);
-            if (targetedEntity.isEmpty())return;
-            LivingEntity target = targetedEntity.get();
-            Vec3 pos = player.position().add(0.0D, (double) player.getEyeHeight() * 0.75D, 0.0D)
-                    .add(player.getLookAngle().scale(0.3f));
-            Vec3 centerOffset = new Vec3(0.0D, 0.0D, 0.0D);
-            pos = pos.add(VectorHelper.getVectorForRotation(-90.0F, player.getViewYRot(0)).scale(centerOffset.y))
-                    .add(VectorHelper.getVectorForRotation(0, player.getViewYRot(0) + 90).scale(centerOffset.z))
-                    .add(player.getLookAngle().scale(centerOffset.z));
-            EntityDrive drive = new EntityDrive(SlashBlade.RegistryEvents.Drive, player.level());
+        a(entity,stack,null);
+        final Vec3 _center = entity.position();
+        if (entity.hasEffect(Legendblade.EffectAbout.MO_DAO.get())){
+            List<Entity> _entfound = entity.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 * 4 / 2d), a -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+              for (Entity entity2 : _entfound){
+                if (entity2 instanceof LivingEntity livingEntity){
+                    if (entity2!=entity){
+                        livingEntity.invulnerableTime = 0;
+                        entity2.hurt(new DamageSource(entity2.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity), (float) entity.getAttributeValue(Attributes.ATTACK_DAMAGE)*5);
 
-            player.level().addFreshEntity(drive);
-
-            drive.setBaseSize(50);
-            drive.getDimensions(Pose.STANDING).scale(18,18);
-            drive.getPersistentData().putBoolean("modao",true);
-
-
-            drive.setPos(pos.x, pos.y, pos.z);
-            drive.setDamage(5f);
-            drive.setSpeed(1.2f);
-            drive.shoot(player.getLookAngle().x, player.getLookAngle().y, player.getLookAngle().z, drive.getSpeed(), 0);
-            drive.setColor(5177599);
-            drive.setOwner(player);
-
-            drive.setLifetime(60);
-            List<Vec3> vl = PathGenerator.generatePath(Vec3.atCenterOf(player.blockPosition()), Vec3.atCenterOf(target.blockPosition()));
-            for (Vec3 v : vl){
-                if (player.level() instanceof ServerLevel serverLevel){
-                    serverLevel.sendParticles(ParticleTypes.DRAGON_BREATH, v.x(), v.y(), v.z(), 4, 0.3, 0.3, 0.3, 0.1);
-                    {
-                        final Vec3 _center = v;
-                        List<Entity> _entfound = serverLevel.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), a -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-                        for (Entity entityiterator : _entfound) {
-                            if (entityiterator != player) {
-                                if (entityiterator instanceof LivingEntity) {
-                                    player.heal((float) (player.getMaxHealth()*0.01));
-                                    entityiterator.invulnerableTime = 0;
-                                    entityiterator.hurt(new DamageSource(serverLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), player), (float) (player.getAttributeValue(Attributes.ATTACK_DAMAGE)*1.5+2));
-                                }
-                            }
-                        }
                     }
                 }
+                if (entity2 instanceof SevenSkillField sevenSkillField){
+                    entity.lookAt(EntityAnchorArgument.Anchor.EYES, sevenSkillField.position());
+                    if (entity.level() instanceof ServerLevel level1) {
+                        TeleportHelper.teleportEntityInCube(level1,entity,entity2.getOnPos().getCenter(),8);
+                    }
+                    EntityDrive drive = new EntityDrive(SlashBlade.RegistryEvents.Drive, entity.level());
+
+                    entity.level().addFreshEntity(drive);
+
+                    drive.setBaseSize(60);
+                    drive.getDimensions(Pose.STANDING).scale(36, 36);
+                    drive.getPersistentData().putBoolean("modao", true);
+
+
+                    drive.setPos(_center.x, _center.y, _center.z);
+                    drive.setDamage(21f);
+                    drive.setSpeed(1.2f);
+                    drive.shoot(entity.getLookAngle().x, entity.getLookAngle().y, entity.getLookAngle().z, drive.getSpeed(), 0);
+                    drive.setColor(5177599);
+                    drive.setOwner(entity);
+
+                    drive.setLifetime(60);
+                }
             }
-            player.teleportTo(target.getX(), target.getY(), target.getZ());
-            SMoveUtil.sendDashMessage(player,0,1.2);
-           // player.lookAt(EntityAnchorArgument.Anchor.EYES, target.position().add(0,0.5,0));
-
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 2));
-            player.addEffect(new MobEffectInstance(Legendblade.EffectAbout.HIT_DAMAGE.get(), 25, 2));
-            target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 3));
-            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 100, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.HUNGER, 30, 5));
-            player.addEffect(new MobEffectInstance(MobEffects.UNLUCK, 30, 5));
-            player.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 2));
-
-
+        }
 
 
     }

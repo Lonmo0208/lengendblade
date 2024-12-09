@@ -1,5 +1,7 @@
 package com.exfantasy.mclib.Utils;
 import com.dinzeer.legendblade.Legendblade;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -10,9 +12,13 @@ import net.minecraft.world.level.ClipContext;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.entity.PartEntity;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class EntityPointer {
     public static HitResult raycastForEntity(Level level, Entity originEntity, float distance, boolean checkForBlocks) {
@@ -165,7 +171,7 @@ public class EntityPointer {
      * @param player 玩家实例
      * @return 找到的实体或空
      */
-    public static Optional<LivingEntity> findTargetedEntity(Player player,float length) {
+    public static Optional<LivingEntity> findTargetedEntity(LivingEntity player,float length) {
         // 获取玩家视线方向的射线追踪结果
         HitResult hit = player.pick(5, 1.0f, false);
 

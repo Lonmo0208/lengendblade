@@ -42,7 +42,7 @@ import org.slf4j.Logger;
 
 
 @Mod(Legendblade.MODID)
-                   public class Legendblade {
+public class Legendblade {
 
 
     public static ResourceLocation prefix(String path) {
@@ -88,7 +88,10 @@ import org.slf4j.Logger;
         }
         LBSounds.REGISTRY.register(modEventBus);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        if (ModList.get().isLoaded(L2Hostility.MODID)){
 
+          new L2LBcompatRegsitry().register(modEventBus);
+        }
         ItemTab.REGISTRY.register(modEventBus);
         if (ModList.get().isLoaded(SlashBladeAddon.MODID)){
             SBALBSlashArtRegsitry.register(modEventBus);
@@ -110,6 +113,7 @@ import org.slf4j.Logger;
         public static final DeferredRegister<MobEffect> REGISTRY = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Legendblade.MODID);
         public static final RegistryObject<StrengthBoost> STRENGTH_BOOST = REGISTRY.register("strength_boost", StrengthBoost::new);
         public static final RegistryObject<HitDamageEffect> HIT_DAMAGE = REGISTRY.register("hit_damage", HitDamageEffect::new);
-
+        public static final RegistryObject<SumeruEffect> SUMERU = REGISTRY.register("sumeru", SumeruEffect::new);
+        public static final RegistryObject<MoDaoEffect> MO_DAO = REGISTRY.register("mo_dao", MoDaoEffect::new);
     }
 }

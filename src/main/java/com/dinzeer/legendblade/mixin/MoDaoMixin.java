@@ -36,10 +36,11 @@ public abstract class MoDaoMixin {
     @Inject(method = "tick" , at = @At("HEAD"))
     private void tick(CallbackInfo ci) {
         EntityDrive entity = (EntityDrive)(Object)this;
+        if (entity.getShooter()==null)return;
+
         if (entity.getPersistentData().getBoolean("modao")){
             final Vec3 _center = entity.position();
           //EntityPointer.sendParticleCircle((ServerLevel) entity.level(), entity, ParticleTypes.END_ROD, 3, 3);
-
             List<Entity> _entfound = entity.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(18 / 2d), a -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
             for (Entity entityiterator : _entfound) {
                 if (entityiterator != entity.getShooter()) {

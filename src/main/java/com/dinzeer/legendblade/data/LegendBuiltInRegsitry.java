@@ -6,6 +6,7 @@ import com.dinzeer.legendblade.regsitry.slashblade.LBSpecialEffectsRegistry;
 import com.dinzeer.legendblade.regsitry.slashblade.LBslashArtRegsitry;
 import com.dinzeer.legendblade.regsitry.compat.L2LBcompatRegsitry;
 import com.dinzeer.legendblade.regsitry.compat.SBALBSlashArtRegsitry;
+import dev.xkmc.l2complements.init.registrate.LCEnchantments;
 import mods.flammpfeil.slashblade.item.SwordType;
 import mods.flammpfeil.slashblade.registry.SlashArtsRegistry;
 import mods.flammpfeil.slashblade.registry.slashblade.EnchantmentDefinition;
@@ -934,7 +935,8 @@ public class LegendBuiltInRegsitry {
                                 .baseAttackModifier(35)
                                 .maxDamage(80)
                                 .build(),
-                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 15),
+                        List.of(
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 15),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 10),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 10),
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.MOB_LOOTING), 10),
