@@ -1,0 +1,29 @@
+{
+  "enchantments": [
+    {
+      "id": "minecraft:fortune",
+      "lvl": 5
+    },
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 3
+    },
+    {
+      "id": "minecraft:smite",
+      "lvl": 5
+    }
+  ],
+  "name": "legendblade:fish",
+  "properties": {
+    "attack_base": 17.0,
+    "max_damage": 80,
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "model": "legendblade:model/lostblade/fish/fish.obj",
+    "summon_sword_color": 16766464,
+    "texture": "legendblade:model/lostblade/fish/fish.png"
+  }
+}

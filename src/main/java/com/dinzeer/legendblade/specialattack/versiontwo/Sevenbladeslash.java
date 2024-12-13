@@ -1,5 +1,6 @@
 package com.dinzeer.legendblade.specialattack.versiontwo;
 
+import com.dinzeer.legendblade.Config;
 import com.dinzeer.legendblade.Legendblade;
 import com.dinzeer.legendblade.entity.SevenSkillField;
 import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
@@ -58,7 +59,7 @@ public class Sevenbladeslash {
     private static final Random random = new Random();
     public static void doSlash(LivingEntity playerIn, float speed) {
         ItemStack mainHandItem = playerIn.getMainHandItem();
-
+if (Config.sevenbladesKill){
         if (!mainHandItem.getOrCreateTag().contains("SACooldwon") || mainHandItem.getOrCreateTag().getInt("SACooldwon") <= 0) {
             playerIn.hurt(new DamageSource(playerIn.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC_KILL), playerIn), 4);
             mainHandItem.getOrCreateTag().putInt("SACooldwon", 40);
@@ -80,6 +81,22 @@ public class Sevenbladeslash {
             playerIn.sendSystemMessage(Component.translatable("message.seven_sword_cooldown",mainHandItem.getOrCreateTag().getInt("SACooldwon")));
             playerIn.playSound(SoundEvents.ANVIL_PLACE);
         }
+}else {
+    playerIn.hurt(new DamageSource(playerIn.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC_KILL), playerIn), 4);
+
+    playerIn.addEffect(new MobEffectInstance(Legendblade.EffectAbout.SUMERU.get(), 200, 5));
+    playerIn.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 3));
+    playerIn.addEffect(new MobEffectInstance(MobEffects.UNLUCK, 200, 3));
+    LBComboRegsitry.swordoneex.get().tickAction(playerIn);
+    SevenSkillField sevenSkillField = new SevenSkillField(LBEntiteRegristrys.ma, playerIn.level());
+    var pos = EntityPointer.raycastForEntityTo(playerIn.level(), playerIn, 10, false);
+    playerIn.level().addFreshEntity(sevenSkillField);
+    sevenSkillField.setDuring(110);
+    sevenSkillField.setDamage((float) ((LivingEntity) playerIn).getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.4f);
+    sevenSkillField.setPos(Objects.requireNonNullElse(pos, playerIn).getOnPos().getCenter().add(0, 5, 0));
+    sevenSkillField.setOwner(playerIn);
+    sevenSkillField.setSIZE(8);
+}
 
 
     }

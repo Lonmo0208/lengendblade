@@ -1,5 +1,6 @@
 package com.dinzeer.legendblade.regsitry.slashblade;
 
+import com.dinzeer.legendblade.specialattack.versiontwo.SaveAll;
 import mods.flammpfeil.slashblade.slasharts.SlashArts;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -32,6 +33,11 @@ public class LBslashArtRegsitry {
     public static final RegistryObject<SlashArts> delete;
     public static final RegistryObject<SlashArts> BloodThrusts;
     public static final RegistryObject<SlashArts> sevenbladeslash;
+    public static final RegistryObject<SlashArts> MoonDrive;
+    public static final RegistryObject<SlashArts> FrogGlaxy;
+    public static final RegistryObject<SlashArts> SaveAll;
+    public static final RegistryObject<SlashArts> Elbowstrike;
+
     static {
         PROWESS=SLASH_ARTS.register("prowess", () -> new SlashArts((e) ->
                 LBComboRegsitry.PROWESS.getId()));
@@ -64,5 +70,9 @@ public class LBslashArtRegsitry {
         delete=SLASH_ARTS.register("delete",() -> new SlashArts((e) ->LBComboRegsitry.delete.getId()));
         BloodThrusts=SLASH_ARTS.register("bloodbirdthrust",() -> new SlashArts((e) ->LBComboRegsitryA.Bloodthrusts.getId()));
         sevenbladeslash=SLASH_ARTS.register("sevenbladeslash",() -> new SlashArts((e) ->LBComboRegsitryA.sevenbladeslash.getId()));
+        MoonDrive=SLASH_ARTS.register("moondrive",() -> new SlashArts((e) ->LBComboRegsitryA.MoonDrive.getId()));
+        FrogGlaxy=SLASH_ARTS.register("frog_glaxy",() -> new SlashArts((e) ->LBComboRegsitryA.FrogGlaxy.getId()));
+        SaveAll =SLASH_ARTS.register("save_all",() -> new SlashArts((e) ->LBComboRegsitryA.saveall.getId()));
+        Elbowstrike=SLASH_ARTS.register("elbowstrike",() -> new SlashArts((e) ->LBComboRegsitryA.elbowstrike.getId()));
     }
 }

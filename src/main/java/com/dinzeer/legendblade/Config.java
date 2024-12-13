@@ -32,12 +32,16 @@ public class Config
             .comment("damegeadd max if 0 is off")
             .comment("锻造数影响倍率上限，0为关闭（已不在维护）")
             .define("damegeaddmax", 0.0);
-
+    private static final ForgeConfigSpec.BooleanValue sevenbladeskill = BUILDER
+            .comment("seven sword kill or no kill")
+            .comment("魔刀sa是否靠杀敌启动")
+            .define("sevenbladeskill", true);
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean Open_damege_fix;
     public static double damegeaddd;
     public static double damegeadddmaX;
+    public static boolean sevenbladesKill;
     private static boolean validateItemName(final Object obj)
     {
         return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(new ResourceLocation(itemName));
@@ -49,5 +53,6 @@ public class Config
         Open_damege_fix = open_damege_fix.get();
         damegeaddd=damegeadd.get();
         damegeadddmaX=damegeaddmax.get();
+        sevenbladesKill=sevenbladeskill.get();
     }
 }

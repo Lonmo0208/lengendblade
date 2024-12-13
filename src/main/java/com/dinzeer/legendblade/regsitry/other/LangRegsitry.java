@@ -56,7 +56,9 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("item.legendblade.zerogalaxy","zero galaxy");
         REGISTRATE.addRawLang("item.legendblade.zhuzi","zhuzi's blade");
         REGISTRATE.addRawLang("item.legendblade.truebloodfox","true blood fox");
-
+        REGISTRATE.addRawLang("item.legendblade.eiily","eiily!");
+        REGISTRATE.addRawLang("item.legendblade.zangetsu","zangetsu");
+        REGISTRATE.addRawLang("item.legendblade.frog","ice frog");
         REGISTRATE.addRawLang("item_group.legendblade.legendbladeitem","lengend blade item");
         REGISTRATE.addRawLang("se.legendblade.bad_blood","bad blood");
         REGISTRATE.addRawLang("se.legendblade.blade_attack","blade attack");
@@ -118,11 +120,14 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("slash_art.legendblade.firesummonsword","fire summonsword");
         REGISTRATE.addRawLang("slash_art.legendblade.icesummonsword","ice summonsword");
         REGISTRATE.addRawLang("slash_art.legendblade.hosswords","hos summon sword");
+        REGISTRATE.addRawLang("slash_art.legendblade.moondrive","moondrive");
+        REGISTRATE.addRawLang("slash_art.legendblade.frog_glaxy","frog glaxy");
 
         REGISTRATE.addRawLang("enchantment.level.15","XV");
         REGISTRATE.addRawLang("enchantment.level.10","X");
         REGISTRATE.addRawLang("effect.legendblade.hit_damage","hit damage");
         REGISTRATE.addRawLang("effect.legendblade.strength_damage","strength damage");
+        REGISTRATE.addRawLang("effect.legendblade.sumeru","sumeru");
         REGISTRATE.addRawLang("legendblade.message.liuli","liuli eat %s effect");
 
 

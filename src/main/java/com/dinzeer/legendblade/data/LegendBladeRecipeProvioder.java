@@ -933,7 +933,57 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
 
                 .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
 
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.eiily.location())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', Items.AMETHYST_CLUSTER)
+                .define('B',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeBuiltInRegistry.SANGE.location())
+                                .build()
+                ))
 
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.demonbird.location())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ADA")
+                .define('A', LBModItems.ira)
+                .define('B', SBItems.proudsoul_sphere)
+                .define('C',SlashBladeIngredient.of(
+                        SBItems.slashblade, RequestDefinition.Builder.newInstance()
+                                .killCount(3000).refineCount(5).proudSoul(20000).build()
+                ))
+                .define('D',SBItems.proudsoul_ingot)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.zangetsu.location())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ADA")
+                .define('A', Items.DIAMOND_ORE)
+                .define('B', SBItems.proudsoul_sphere)
+                .define('C',SlashBladeIngredient.of(
+                        SBItems.slashblade, RequestDefinition.Builder.newInstance()
+                                .killCount(3000).refineCount(5).proudSoul(20000).build()
+                ))
+                .define('D',SBItems.proudsoul_ingot)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.frog.location())
+                .pattern("ABA")
+                .pattern("ECE")
+                .pattern("ADA")
+                .define('A', Items.GHAST_TEAR)
+                .define('B', SBItems.proudsoul_sphere)
+                .define('C',SlashBladeIngredient.of(
+                        SBItems.slashblade, RequestDefinition.Builder.newInstance()
+                                .killCount(3000).refineCount(5).proudSoul(20000).build()
+                ))
+                .define('D',LBModItems.icegem)
+                .define('E',Items.ICE)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
 
     }
 

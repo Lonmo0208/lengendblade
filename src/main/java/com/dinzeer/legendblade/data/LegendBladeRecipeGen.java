@@ -3,9 +3,11 @@ package com.dinzeer.legendblade.data;
 import com.dinzeer.legendblade.regsitry.other.LBModItems;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
+import mods.flammpfeil.slashblade.init.SBItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.nbt.Tag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
@@ -26,12 +28,14 @@ public class LegendBladeRecipeGen {
                 .define('G', LBModItems.luxuria)
                 .save(pvd);
 
-//        unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CFItems.FORGE_TABLE.get().asItem(), 1)::unlockedBy, Items.IRON_INGOT)
-//                .pattern("CIC").pattern("PCP").pattern("PCP")
-//                .define('P', ItemTags.PLANKS)
-//                .define('C', Items.COPPER_INGOT)
-//                .define('I', Items.IRON_INGOT)
-//                .save(pvd);
+        unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC,
+                LBModItems.icegem, 1)::unlockedBy, Items.IRON_INGOT)
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', SBItems.proudsoul)
+                .define('B', Items.ICE)
+                .save(pvd);
     }
 
     public static <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, InventoryChangeTrigger.TriggerInstance, T> func, Item item) {

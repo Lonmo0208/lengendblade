@@ -24,6 +24,6 @@
   "render": {
     "model": "legendblade:model/sevensword/model.obj",
     "summon_sword_color": 10289407,
-    "texture": "legendblade:model/sevensword/texture0.png"
+    "texture": "legendblade:model/sevensword/texture.png"
   }
 }

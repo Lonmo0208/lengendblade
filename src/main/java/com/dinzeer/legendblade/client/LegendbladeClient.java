@@ -12,7 +12,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
-
+import com.dinzeer.legendblade.client.render.*;
 import static com.dinzeer.legendblade.Legendblade.MODID;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT,modid = MODID)
@@ -24,6 +24,9 @@ public class LegendbladeClient {
         event.registerEntityRenderer(LBEntiteRegristrys.ssex, SummonedSwordRenderer::new);
         event.registerEntityRenderer(LBEntiteRegristrys.ssdo, DriveRenderer::new);
         event.registerEntityRenderer(LBEntiteRegristrys.ma, SevenSkillFieldRender::new);
+        event.registerEntityRenderer(LBEntiteRegristrys.md, MoonDriveRenderer::new);
+        event.registerEntityRenderer(LBEntiteRegristrys.sps, SaveAllRender::new);
+        event.registerEntityRenderer(LBEntiteRegristrys.dbf, DemonBladeFragmentsRender::new);
         if(ModList.get().isLoaded(IceAndFire.MODID)){
         event.registerEntityRenderer(ICFEntiyRegsitry.FSFE, SummonedSwordRenderer::new);
         event.registerEntityRenderer(ICFEntiyRegsitry.LSS, SummonedSwordRenderer::new);

@@ -29,16 +29,17 @@ public class LBModItems {
 	public static final ItemEntry<Item> redjadeofuda;
 	public static final ItemEntry<Item> scarletjadeofuda;
 	public static final ItemEntry<Item> tearfluorite;
-	public static ItemEntry<Item> acedia;
-	public static ItemEntry<Item> avaritia;
-	public static  ItemEntry<Item> gula;
-	public static  ItemEntry<Item> invidia;
-	public static  ItemEntry<Item> ira;
-	public static  ItemEntry<Item> luxuria;
-	public static  ItemEntry<Item> saligiaex;
-	public static  ItemEntry<Item> saligiasphere;
-	public static  ItemEntry<Item> superbia;
-
+	public static final ItemEntry<Item> acedia;
+	public static final ItemEntry<Item> avaritia;
+	public static final  ItemEntry<Item> gula;
+	public static final  ItemEntry<Item> invidia;
+	public static final  ItemEntry<Item> ira;
+	public static final  ItemEntry<Item> luxuria;
+	public static final  ItemEntry<Item> saligiaex;
+	public static final  ItemEntry<Item> saligiasphere;
+	public static final  ItemEntry<Item> superbia;
+	public static final  ItemEntry<Item> icegem;
+	public static final  ItemEntry<Item> soul_crystal;
 
 
 	static {
@@ -65,7 +66,8 @@ public class LBModItems {
 		superbia= iteminit("superbia");
 		saligiaex= iteminit("saligiaex");
 		saligiasphere= iteminit("saligiasphere");
-
+        icegem= iteminit("ice_gem");
+		soul_crystal= iteminit("soul_crystal");
 }
 
 

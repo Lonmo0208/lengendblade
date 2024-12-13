@@ -125,6 +125,20 @@ public class LegendBuiltInRegsitry {
     public static final ResourceKey<SlashBladeDefinition> foreverice;
     //妖魔刀「血狐」
     public static final ResourceKey<SlashBladeDefinition> truebloodfox;
+    //痛刀「爱莉」
+    public static final ResourceKey<SlashBladeDefinition> eiily;
+    //现世刀「斩月」
+    public static final ResourceKey<SlashBladeDefinition> zangetsu;
+    //铭刀「蟾宫」
+    public static final ResourceKey<SlashBladeDefinition> frog;
+    //铭刀「鱼音」
+    public static final ResourceKey<SlashBladeDefinition> fish;
+    //天锁斩月
+    public static final ResourceKey<SlashBladeDefinition> tensazangetsu;
+    //红「天锁斩月」
+    public static final ResourceKey<SlashBladeDefinition> tensazangetsured;
+    //物理学圣剑
+    public static final ResourceKey<SlashBladeDefinition> crowbar;
     static {
         SHINKU=register("shinku");
         BLOODKATANA=register("bloodkatana");
@@ -178,6 +192,13 @@ public class LegendBuiltInRegsitry {
         zerogalaxy=register("zerogalaxy");
         foreverice=register("foreverice");
         truebloodfox=register("truebloodfox");
+        eiily=register("eiily");
+        zangetsu=register("zangetsu");
+        frog=register("frog");
+        fish=register("fish");
+        tensazangetsu=register("tensazangetsu");
+        tensazangetsured=register("tensazangetsured");
+        crowbar=register("crowbar");
     }
     public static void registerAll(BootstapContext<SlashBladeDefinition> bootstrap) {
 
@@ -825,7 +846,7 @@ public class LegendBuiltInRegsitry {
         bootstrap.register(
                 sevensword, new SlashBladeDefinition(Legendblade.prefix("sevensword"),
                         RenderDefinition.Builder.newInstance()
-                                .textureName(Legendblade.prefix("model/sevensword/texture0.png"))
+                                .textureName(Legendblade.prefix("model/sevensword/texture.png"))
                                 .modelName(Legendblade.prefix("model/sevensword/model.obj"))
                                 .effectColor(10289407)
                                 .build(),
@@ -1165,10 +1186,135 @@ public class LegendBuiltInRegsitry {
                                 new EnchantmentDefinition(getEnchantmentID(Enchantments.MOB_LOOTING), 5)
                         )
                 ));
+        bootstrap.register(
+                eiily, new SlashBladeDefinition(Legendblade.prefix("eiily"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/mrzhu/white.png"))
+                                .modelName(Legendblade.prefix("model/named/rustgodfox/model.obj"))
+                                .effectColor(11010303)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(7)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(  new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3))
+                ));
+        bootstrap.register(
+                zangetsu, new SlashBladeDefinition(Legendblade.prefix("zangetsu"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/lostblade/zangetsu/zangetsu.png"))
+                                .modelName(Legendblade.prefix("model/lostblade/zangetsu/zangetsu.obj"))
+                                .effectColor(54527)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(LBslashArtRegsitry.MoonDrive.getId())
+                                .baseAttackModifier(20)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(  new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.THORNS), 3)
+                        )
+                ));
+        bootstrap.register(
+                frog, new SlashBladeDefinition(Legendblade.prefix("frog"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/lostblade/frog/frog.png"))
+                                .modelName(Legendblade.prefix("model/lostblade/frog/frog.obj"))
+                                .effectColor(16766464)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(LBslashArtRegsitry.FrogGlaxy.getId())
+                                .baseAttackModifier(20)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_FORTUNE), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 5)
+                        )
+                ));
+        bootstrap.register(
+                fish, new SlashBladeDefinition(Legendblade.prefix("fish"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/lostblade/fish/fish.png"))
+                                .modelName(Legendblade.prefix("model/lostblade/fish/fish.obj"))
+                                .effectColor(16766464)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+
+                                .baseAttackModifier(17)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_FORTUNE), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 5)
+                        )
+                ));
+        bootstrap.register(
+                tensazangetsu, new SlashBladeDefinition(Legendblade.prefix("tensazangetsu"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/lostblade/tensazangetsu/texture.png"))
+                                .modelName(Legendblade.prefix("model/lostblade/tensazangetsu/model.obj"))
+                                .effectColor(16766464)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+
+                                .baseAttackModifier(17)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_FORTUNE), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 5)
+                        )
+                ));
+        bootstrap.register(
+                tensazangetsured, new SlashBladeDefinition(Legendblade.prefix("tensazangetsured"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/lostblade/tensazangetsu/texture2.png"))
+                                .modelName(Legendblade.prefix("model/lostblade/tensazangetsu/model.obj"))
+                                .effectColor(16766464)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+
+                                .baseAttackModifier(17)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_FORTUNE), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 5)
+                        )
+                ));
+        bootstrap.register(
+                crowbar, new SlashBladeDefinition(Legendblade.prefix("crowbar"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/lostblade/crowbar/crowbar.png"))
+                                .modelName(Legendblade.prefix("model/lostblade/crowbar/crowbar.obj"))
+                                .effectColor(16766464)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+
+                                .baseAttackModifier(17)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_FORTUNE), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 5)
+                        )
+                ));
     }
-
-
-
 
 
 

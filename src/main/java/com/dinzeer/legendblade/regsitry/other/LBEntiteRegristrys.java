@@ -29,6 +29,12 @@ public class LBEntiteRegristrys {
     public static EntityType<DriveSummonEntityOne> ssdo;
     public static final ResourceLocation maloc = new ResourceLocation(MODID, classToString(SevenSkillField.class));
     public static EntityType<SevenSkillField> ma;
+    public static final ResourceLocation MDLOC = new ResourceLocation(MODID, classToString(MoonDriveEntity.class));
+    public static EntityType<MoonDriveEntity> md;
+    public static final ResourceLocation spsLOC = new ResourceLocation(MODID, classToString(SpSumonSwordEntity.class));
+    public static EntityType<SpSumonSwordEntity> sps;
+    public static final ResourceLocation dbfloc = new ResourceLocation(MODID, classToString(DemonBladeFragments.class));
+    public static EntityType<DemonBladeFragments> dbf;
     public static void register(RegisterEvent event){
 
         event.register(ForgeRegistries.Keys.ENTITY_TYPES, helper -> {
@@ -88,6 +94,42 @@ public class LBEntiteRegristrys {
                         .setUpdateInterval(20).setCustomClientFactory(SevenSkillField::createInstance)
                         .build(maloc.toString());
                 helper.register(maloc, entity);
+            }
+
+        });
+        event.register(ForgeRegistries.Keys.ENTITY_TYPES, helper -> {
+            {
+                EntityType<MoonDriveEntity> entity = md = EntityType.Builder
+                        .of(MoonDriveEntity::new, MobCategory.MISC)
+                        .sized(0.9F, 0.9F)
+                        .setTrackingRange(4)
+                        .setUpdateInterval(20).setCustomClientFactory(MoonDriveEntity::createInstance)
+                        .build(MDLOC.toString());
+                helper.register(MDLOC, entity);
+            }
+
+        });
+        event.register(ForgeRegistries.Keys.ENTITY_TYPES, helper -> {
+            {
+                EntityType<SpSumonSwordEntity> entity = sps = EntityType.Builder
+                        .of(SpSumonSwordEntity::new, MobCategory.MISC)
+                        .sized(0.9F, 0.9F)
+                        .setTrackingRange(4)
+                        .setUpdateInterval(20).setCustomClientFactory(SpSumonSwordEntity::createInstance)
+                        .build(spsLOC.toString());
+                helper.register(spsLOC, entity);
+            }
+
+        });
+        event.register(ForgeRegistries.Keys.ENTITY_TYPES, helper -> {
+            {
+                EntityType<DemonBladeFragments> entity = dbf = EntityType.Builder
+                        .of(DemonBladeFragments::new, MobCategory.MISC)
+                        .sized(0.9F, 0.9F)
+                        .setTrackingRange(4)
+                        .setUpdateInterval(20).setCustomClientFactory(DemonBladeFragments::createInstance)
+                        .build(dbfloc.toString());
+                helper.register(dbfloc, entity);
             }
 
         });
