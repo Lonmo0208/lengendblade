@@ -25,17 +25,18 @@ public class SumeruEffect extends MobEffect {
     @SubscribeEvent
     public static void recordDamage(LivingHurtEvent event){
         LivingEntity entity = event.getEntity();
-        LivingEntity entity1 = (LivingEntity) event.getSource().getEntity();
-        if (entity1!=null) {
-            if (entity1.hasEffect(Legendblade.EffectAbout.SUMERU.get())) {
-                event.setAmount(event.getAmount() * (entity1.getEffect(Legendblade.EffectAbout.SUMERU.get()).getAmplifier() * 0.3f + 1));
+        if (entity!=null) {
+            if (event.getSource().getEntity() instanceof LivingEntity entity1) {
+                if (entity1.hasEffect(Legendblade.EffectAbout.SUMERU.get())) {
+                    event.setAmount(event.getAmount() * (entity1.getEffect(Legendblade.EffectAbout.SUMERU.get()).getAmplifier() * 0.3f + 1));
+                }
             }
-        }
-        if (entity.hasEffect(Legendblade.EffectAbout.SUMERU.get())){
-            entity.getPersistentData().putFloat("Sumereu_damage",entity.getPersistentData().getFloat("Sumereu_damage")+event.getAmount());
+            if (entity.hasEffect(Legendblade.EffectAbout.SUMERU.get())) {
+                entity.getPersistentData().putFloat("Sumereu_damage", entity.getPersistentData().getFloat("Sumereu_damage") + event.getAmount());
 
-            event.setCanceled(true);
+                event.setCanceled(true);
 
+            }
         }
 
     }

@@ -3,6 +3,7 @@ package com.dinzeer.legendblade.mixin;
 
 
 import com.exfantasy.mclib.Utils.EntityPointer;
+import com.exfantasy.mclib.Utils.ParticleHelper;
 import mods.flammpfeil.slashblade.entity.EntityDrive;
 import mods.flammpfeil.slashblade.entity.Projectile;
 import net.minecraft.core.particles.ParticleTypes;
@@ -40,16 +41,18 @@ public abstract class MoDaoMixin {
 
         if (entity.getPersistentData().getBoolean("modao")){
             final Vec3 _center = entity.position();
+
           //EntityPointer.sendParticleCircle((ServerLevel) entity.level(), entity, ParticleTypes.END_ROD, 3, 3);
-            List<Entity> _entfound = entity.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(18 / 2d), a -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+            List<Entity> _entfound = entity.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(16 / 2d), a -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
             for (Entity entityiterator : _entfound) {
                 if (entityiterator != entity.getShooter()) {
                     if (entityiterator != entity.getShooter()) {
                         if (entityiterator instanceof LivingEntity) {
-                            if (entityiterator.invulnerableTime<=0) EntityPointer.sendParticleCircle((ServerLevel) entityiterator.level(), entityiterator, ParticleTypes.ENCHANTED_HIT, 1, 2);
-
+                            if (entityiterator.invulnerableTime<=0) {
+                                if (entityiterator.level() instanceof ServerLevel) EntityPointer.sendParticleCircle((ServerLevel) entityiterator.level(), entityiterator, ParticleTypes.ENCHANTED_HIT, 1, 2);
+                            }
                             ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 3, (false), (false)));
-                            entityiterator.hurt(new DamageSource(entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity.getShooter()), (float) ((((LivingEntity) entity.getShooter()).getAttributeValue(Attributes.ATTACK_DAMAGE))*1.2f ));
+                            entityiterator.hurt(new DamageSource(entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity.getShooter()), (float) ((((LivingEntity) entity.getShooter()).getAttributeValue(Attributes.ATTACK_DAMAGE))*1.3f ));
 
 
                         }
@@ -58,6 +61,32 @@ public abstract class MoDaoMixin {
 
 
             }
+        }
+        if (entity.getPersistentData().getBoolean("modao1")){
+            final Vec3 _center = entity.position();
+            boolean isD = false;
+          //EntityPointer.sendParticleCircle((ServerLevel) entity.level(), entity, ParticleTypes.END_ROD, 3, 3);
+            List<Entity> _entfound = entity.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), a -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+            for (Entity entityiterator : _entfound) {
+                if (entityiterator != entity.getShooter()) {
+                    if (entityiterator != entity.getShooter()) {
+                        if (entityiterator instanceof LivingEntity) {
+                                entityiterator.invulnerableTime =0;
+                                ParticleHelper.spawnHollowParticleCube(entity.level(),ParticleTypes.END_ROD,entityiterator.position(),2,2);
+                                        isD=true;
+
+                            ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 3, (false), (false)));
+                            ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 5, (false), (false)));
+                            entityiterator.hurt(new DamageSource(entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity.getShooter()), (float) ((((LivingEntity) entity.getShooter()).getAttributeValue(Attributes.ATTACK_DAMAGE))*7.5f ));
+
+
+                        }
+                    }
+                }
+
+
+            }
+            if (isD)entity.remove(Entity.RemovalReason.DISCARDED);
         }
 
     }

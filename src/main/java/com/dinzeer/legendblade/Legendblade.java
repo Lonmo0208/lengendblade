@@ -3,6 +3,9 @@ package com.dinzeer.legendblade;
 import cn.mmf.slashblade_addon.SlashBladeAddon;
 import com.dinzeer.legendblade.effect.MoDaoEffect;
 import com.dinzeer.legendblade.effect.SumeruEffect;
+import com.dinzeer.legendblade.entity.DemonBladeFragments;
+import com.dinzeer.legendblade.network.DemonBladeMessage;
+import com.dinzeer.legendblade.network.DemonBladeMessageA;
 import com.dinzeer.legendblade.regsitry.compat.ICFEntiyRegsitry;
 import com.dinzeer.legendblade.regsitry.compat.ICFLBcompatRegsitry;
 import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
@@ -102,6 +105,8 @@ public class Legendblade {
                 .decoder(DashMessage::decode)
                 .consumerMainThread(DashMessage::handle)
                 .add();
+        INSTANCE.registerMessage(id++, DemonBladeMessage.class, DemonBladeMessage::encode, DemonBladeMessage::new, DemonBladeMessage::handle);
+        INSTANCE.registerMessage(id++, DemonBladeMessageA.class, DemonBladeMessageA::encode, DemonBladeMessageA::new, DemonBladeMessageA::handle);
     }
     public void register(RegisterEvent event) {
         LBEntiteRegristrys.register(event);

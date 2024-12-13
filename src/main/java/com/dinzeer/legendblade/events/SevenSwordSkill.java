@@ -1,7 +1,11 @@
 package com.dinzeer.legendblade.events;
 
 import com.dinzeer.legendblade.Legendblade;
+import com.dinzeer.legendblade.entity.Compat.FireSummonSwordEntity;
+import com.dinzeer.legendblade.entity.DemonBladeFragments;
 import com.dinzeer.legendblade.entity.SevenSkillField;
+import com.dinzeer.legendblade.regsitry.compat.ICFEntiyRegsitry;
+import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
 import com.dinzeer.legendblade.regsitry.slashblade.LBSpecialEffectsRegistry;
 import com.exfantasy.mclib.Utils.Dash.DashMessage;
 import com.exfantasy.mclib.Utils.Dash.SMoveUtil;
@@ -12,6 +16,7 @@ import com.exfantasy.mclib.Utils.TeleportHelper;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.entity.EntityDrive;
 import mods.flammpfeil.slashblade.event.SlashBladeEvent;
+import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.util.VectorHelper;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.particles.ParticleTypes;
@@ -20,6 +25,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -31,20 +37,39 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
+
+import static com.exfantasy.mclib.Utils.Dash.ClientPacketHandler.sendDemonBladeMessage;
+import static com.exfantasy.mclib.Utils.Dash.ClientPacketHandler.sendDemonBladeMessageA;
 
 @Mod.EventBusSubscriber
 public class SevenSwordSkill {
+    @SubscribeEvent
+    public static void appluA(PlayerInteractEvent.LeftClickEmpty event){
+
+
+        if (event.getEntity().isShiftKeyDown()){
+            sendDemonBladeMessageA(event.getEntity());
+        }else {
+            sendDemonBladeMessage(event.getEntity());
+        }
+        }
+
+
     @SubscribeEvent
     public static void UnLock(LivingDeathEvent event){
         if (!(event.getEntity() instanceof WitherBoss))return;
@@ -53,7 +78,7 @@ public class SevenSwordSkill {
             CompoundTag tag = stack.getTag();
             if (stack.getTag().contains("UnLock"))return;
             if (SlashbladeUtils.getStringNBT(tag, "translationKey").equals("item.legendblade.sevensword")) {
-                ///data get entity @s SelectedItem
+                stack.getCapability(ItemSlashBlade.BLADESTATE).orElse(null).setTexture(Legendblade.prefix("model/sevensword/texture0.png"));
                 stack.getTag().putString("translationKey", "item.legendblade.sevensword_unlock");
                 SlashbladeUtils.setStringNBT(stack.getTag(), "TextureName", "legendblade:model/sevensword/texture0.png");
                 tag.putBoolean("UnLock",true);
@@ -111,23 +136,31 @@ public class SevenSwordSkill {
                     if (entity.level() instanceof ServerLevel level1) {
                         TeleportHelper.teleportEntityInCube(level1,entity,entity2.getOnPos().getCenter(),8);
                     }
-                    EntityDrive drive = new EntityDrive(SlashBlade.RegistryEvents.Drive, entity.level());
-
-                    entity.level().addFreshEntity(drive);
-
-                    drive.setBaseSize(60);
-                    drive.getDimensions(Pose.STANDING).scale(36, 36);
-                    drive.getPersistentData().putBoolean("modao", true);
+                    RandomSource random = entity2.level().getRandom();
+                    for (int i = 0; i < random.nextInt(3)+1; i++) {
 
 
-                    drive.setPos(_center.x, _center.y, _center.z);
-                    drive.setDamage(21f);
-                    drive.setSpeed(1.2f);
-                    drive.shoot(entity.getLookAngle().x, entity.getLookAngle().y, entity.getLookAngle().z, drive.getSpeed(), 0);
-                    drive.setColor(5177599);
-                    drive.setOwner(entity);
+                        EntityDrive drive = new EntityDrive(SlashBlade.RegistryEvents.Drive, entity.level());
 
-                    drive.setLifetime(60);
+                        entity.level().addFreshEntity(drive);
+
+                        drive.setBaseSize(60);
+                        drive.getDimensions(Pose.STANDING).scale(36, 36);
+                        drive.getPersistentData().putBoolean("modao", true);
+                        drive.getPersistentData().putBoolean("modao1", true);
+
+
+                        drive.setPos(_center.x, _center.y, _center.z);
+                        drive.setDamage(21f);
+                        drive.setSpeed(1.0f+i*0.2f);
+                        Vec3 directionVec = sevenSkillField.position().subtract(entity.position()).normalize();
+
+                        drive.shoot(directionVec.x, directionVec.y, directionVec.z, drive.getSpeed(), 0);
+                        drive.setColor(5177599);
+                        drive.setOwner(entity);
+
+                        drive.setLifetime(60);
+                    }
                 }
             }
         }
@@ -135,7 +168,7 @@ public class SevenSwordSkill {
 
     }
         public static void a(LivingEntity entity,ItemStack stack,LivingEntity tartget2) {
-
+            if (stack.getTag()==null)return;
             if (!stack.getTag().getBoolean("UnLock")) return;
             if (SlashbladeUtils.hasSpecialEffect(stack, (LBSpecialEffectsRegistry.FragmentedEdge.getId()).toString())) {
                 if (entity.hasEffect(Legendblade.EffectAbout.MO_DAO.get()))return;
@@ -163,7 +196,9 @@ public class SevenSwordSkill {
                 drive.setPos(pos.x, pos.y, pos.z);
                 drive.setDamage(5f);
                 drive.setSpeed(1.2f);
-                drive.shoot(entity.getLookAngle().x, entity.getLookAngle().y, entity.getLookAngle().z, drive.getSpeed(), 0);
+                Vec3 directionVec = target.position().subtract(entity.position()).normalize();
+
+                drive.shoot(directionVec.x, directionVec.y, directionVec.z, drive.getSpeed(), 0);
                 drive.setColor(5177599);
                 drive.setOwner(entity);
 

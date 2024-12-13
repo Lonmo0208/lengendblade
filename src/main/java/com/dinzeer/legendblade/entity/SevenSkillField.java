@@ -13,6 +13,7 @@ import com.exfantasy.mclib.Utils.ParticleHelper;
 import com.exfantasy.mclib.Utils.TeleportHelper;
 import mods.flammpfeil.slashblade.entity.EntityDrive;
 import mods.flammpfeil.slashblade.entity.Projectile;
+import mods.flammpfeil.slashblade.init.SBItems;
 import mods.flammpfeil.slashblade.slasharts.Drive;
 import mods.flammpfeil.slashblade.util.NBTHelper;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -45,6 +46,7 @@ import org.checkerframework.checker.units.qual.A;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 
 public class SevenSkillField extends Projectile {
     static {
@@ -102,11 +104,12 @@ public class SevenSkillField extends Projectile {
     public static SevenSkillField createInstance(PlayMessages.SpawnEntity packet, Level worldIn) {
         return new SevenSkillField(LBEntiteRegristrys.ma, worldIn);
     }
+    private static final Random rand = new Random();
     @Override
     public void tick() {
         super.tick();
         if (getDuring() > 0){
-            setDuring(getDuring() - 1);
+
             int size = this.getSIZE() + 1;
             final Vec3 _center = this.position();
 
@@ -114,20 +117,22 @@ public class SevenSkillField extends Projectile {
                 ParticleHelper.spawnHollowParticleCube(this.level(), ParticleTypes.DRAGON_BREATH, this.position(), size, 3);
             else    if  (getDuring()>10)
                 ParticleHelper.spawnHollowParticleCube(this.level(), ParticleTypes.DRAGON_BREATH, this.position(), (float) (size*( 0.05*getDuring())), 3);
-            else  if (getDuring()<=10) {
-                ParticleHelper.spawnHollowParticleCube(this.level(), ParticleTypes.DRAGON_BREATH, this.position(), size * (3 * ((float) 1 / getDuring())), 3);
+            else  if (getDuring()<=10 && getDuring()!=1) {
+                ParticleHelper.spawnHollowParticleCube(this.level(), ParticleTypes.DRAGON_BREATH, this.position(), size * (5 * ((float) 1 / getDuring())), 3);
                 if (getOwner() !=null){
                     ((LivingEntity) getOwner()).addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,4,10));
                     getOwner().lookAt(EntityAnchorArgument.Anchor.EYES, _center);
                 //    getOwner().teleportTo(this.getX(), this.getY()+size*0.2*getDuring(), this.getZ());
-                    SevenSwordSkill.a(((LivingEntity) getOwner()),((LivingEntity) getOwner()).getMainHandItem(),null );
-                    //  Lightning.doSlash(((LivingEntity) getOwner()),true,getDamage()*2,1);
+                    if(!((LivingEntity) getOwner()).getMainHandItem().isEmpty()) {
+                        SevenSwordSkill.a(((LivingEntity) getOwner()), ((LivingEntity) getOwner()).getMainHandItem(), null);
+                    } //  Lightning.doSlash(((LivingEntity) getOwner()),true,getDamage()*2,1);
                 }
-            }else {
+            }
+            if(getDuring()==1){
                 if (getOwner()!=null) {
                     if (getOwner() instanceof Player player) {
                         if (player.level() instanceof ServerLevel level) {
-                            level.sendParticles(ParticleTypes.END_ROD,this.getX(), this.getY(), this.getZ(), 60,1.4,4,4,4);;
+                            level.sendParticles(ParticleTypes.END_ROD,this.getX(), this.getY(), this.getZ(), 110,3,6,6,6);;
                         }
                         List<Entity> _entfound1 = this.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(this.getSIZE() * 6 / 2d), a -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
                         player.addEffect(new MobEffectInstance(Legendblade.EffectAbout.STRENGTH_BOOST.get(),20,3));
@@ -141,7 +146,8 @@ public class SevenSkillField extends Projectile {
                                     if (entityiterator instanceof LivingEntity livingEntity) {
                                         entityiterator.invulnerableTime = 0;
                                         entityiterator.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), getOwner()), (float) (getDamage())*15);
-                                        SMoveUtil.orbitAroundEntity(entityiterator, this, this.getSIZE() , 1f);
+                                       // SMoveUtil.orbitAroundEntity(entityiterator, this, this.getSIZE() , 2.5f);
+                                        entityiterator.setDeltaMovement(rand.nextDouble(getSIZE()*-1, getSIZE())*0.1, rand.nextDouble(getSIZE()*-1, getSIZE())*0.1, rand.nextDouble(getSIZE()*-1, getSIZE())*0.1);
                                         player.heal(player.getMaxHealth()*0.1f);
                                         SevenSwordSkill.a(player,player.getMainHandItem(),livingEntity);
 
@@ -231,6 +237,7 @@ public class SevenSkillField extends Projectile {
                     }
                 }
             }
+            setDuring(getDuring() - 1);
         }else {
             this.remove(RemovalReason.DISCARDED);
         }
