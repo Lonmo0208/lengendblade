@@ -35,6 +35,8 @@ public class LBEntiteRegristrys {
     public static EntityType<SpSumonSwordEntity> sps;
     public static final ResourceLocation dbfloc = new ResourceLocation(MODID, classToString(DemonBladeFragments.class));
     public static EntityType<DemonBladeFragments> dbf;
+    public static final ResourceLocation srloc = new ResourceLocation(MODID, classToString(SwordRainEntity.class));
+    public static EntityType<SwordRainEntity> sr;
     public static void register(RegisterEvent event){
 
         event.register(ForgeRegistries.Keys.ENTITY_TYPES, helper -> {
@@ -130,6 +132,18 @@ public class LBEntiteRegristrys {
                         .setUpdateInterval(20).setCustomClientFactory(DemonBladeFragments::createInstance)
                         .build(dbfloc.toString());
                 helper.register(dbfloc, entity);
+            }
+
+        });
+        event.register(ForgeRegistries.Keys.ENTITY_TYPES, helper -> {
+            {
+                EntityType<SwordRainEntity> entity = sr = EntityType.Builder
+                        .of(SwordRainEntity::new, MobCategory.MISC)
+                        .sized(0.9F, 0.9F)
+                        .setTrackingRange(4)
+                        .setUpdateInterval(20).setCustomClientFactory(SwordRainEntity::createInstance)
+                        .build(srloc.toString());
+                helper.register(srloc, entity);
             }
 
         });

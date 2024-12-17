@@ -1,7 +1,9 @@
 package com.dinzeer.legendblade.data;
 
+import cn.mmf.slashblade_addon.registry.SBASlashArtsRegistry;
 import com.dinzeer.legendblade.Legendblade;
 import com.dinzeer.legendblade.regsitry.compat.ICFLBcompatRegsitry;
+import com.dinzeer.legendblade.regsitry.compat.TFLBcompat;
 import com.dinzeer.legendblade.regsitry.slashblade.LBSpecialEffectsRegistry;
 import com.dinzeer.legendblade.regsitry.slashblade.LBslashArtRegsitry;
 import com.dinzeer.legendblade.regsitry.compat.L2LBcompatRegsitry;
@@ -139,6 +141,16 @@ public class LegendBuiltInRegsitry {
     public static final ResourceKey<SlashBladeDefinition> tensazangetsured;
     //物理学圣剑
     public static final ResourceKey<SlashBladeDefinition> crowbar;
+    //彩虹之剑
+    public static final ResourceKey<SlashBladeDefinition> rainbow;
+    //§4§o铭刀「悭臾」
+    public static final ResourceKey<SlashBladeDefinition> undragon;
+    //骑士刃「甲穿」
+    public static final ResourceKey<SlashBladeDefinition> breakarm;
+    //冰晶刃「寒流」
+    public static final ResourceKey<SlashBladeDefinition> allice;
+    //炽铁刃「炎灼」
+    public static final ResourceKey<SlashBladeDefinition> fireiron;
     static {
         SHINKU=register("shinku");
         BLOODKATANA=register("bloodkatana");
@@ -199,6 +211,12 @@ public class LegendBuiltInRegsitry {
         tensazangetsu=register("tensazangetsu");
         tensazangetsured=register("tensazangetsured");
         crowbar=register("crowbar");
+        rainbow=register("rainbow");
+
+        undragon=register("undragon");
+        breakarm=register("breakarm");
+        allice=register("allice");
+        fireiron=register("fireiron");
     }
     public static void registerAll(BootstapContext<SlashBladeDefinition> bootstrap) {
 
@@ -1243,18 +1261,19 @@ public class LegendBuiltInRegsitry {
                         RenderDefinition.Builder.newInstance()
                                 .textureName(Legendblade.prefix("model/lostblade/fish/fish.png"))
                                 .modelName(Legendblade.prefix("model/lostblade/fish/fish.obj"))
-                                .effectColor(16766464)
+                                .effectColor(54527)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-
+                                .slashArtsType(LBslashArtRegsitry.SaveAll.getId())
                                 .baseAttackModifier(17)
                                 .maxDamage(80)
                                 .build(),
                         List.of(
-                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_FORTUNE), 5),
-                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
-                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 5)
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.ALL_DAMAGE_PROTECTION), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FIRE_PROTECTION), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SWEEPING_EDGE), 2),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FALL_PROTECTION), 2)
                         )
                 ));
         bootstrap.register(
@@ -1262,7 +1281,7 @@ public class LegendBuiltInRegsitry {
                         RenderDefinition.Builder.newInstance()
                                 .textureName(Legendblade.prefix("model/lostblade/tensazangetsu/texture.png"))
                                 .modelName(Legendblade.prefix("model/lostblade/tensazangetsu/model.obj"))
-                                .effectColor(16766464)
+                                .effectColor(16711680)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
@@ -1281,7 +1300,7 @@ public class LegendBuiltInRegsitry {
                         RenderDefinition.Builder.newInstance()
                                 .textureName(Legendblade.prefix("model/lostblade/tensazangetsu/texture2.png"))
                                 .modelName(Legendblade.prefix("model/lostblade/tensazangetsu/model.obj"))
-                                .effectColor(16766464)
+                                .effectColor(16711680)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
@@ -1300,20 +1319,101 @@ public class LegendBuiltInRegsitry {
                         RenderDefinition.Builder.newInstance()
                                 .textureName(Legendblade.prefix("model/lostblade/crowbar/crowbar.png"))
                                 .modelName(Legendblade.prefix("model/lostblade/crowbar/crowbar.obj"))
-                                .effectColor(16766464)
+                                .effectColor(16711680)
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
-
-                                .baseAttackModifier(17)
+                                .slashArtsType(LBslashArtRegsitry.Elbowstrike.getId())
+                                .baseAttackModifier(20)
                                 .maxDamage(80)
                                 .build(),
                         List.of(
-                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BLOCK_FORTUNE), 5),
-                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3),
-                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 5)
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.KNOCKBACK), 7),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.ALL_DAMAGE_PROTECTION), 5)
                         )
                 ));
+        bootstrap.register(
+                undragon, new SlashBladeDefinition(Legendblade.prefix("undragon"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/lostblade/undragon/undragon.png"))
+                                .modelName(Legendblade.prefix("model/lostblade/undragon/undragon.obj"))
+                                .effectColor(16711680)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(LBslashArtRegsitry.swordRain.getId())
+                                .baseAttackModifier(32)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(  new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 10),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 9)
+                        )
+                ));
+
+        bootstrap.register(
+                breakarm, new SlashBladeDefinition(Legendblade.prefix("breakarm"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/tfcompat/breakarm.png"))
+                                .modelName(Legendblade.prefix("model/named/truegodfox/model.obj"))
+                                .effectColor(32768)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(SlashArtsRegistry.WAVE_EDGE.getId())
+                                .addSpecialEffect(TFLBcompat.breakarm.getId())
+                                .baseAttackModifier(18)
+                                .maxDamage(80)
+                                .build(),
+                        List.of(  new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 5)
+                        )
+                )
+        );
+        bootstrap.register(
+                allice, new SlashBladeDefinition(Legendblade.prefix("allice"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/tfcompat/allice.png"))
+                                .modelName(Legendblade.prefix("model/named/truegodfox/model.obj"))
+                                .effectColor(54527)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .slashArtsType(SlashArtsRegistry.CIRCLE_SLASH.getId())
+                                .addSpecialEffect(TFLBcompat.allice.getId())
+                                .baseAttackModifier(20)
+                                .maxDamage(80).build(),
+                        List.of(  new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 5)
+                        )
+                )
+        );
+        bootstrap.register(
+                fireiron, new SlashBladeDefinition(Legendblade.prefix("fireiron"),
+                        RenderDefinition.Builder.newInstance()
+                                .textureName(Legendblade.prefix("model/tfcompat/fireiron.png"))
+                                .modelName(Legendblade.prefix("model/named/truegodfox/model.obj"))
+                                .effectColor(14749969)
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                                .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                .baseAttackModifier(20)
+                                .slashArtsType(SBASlashArtsRegistry.SPIRAL_EDGE.getId())
+                                .addSpecialEffect(TFLBcompat.fire.getId())
+                                .maxDamage(80).build(),
+                        List.of(  new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.BANE_OF_ARTHROPODS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 5)
+                        )
+                )
+        );
     }
 
 

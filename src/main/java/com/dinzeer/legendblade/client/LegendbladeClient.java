@@ -22,6 +22,7 @@ public class LegendbladeClient {
         event.registerEntityRenderer(LBEntiteRegristrys.ss, SummonedSwordRenderer::new);
         event.registerEntityRenderer(LBEntiteRegristrys.sd, DriveRenderer::new);
         event.registerEntityRenderer(LBEntiteRegristrys.ssex, SummonedSwordRenderer::new);
+        event.registerEntityRenderer(LBEntiteRegristrys.sr, SummonedSwordRenderer::new);
         event.registerEntityRenderer(LBEntiteRegristrys.ssdo, DriveRenderer::new);
         event.registerEntityRenderer(LBEntiteRegristrys.ma, SevenSkillFieldRender::new);
         event.registerEntityRenderer(LBEntiteRegristrys.md, MoonDriveRenderer::new);

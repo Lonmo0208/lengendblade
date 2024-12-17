@@ -1,5 +1,6 @@
-// 1.20.1	2024-12-12T12:38:59.9236914	Recipes
+// 1.20.1	2024-12-17T23:27:34.874243	Recipes
 810cb3c0d8e3f58c9eb2c45c54ac6653b81e14a7 data/legendblade/advancements/recipes/combat/administrator.json
+f7dec9da9eba70401188916dd3a4cd725eeabec2 data/legendblade/advancements/recipes/combat/allice.json
 038d96a1d2c09ae184ac221649cebe7a27453b16 data/legendblade/advancements/recipes/combat/amazedshine.json
 0a156df8696e775339cff9b87fb892d747a269b1 data/legendblade/advancements/recipes/combat/ark.json
 f5d5fce438adda6745d3783380994a704c905568 data/legendblade/advancements/recipes/combat/asmodeus.json
@@ -11,7 +12,9 @@ e7947bceb12b18eb0910f0f1daf86cfc7b7cf198 data/legendblade/advancements/recipes/c
 564bafcbdcc31854ca45f24a92fca1941df4be7a data/legendblade/advancements/recipes/combat/belphegorex.json
 4bbd26f16302a4ea1f650928a2eed59c3e4f3ab8 data/legendblade/advancements/recipes/combat/blaze.json
 c392c8d1d7285cbeb609b1b54d2ebd577698a4ce data/legendblade/advancements/recipes/combat/bloodkatana.json
+809928976833ced9b8d1b63db4ccc58cf0c0470f data/legendblade/advancements/recipes/combat/breakarm.json
 2458f387819f7384eaa02ca61c09c895281778f4 data/legendblade/advancements/recipes/combat/crimsoncherryex.json
+880bb6e7daf9d3cdd3c004e489000126cec1c038 data/legendblade/advancements/recipes/combat/crowbar.json
 b6d916fb665e3137379e137936f6aad136658942 data/legendblade/advancements/recipes/combat/demonbird.json
 50e71120939f161d129328feae9c8cc90c6e1e49 data/legendblade/advancements/recipes/combat/dragon_fire.json
 c9d7aac465d3c0c4324236bd2ca649c397eb877a data/legendblade/advancements/recipes/combat/dragon_ice.json
@@ -20,6 +23,8 @@ c5bbfc45c1f3a21096c7c5fd0256b0ac25b8e309 data/legendblade/advancements/recipes/c
 22ec824008595c39537cb7ed14f69d10df9cfd9f data/legendblade/advancements/recipes/combat/evil.json
 79ee7d52e4a5da49b00d57bfd65a473f06c2b973 data/legendblade/advancements/recipes/combat/evilex.json
 1a86266bd0b10264b0c8a4fdacc71bdfae449210 data/legendblade/advancements/recipes/combat/fireex.json
+e4648d44dda8e94c22e2a83d62a73a62540cd88d data/legendblade/advancements/recipes/combat/fireiron.json
+35ab15ec00b5d5846ef00c905daa0c06d1286e76 data/legendblade/advancements/recipes/combat/fish.json
 490c9cef382cf28bf4113d19918267e3acb7cfa9 data/legendblade/advancements/recipes/combat/foreverice.json
 eb817268d494c3bbd40c19296195fde8486a7935 data/legendblade/advancements/recipes/combat/foxex.json
 c504cd6294e52838f139083e67f65f724f677a4f data/legendblade/advancements/recipes/combat/foxex2.json
@@ -46,12 +51,14 @@ c9c7777e68187e94e26f5da4af0b0cda74ee861d data/legendblade/advancements/recipes/c
 184cff3073c2be93d86beebd1a4641e78cd52551 data/legendblade/advancements/recipes/combat/stickgodfox.json
 51ed411704b8fc6dc15c85d7331765ccbbeecd85 data/legendblade/advancements/recipes/combat/truebloodfox.json
 568013b4afca1d78e09a7388dc424eddd6b3a992 data/legendblade/advancements/recipes/combat/truegodfox.json
+4187ad97a26a8cc9fa05ced45c7eaf4ac1cda8a6 data/legendblade/advancements/recipes/combat/undragon.json
 4112222ec40091f1aff0cd3407c309e44aecdfc1 data/legendblade/advancements/recipes/combat/waterex.json
 7b34728fb41aea68c9928da62566a9d3630f3b4d data/legendblade/advancements/recipes/combat/whitegodfox.json
 9f13c36066c9b9b325ee0c9ae0c2eb9740a39660 data/legendblade/advancements/recipes/combat/wujiu.json
 2c331a07d24c6b35e6579cc7174ccf08a592bfd7 data/legendblade/advancements/recipes/combat/zangetsu.json
 fe05d9b2dd502545a9c453e5630066e0edd8dd6e data/legendblade/advancements/recipes/combat/zerogalaxy.json
 06aa2aca5272e98dda7b55ff16224f314500c59f data/legendblade/recipes/administrator.json
+74184dbc44abbe7d3295f0dd94076f6cd8187fb6 data/legendblade/recipes/allice.json
 fe66f07f35949869709e30bc67c3927fbb273c1c data/legendblade/recipes/amazedshine.json
 ce9dcf280c53d7d05fb531abf1f5eb497f85f563 data/legendblade/recipes/ark.json
 f636341a0d01e8412dffa171df197d84d18f7623 data/legendblade/recipes/asmodeus.json
@@ -63,7 +70,9 @@ ab0ff75c24c35932da3e663f1d3efc05b55a81f2 data/legendblade/recipes/belphegor.json
 445d3769acbf95bf51413a19283fa0cfa6e2ab12 data/legendblade/recipes/belphegorex.json
 8dd42080e920092e95714c4a764584931e966ae7 data/legendblade/recipes/blaze.json
 a579e4aa356564330381ea11c69c66530e9f0ef9 data/legendblade/recipes/bloodkatana.json
+e1b8017dca529939fcd388a910d5ec1d53314b35 data/legendblade/recipes/breakarm.json
 16a9fab5d293d2333823af86ab51535cb5c6641e data/legendblade/recipes/crimsoncherryex.json
+876da29b92444921442a8314c7ac6745f2aa9f90 data/legendblade/recipes/crowbar.json
 e590daf2d2e74ff7345d88c91f4231e0a9f9adff data/legendblade/recipes/demonbird.json
 9a753cffe1d0ea278711527d83099d9be8372205 data/legendblade/recipes/dragon_fire.json
 7fe74e70d8fd9efd8fb72d20834312dfa64a0d60 data/legendblade/recipes/dragon_ice.json
@@ -72,6 +81,8 @@ e590daf2d2e74ff7345d88c91f4231e0a9f9adff data/legendblade/recipes/demonbird.json
 08b674116b2aabaaa0451dfc6560bf1a40c8ec75 data/legendblade/recipes/evil.json
 8bdf652e16b13161fee1119f13d8c078067b3ebc data/legendblade/recipes/evilex.json
 eaf2730fb251c96735291d727e5ff3ba7cb3b12a data/legendblade/recipes/fireex.json
+f95fe5e3f0505aa813a8b4891f63131bdd9240a4 data/legendblade/recipes/fireiron.json
+232a3e76a38e39c7fa0704da34cc0ef0acd2e23d data/legendblade/recipes/fish.json
 5e66905eaa7ce65440e9f116fcd214defdb888fb data/legendblade/recipes/foreverice.json
 17d5bc0907f33161f5bb1da155ac623fb72c9fc2 data/legendblade/recipes/foxex.json
 5a69c1c243e2f03eed15401c129d6b4bc9b144b9 data/legendblade/recipes/foxex2.json
@@ -98,6 +109,7 @@ f4ed24b23767d1eb324f547bf6342337f964eee3 data/legendblade/recipes/sevensword.jso
 efe4e917b080fe416687d8e772a30005d6e59988 data/legendblade/recipes/stickgodfox.json
 c5b39e3b5eaf639fe667dab69faef4460b9e358b data/legendblade/recipes/truebloodfox.json
 2825904fb6aa6ee840d4eb6e57b79143bf11fa2a data/legendblade/recipes/truegodfox.json
+96bf716131ae26fb5abab0519601b7b598c9d36c data/legendblade/recipes/undragon.json
 706420ed726eb790f6f60a8c5cadb11542dec40d data/legendblade/recipes/waterex.json
 3883f3b6394e3fcb794258bd253507d9101866ff data/legendblade/recipes/whitegodfox.json
 2aeeb9a578c77482038516d361dcf00459abbb8c data/legendblade/recipes/wujiu.json

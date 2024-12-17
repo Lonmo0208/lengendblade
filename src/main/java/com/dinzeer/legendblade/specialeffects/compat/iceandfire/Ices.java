@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber
 public class Ices extends SpecialEffect {
     public Ices() {
-        super(30, false, false);
+        super(0, false, false);
     }
     @SubscribeEvent
     public static void ice(SlashBladeEvent.HitEvent event){

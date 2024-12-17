@@ -1,4 +1,4 @@
-package com.dinzeer.legendblade.mixin;
+package com.dinzeer.legendblade.mixins;
 
 
 

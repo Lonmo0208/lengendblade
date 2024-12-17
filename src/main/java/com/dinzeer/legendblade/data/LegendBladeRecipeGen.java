@@ -36,6 +36,22 @@ public class LegendBladeRecipeGen {
                 .define('A', SBItems.proudsoul)
                 .define('B', Items.ICE)
                 .save(pvd);
+        unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC,
+                LBModItems.dragon_gem, 1)::unlockedBy, Items.IRON_INGOT)
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', SBItems.proudsoul)
+                .define('B', Items.REDSTONE_BLOCK)
+                .save(pvd);
+        unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC,
+                LBModItems.water_gem, 1)::unlockedBy, Items.IRON_INGOT)
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', SBItems.proudsoul)
+                .define('B', Items.WATER_BUCKET)
+                .save(pvd);
     }
 
     public static <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, InventoryChangeTrigger.TriggerInstance, T> func, Item item) {

@@ -1,6 +1,7 @@
 package com.dinzeer.legendblade;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -36,12 +37,17 @@ public class Config
             .comment("seven sword kill or no kill")
             .comment("魔刀sa是否靠杀敌启动")
             .define("sevenbladeskill", true);
+    private static final ForgeConfigSpec.ConfigValue<Double> Soul_crystal = BUILDER
+            .comment("soul crystal loot")
+            .comment("魂缚晶的掉落要求血量（看基础值）")
+            .define("soul_crystal", 200.0);
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean Open_damege_fix;
     public static double damegeaddd;
     public static double damegeadddmaX;
     public static boolean sevenbladesKill;
+    public static double soul_crystal;
     private static boolean validateItemName(final Object obj)
     {
         return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(new ResourceLocation(itemName));
@@ -54,5 +60,6 @@ public class Config
         damegeaddd=damegeadd.get();
         damegeadddmaX=damegeaddmax.get();
         sevenbladesKill=sevenbladeskill.get();
+        soul_crystal=Soul_crystal.get();
     }
 }

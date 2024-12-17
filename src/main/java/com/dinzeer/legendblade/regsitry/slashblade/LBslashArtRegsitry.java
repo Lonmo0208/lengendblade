@@ -37,6 +37,7 @@ public class LBslashArtRegsitry {
     public static final RegistryObject<SlashArts> FrogGlaxy;
     public static final RegistryObject<SlashArts> SaveAll;
     public static final RegistryObject<SlashArts> Elbowstrike;
+    public static final RegistryObject<SlashArts> swordRain;
 
     static {
         PROWESS=SLASH_ARTS.register("prowess", () -> new SlashArts((e) ->
@@ -74,5 +75,6 @@ public class LBslashArtRegsitry {
         FrogGlaxy=SLASH_ARTS.register("frog_glaxy",() -> new SlashArts((e) ->LBComboRegsitryA.FrogGlaxy.getId()));
         SaveAll =SLASH_ARTS.register("save_all",() -> new SlashArts((e) ->LBComboRegsitryA.saveall.getId()));
         Elbowstrike=SLASH_ARTS.register("elbowstrike",() -> new SlashArts((e) ->LBComboRegsitryA.elbowstrike.getId()));
+        swordRain=SLASH_ARTS.register("swordrain",() -> new SlashArts((e) ->LBComboRegsitryA.swordRain.getId()));
     }
 }

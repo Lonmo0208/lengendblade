@@ -32,6 +32,7 @@ public class LBSpecialEffectsRegistry {
     public static final RegistryObject<SpecialEffect> WaveEdgeRiseUp;
     public static final RegistryObject<SpecialEffect> FragmentedEdge;
     public static final RegistryObject<SpecialEffect> bloodfox;
+    public static final RegistryObject<SpecialEffect> RainBow;
 
     public LBSpecialEffectsRegistry() {
     }
@@ -59,5 +60,6 @@ public class LBSpecialEffectsRegistry {
         TheShineSummonSword=REGISTRY_KEY2.register("theshine",TheShine::new);
         FragmentedEdge=REGISTRY_KEY2.register("fragmentededge", FragmentedEdge::new);
         bloodfox=REGISTRY_KEY2.register("bloodfox", Bloodfox::new);
+        RainBow=REGISTRY_KEY2.register("rainbow", com.dinzeer.legendblade.specialeffects.versiontwo.RainBow::new);
     }
 }

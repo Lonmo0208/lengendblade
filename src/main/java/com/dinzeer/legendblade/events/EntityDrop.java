@@ -1,5 +1,6 @@
 package com.dinzeer.legendblade.events;
 
+import com.dinzeer.legendblade.Config;
 import com.dinzeer.legendblade.regsitry.other.LBModItems;
 import com.dinzeer.legendblade.regsitry.slashblade.LBSpecialEffectsRegistry;
 import mods.flammpfeil.slashblade.registry.specialeffects.SpecialEffect;
@@ -159,5 +160,22 @@ public class EntityDrop {
                 }
             }
         }
+    }
+    @SubscribeEvent
+    public static void entityheal(LivingDropsEvent e){
+        LivingEntity entity = e.getEntity();
+        Level level = entity.level();
+            if (e.getSource().getDirectEntity() instanceof Player player){
+                int lv=player.experienceLevel;
+                if(level.isClientSide)return;
+                if (entity.getAttributeBaseValue(Attributes.MAX_HEALTH) >= Config.soul_crystal){
+
+                    ItemStack p_32005_ = new ItemStack(LBModItems.soul_crystal.get());
+                    p_32005_.setCount(1);
+                    level.addFreshEntity(new ItemEntity(level,entity.getX(),entity.getY()+1,entity.getZ()
+                            , p_32005_));
+                }
+            }
+
     }
 }

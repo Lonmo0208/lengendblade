@@ -23,7 +23,7 @@
   },
   "render": {
     "model": "legendblade:model/lostblade/tensazangetsu/model.obj",
-    "summon_sword_color": 16766464,
+    "summon_sword_color": 16711680,
     "texture": "legendblade:model/lostblade/tensazangetsu/texture.png"
   }
 }

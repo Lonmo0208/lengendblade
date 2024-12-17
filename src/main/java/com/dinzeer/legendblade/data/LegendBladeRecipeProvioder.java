@@ -22,6 +22,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
+import twilightforest.init.TFItems;
 
 import java.util.function.Consumer;
 
@@ -984,6 +985,120 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
                 .define('D',LBModItems.icegem)
                 .define('E',Items.ICE)
                 .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.crowbar.location())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("DED")
+                .define('A', Items.REDSTONE_BLOCK)
+                .define('B', SBItems.proudsoul_sphere)
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeAddonBuiltInRegistry.FLUORESCENT_BAR.location())
+                                .proudSoul(1500)
+                                .refineCount(10)
+                                .killCount(1000)
+                                .addEnchantment(new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3))
+                                .build()
+                ))
+                .define('D',Items.OBSIDIAN)
+                .define('E',Items.IRON_BLOCK)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.fish.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("AEA")
+                .define('A', Items.WATER_BUCKET)
+                .define('B', SBItems.proudsoul_sphere)
+                .define('C',Items.ICE)
+                .define('D',SlashBladeIngredient.of(
+
+                        SBItems.slashblade, RequestDefinition.Builder.newInstance()
+                                .proudSoul(1500)
+                                .refineCount(3)
+                                .killCount(300)
+                                .build()
+                ))
+                .define('E',LBModItems.water_gem)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.undragon.location())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("AEA")
+                .define('A', LBModItems.dragon_gem)
+                .define('B', SBItems.proudsoul_sphere)
+                .define('C',SlashBladeIngredient.of(
+
+                        SBItems.slashblade_silverbamboo, RequestDefinition.Builder.newInstance()
+                                .proudSoul(1500)
+                                .refineCount(20)
+                                .killCount(3000)
+                                .build()
+                ))
+                .define('D',SlashBladeIngredient.of(
+
+                        SBItems.slashblade, RequestDefinition.Builder.newInstance()
+                                .proudSoul(500000)
+                                .refineCount(30)
+                                .killCount(10000)
+                                .build()
+                ))
+                .define('E',Items.DRAGON_EGG)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.breakarm.location())
+                .pattern("ABC")
+                .pattern("DED")
+                .pattern("CFA")
+                .define('A', TFItems.KNIGHTMETAL_SWORD.get())
+                .define('B',  TFItems.KNIGHT_PHANTOM_TROPHY.get())
+                .define('C', TFItems.KNIGHTMETAL_AXE.get())
+                .define('D',TFItems.KNIGHTMETAL_PICKAXE.get())
+                .define('E',SlashBladeIngredient.of(
+
+                        SBItems.slashblade, RequestDefinition.Builder.newInstance()
+                                .refineCount(30)
+                                .killCount(3000)
+                                .build()
+                ))
+                .define('F',TFItems.BLOCK_AND_CHAIN.get())
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.fireiron.location())
+                .pattern("ABC")
+                .pattern("DED")
+                .pattern("CFA")
+                .define('A', TFItems.FIERY_SWORD.get())
+                .define('B',  TFItems.HYDRA_TROPHY.get())
+                .define('C', TFItems.FIERY_PICKAXE.get())
+                .define('D',TFItems.FIERY_INGOT.get())
+                .define('E',SlashBladeIngredient.of(
+
+                        SBItems.slashblade, RequestDefinition.Builder.newInstance()
+                                .refineCount(10)
+                                .killCount(1000)
+                                .build()
+                ))
+                .define('F',TFItems.FIERY_INGOT.get())
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.allice.location())
+                .pattern("ABC")
+                .pattern("DED")
+                .pattern("CFA")
+                .define('A', TFItems.ICE_SWORD.get())
+                .define('B',  TFItems.SNOW_QUEEN_TROPHY.get())
+                .define('C', TFItems.ICE_BOMB.get())
+                .define('D',TFItems.KNIGHTMETAL_INGOT.get())
+                .define('E',SlashBladeIngredient.of(
+
+                        SBItems.slashblade, RequestDefinition.Builder.newInstance()
+                                .refineCount(20)
+                                .killCount(2000)
+                                .build()
+                ))
+                .define('F',TFItems.ICE_BOW.get())
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+
+
+
 
     }
 

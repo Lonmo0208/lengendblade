@@ -36,7 +36,7 @@ public class SaveAll {
 
             Vec3 playerPos = playerIn.position(); // 获取玩家当前位置
             float playerYaw = Mth.wrapDegrees(playerIn.getYRot()); // 获取玩家朝向（Y轴旋转）
-            for (int z = 0; z < 4; z++){
+
             for (int i = 0; i < count; i++) {
                 // 计算每个实体的角度（度）
                 double angleDeg = 360.0 / count * i;
@@ -76,7 +76,7 @@ public class SaveAll {
                 worldIn.addFreshEntity(ss);
                 playerIn.playSound(SoundEvents.CHORUS_FRUIT_TELEPORT, 0.2F, 1.45F);
             }
-            }
+
         });
     }
 //

@@ -59,6 +59,16 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("item.legendblade.eiily","eiily!");
         REGISTRATE.addRawLang("item.legendblade.zangetsu","zangetsu");
         REGISTRATE.addRawLang("item.legendblade.frog","ice frog");
+        REGISTRATE.addRawLang("item.legendblade.fish","fish");
+        REGISTRATE.addRawLang("item.legendblade.crowbar","crowbar");
+        REGISTRATE.addRawLang("item.legendblade.undragon","undragon");
+
+        REGISTRATE.addRawLang("item.legendblade.tensazangetsu","tensazangetsu");
+        REGISTRATE.addRawLang("item.legendblade.tensazangetsured","tensazangetsu red");
+        REGISTRATE.addRawLang("item.legendblade.breakarm","break arm");
+        REGISTRATE.addRawLang("item.legendblade.allice","all ice");
+        REGISTRATE.addRawLang("item.legendblade.fireiron","fire iron");
+
         REGISTRATE.addRawLang("item_group.legendblade.legendbladeitem","lengend blade item");
         REGISTRATE.addRawLang("se.legendblade.bad_blood","bad blood");
         REGISTRATE.addRawLang("se.legendblade.blade_attack","blade attack");
@@ -91,6 +101,10 @@ public class LangRegsitry {
         REGISTRATE.addRawLang( "se.legendblade.icfbreaker","ice and fire breaker");
         REGISTRATE.addRawLang( "se.legendblade.bloodfox","blood fox");
 
+        REGISTRATE.addRawLang("se.legendblade.fireiron","fire iron!");
+        REGISTRATE.addRawLang( "se.legendblade.breakarm","break arm");
+        REGISTRATE.addRawLang( "se.legendblade.allice","all ice");
+
         REGISTRATE.addRawLang("slash_art.legendblade.heart_slash","all slash");
         REGISTRATE.addRawLang("slash_art.legendblade.heart_slashc","super attack");
         REGISTRATE.addRawLang("slash_art.legendblade.monster_power","monster power");
@@ -122,6 +136,9 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("slash_art.legendblade.hosswords","hos summon sword");
         REGISTRATE.addRawLang("slash_art.legendblade.moondrive","moondrive");
         REGISTRATE.addRawLang("slash_art.legendblade.frog_glaxy","frog glaxy");
+        REGISTRATE.addRawLang("slash_art.legendblade.save_all","save_all");
+        REGISTRATE.addRawLang("slash_art.legendblade.elbowstrike","elbowstrike");
+        REGISTRATE.addRawLang("slash_art.legendblade.swordrain","swordrain");
 
         REGISTRATE.addRawLang("enchantment.level.15","XV");
         REGISTRATE.addRawLang("enchantment.level.10","X");
@@ -137,5 +154,6 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("se.legendblade.tooltip.sevensowrd.2","you should kill one wither on open this blade");
         REGISTRATE.addRawLang("se.legendblade.tooltip.sevensowrd.3","ON");
         REGISTRATE.addRawLang("se.legendblade.tooltip.sevensowrd.4","That s Roll!");
+
     }
 }

@@ -30,7 +30,8 @@ public class MoonDriveEntity extends EntityDrive {
             KnockBacks.cancel.action.accept((LivingEntity)entity);
             StunManager.setStun((LivingEntity)entity);
         }
-        this.level().explode(this, this.getX(), this.getY(), this.getZ(), 1.0F, Level.ExplosionInteraction.NONE);
+        this.level().explode(this, this.getX(), this.getY(), this.getZ(), 4, Level.ExplosionInteraction.NONE);
+
 
     }
 

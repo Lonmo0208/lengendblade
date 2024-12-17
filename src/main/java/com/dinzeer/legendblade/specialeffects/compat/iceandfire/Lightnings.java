@@ -23,7 +23,7 @@ import javax.swing.text.html.HTMLDocument;
 @Mod.EventBusSubscriber
 public class Lightnings extends SpecialEffect {
     public Lightnings() {
-        super(30,false,false);
+        super(0,false,false);
     }
     @SubscribeEvent
     public static void ice(SlashBladeEvent.HitEvent event){

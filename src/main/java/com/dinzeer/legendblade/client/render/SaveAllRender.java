@@ -56,7 +56,8 @@ public class SaveAllRender<T extends EntityAbstractSummonedSword> extends Entity
             }
             WavefrontObject model = BladeModelManager.getInstance().getModel(MODEL);
             BladeRenderState.setCol(entity.getColor(), false);
-            BladeRenderState.renderOverridedLuminous(ItemStack.EMPTY, model, "base", TEXTURE, matrixStack, bufferIn, packedLightIn);
+            BladeRenderState.renderOverridedLuminous(ItemStack.EMPTY, model, "base", TEXTURE, matrixStack, bufferIn,
+                    packedLightIn);
         } catch (Throwable var13) {
             if (msac != null) {
                 try {

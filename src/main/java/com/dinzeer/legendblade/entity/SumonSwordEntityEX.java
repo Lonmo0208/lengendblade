@@ -187,6 +187,16 @@ public class SumonSwordEntityEX extends EntityAbstractSummonedSword {
             setPos(pos);
             setRot(-this.getVehicle().getYRot(), -this.getVehicle().getXRot());
         }
+    protected void onHitEntity(EntityHitResult p_213868_1_) {
+        Entity targetEntity = p_213868_1_.getEntity();
+        if (targetEntity instanceof LivingEntity a) {
+            KnockBacks.cancel.action.accept((LivingEntity)targetEntity);
+            StunManager.setStun((LivingEntity)targetEntity);
+            a.invulnerableTime=0;
+        }
+
+        super.onHitEntity(p_213868_1_);
+    }
 
 
 

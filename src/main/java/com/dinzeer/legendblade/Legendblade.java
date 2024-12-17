@@ -6,11 +6,9 @@ import com.dinzeer.legendblade.effect.SumeruEffect;
 import com.dinzeer.legendblade.entity.DemonBladeFragments;
 import com.dinzeer.legendblade.network.DemonBladeMessage;
 import com.dinzeer.legendblade.network.DemonBladeMessageA;
-import com.dinzeer.legendblade.regsitry.compat.ICFEntiyRegsitry;
-import com.dinzeer.legendblade.regsitry.compat.ICFLBcompatRegsitry;
+import com.dinzeer.legendblade.regsitry.compat.*;
 import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
 import com.dinzeer.legendblade.regsitry.other.LBSounds;
-import com.dinzeer.legendblade.regsitry.compat.L2LBcompatRegsitry;
 import com.dinzeer.legendblade.regsitry.other.LangRegsitry;
 import com.dinzeer.legendblade.regsitry.slashblade.LBComboRegsitry;
 import com.dinzeer.legendblade.regsitry.slashblade.LBComboRegsitryA;
@@ -21,7 +19,6 @@ import com.dinzeer.legendblade.effect.HitDamageEffect;
 import com.dinzeer.legendblade.effect.StrengthBoost;
 import com.dinzeer.legendblade.regsitry.other.LBModItems;
 import com.dinzeer.legendblade.regsitry.creativetab.ItemTab;
-import com.dinzeer.legendblade.regsitry.compat.SBALBSlashArtRegsitry;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.mojang.logging.LogUtils;
 import com.tterrag.registrate.Registrate;
@@ -42,6 +39,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
+import twilightforest.TwilightForestMod;
 
 
 @Mod(Legendblade.MODID)
@@ -98,6 +96,9 @@ public class Legendblade {
         ItemTab.REGISTRY.register(modEventBus);
         if (ModList.get().isLoaded(SlashBladeAddon.MODID)){
             SBALBSlashArtRegsitry.register(modEventBus);
+        }
+        if (ModList.get().isLoaded(TwilightForestMod.ID)){
+            TFLBcompat.register(modEventBus);
         }
         int id = 0;
         INSTANCE.messageBuilder(DashMessage.class, id++)

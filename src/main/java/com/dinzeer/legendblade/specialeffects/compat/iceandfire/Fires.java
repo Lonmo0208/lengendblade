@@ -17,7 +17,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber
 public class Fires extends SpecialEffect {
     public Fires() {
-        super(30, false, false);
+        super(0, false, false);
         //TODO : 写什么?
     }
     @SubscribeEvent
