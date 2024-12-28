@@ -1,0 +1,46 @@
+{
+  "type": "slashblade:shaped_blade",
+  "blade": "legendblade:phantomofgods",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "slashblade:proudsoul_ingot"
+    },
+    "B": {
+      "item": "minecraft:dragon_egg"
+    },
+    "C": {
+      "type": "slashblade:blade",
+      "item": "slashblade:slashblade",
+      "request": {
+        "enchantments": [
+          {
+            "id": "minecraft:unbreaking",
+            "lvl": 4
+          }
+        ],
+        "kill": 10000,
+        "name": "legendblade:desireblade",
+        "proud_soul": 4200,
+        "refine": 17
+      }
+    },
+    "D": {
+      "type": "slashblade:blade",
+      "item": "slashblade:slashblade",
+      "request": {
+        "name": "legendblade:wonderblade",
+        "refine": 50
+      }
+    }
+  },
+  "pattern": [
+    "ABA",
+    "ACA",
+    "ADA"
+  ],
+  "result": {
+    "item": "slashblade:slashblade"
+  },
+  "show_notification": true
+}
