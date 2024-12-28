@@ -1,6 +1,8 @@
-// 1.20.1	2024-12-18T01:10:54.4343428	Registrate Provider for legendblade [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Tags (enchantments), Tags (mob_effects), Tags (traits), Patchouli Provider]
-27ea62046b404200b465eeec8db37e823a4a6078 assets/legendblade/lang/en_ud.json
-f6602f43a9ce379bd9cf82e5a3e082e43876408b assets/legendblade/lang/en_us.json
+// 1.20.1	2024-12-27T22:59:29.6558319	Registrate Provider for legendblade [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Tags (enchantments), Tags (mob_effects), Tags (traits), Patchouli Provider]
+88cf0ca6cfca7c8b46b5e2817af8bce5776a3ba8 assets/legendblade/blockstates/wonder_reactor.json
+afed0e803b8b98ffc733951a0128fbea26d77103 assets/legendblade/lang/en_ud.json
+4616128887527745f34c26722fbc5588eaa0f05c assets/legendblade/lang/en_us.json
+f1913334c2bfcf11e7ef9271a8fca2128f7dca87 assets/legendblade/models/block/wonder_reactor.json
 9e09c5f4757570fc342efd0b577d28b87ab85a9d assets/legendblade/models/item/acedia.json
 449459923874b6e9a5bd84a83fe9aa73eaeda5bd assets/legendblade/models/item/avaritia.json
 e9b2e93798ac18360871e1ace16f5d83a3f0d3db assets/legendblade/models/item/blood_tachi.json
@@ -27,11 +29,19 @@ f96bf3cb659d625e181c4e6cdadb853348acc701 assets/legendblade/models/item/soul_cry
 d7fa07cf49e53e5de8b68e8c59dc56260ff6caad assets/legendblade/models/item/superbia.json
 41a3a1974271325440037ad8b4d9432b643e8c94 assets/legendblade/models/item/tearfluorite.json
 2dd256df5db793d803c22a1a2886d73fc52f5266 assets/legendblade/models/item/water_gem.json
+807e44a6c5628aa6cd6b82cb8c95eda0afc8a938 assets/legendblade/models/item/wonder_reactor.json
 b195d03664aa241b05dd588ce6e57140901e3d4a data/legendblade/advancements/recipes/misc/dragon_gem.json
 3cc5b7f1f0769ee7ad41e27833c326f4031ddd49 data/legendblade/advancements/recipes/misc/ice_gem.json
 993316f62cf444c6526130c0ab24795fe421e80f data/legendblade/advancements/recipes/misc/saligiaex.json
 a49a0c44e2552f65af5895ef2b11f4149fe1f980 data/legendblade/advancements/recipes/misc/water_gem.json
+3259fa5ba4c996712256e11562eb839d6228afce data/legendblade/advancements/recipes/misc/wonder_reactor.json
+bfe00b7894c44298f201e3a8af1f5b75d80a3842 data/legendblade/loot_tables/blocks/wonder_reactor.json
 91fc9e13cf5b1f5cd130e9ec973ea05d92c58862 data/legendblade/recipes/dragon_gem.json
 7a767d1759b53f680a9a7cef2985be8541056197 data/legendblade/recipes/ice_gem.json
 aba4190d924a767d03f9dfda202ae810cf6be4e2 data/legendblade/recipes/saligiaex.json
 9249f965a47a4325e6c28de3952fc1f6ef858535 data/legendblade/recipes/water_gem.json
+e7a966983bd76c1155191c9f5a031048f3f1e684 data/legendblade/recipes/wonder_reactor.json
+1598d6fd6c7f973544580391e2e5b258d24af432 data/minecraft/advancements/recipes/misc/dragon_egg.json
+e9ec6ad6d7cad2795287bfeb1a2a2cc953713e2c data/minecraft/recipes/dragon_egg.json
+fa51fa59de09fdc6876f8898256d72b04f0109a7 data/minecraft/tags/blocks/mineable/pickaxe.json
+fa51fa59de09fdc6876f8898256d72b04f0109a7 data/minecraft/tags/blocks/needs_diamond_tool.json

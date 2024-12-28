@@ -28,7 +28,7 @@ public class SummonSword extends SpecialEffect {
             int level = player.experienceLevel;
             if (SpecialEffect.isEffective(LBSpecialEffectsRegistry.SummonSword.get(), level)) {
 
-                    SommonSwordSommon.doSlash(player,16777215,false, 1,3F,5,10);
+                    SommonSwordSommon.doSlash(player,16777215,false, 3,3F,5,10);
 
             }
         }

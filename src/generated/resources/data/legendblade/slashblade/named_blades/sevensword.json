@@ -15,7 +15,8 @@
     "max_damage": 80,
     "slash_art": "legendblade:sevenbladeslash",
     "special_effects": [
-      "legendblade:fragmentededge"
+      "legendblade:fragmentededge",
+      "legendblade:eternal"
     ],
     "sword_type": [
       "bewitched"

@@ -73,5 +73,5 @@ public class SMoveUtil {
         DashMessage message = new DashMessage( dy, dashDistance);
         if (player.level().isClientSide)return;
         Legendblade.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) player), message);
-    }//6
+    }//
 }

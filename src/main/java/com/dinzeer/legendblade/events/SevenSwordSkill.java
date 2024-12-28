@@ -78,7 +78,9 @@ public class SevenSwordSkill {
             CompoundTag tag = stack.getTag();
             if (stack.getTag().contains("UnLock"))return;
             if (SlashbladeUtils.getStringNBT(tag, "translationKey").equals("item.legendblade.sevensword")) {
+
                 stack.getCapability(ItemSlashBlade.BLADESTATE).orElse(null).setTexture(Legendblade.prefix("model/sevensword/texture0.png"));
+
                 stack.getTag().putString("translationKey", "item.legendblade.sevensword_unlock");
                 SlashbladeUtils.setStringNBT(stack.getTag(), "TextureName", "legendblade:model/sevensword/texture0.png");
                 tag.putBoolean("UnLock",true);

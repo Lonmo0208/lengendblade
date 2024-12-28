@@ -7,9 +7,7 @@ import com.dinzeer.legendblade.entity.DemonBladeFragments;
 import com.dinzeer.legendblade.network.DemonBladeMessage;
 import com.dinzeer.legendblade.network.DemonBladeMessageA;
 import com.dinzeer.legendblade.regsitry.compat.*;
-import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
-import com.dinzeer.legendblade.regsitry.other.LBSounds;
-import com.dinzeer.legendblade.regsitry.other.LangRegsitry;
+import com.dinzeer.legendblade.regsitry.other.*;
 import com.dinzeer.legendblade.regsitry.slashblade.LBComboRegsitry;
 import com.dinzeer.legendblade.regsitry.slashblade.LBComboRegsitryA;
 import com.dinzeer.legendblade.regsitry.slashblade.LBSpecialEffectsRegistry;
@@ -82,6 +80,7 @@ public class Legendblade {
         EffectAbout.REGISTRY.register(modEventBus);
         LBslashArtRegsitry.SLASH_ARTS.register(modEventBus);
         LBModItems.register();
+        LBModBlocks.register();
         if (ModList.get().isLoaded(IceAndFire.MODID)){
 
             new ICFEntiyRegsitry().register(modEventBus);

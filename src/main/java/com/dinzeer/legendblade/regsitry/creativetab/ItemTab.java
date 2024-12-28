@@ -1,5 +1,6 @@
 package com.dinzeer.legendblade.regsitry.creativetab;
 
+import com.dinzeer.legendblade.regsitry.other.LBModBlocks;
 import com.dinzeer.legendblade.regsitry.other.LBModItems;
 
 import net.minecraft.core.registries.Registries;
@@ -18,7 +19,8 @@ public class ItemTab {
     public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
     public static final RegistryObject<CreativeModeTab> LBITEM = REGISTRY.register("legendblade",
             () -> CreativeModeTab.builder().title(Component.translatable("item_group.legendblade.legendbladeitem")).icon(() -> new ItemStack(
-                            LBModItems.lightpinkjadeofuda)).displayItems((parameters, tabData) -> {
+                            LBModBlocks.wonder_reactor.get())).displayItems((parameters, tabData) -> {
+                        tabData.accept( LBModBlocks.wonder_reactor.get());
                     })
 
                     .build());

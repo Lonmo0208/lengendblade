@@ -6,17 +6,24 @@
     },
     {
       "id": "minecraft:sharpness",
-      "lvl": 3
+      "lvl": 5
     },
     {
       "id": "minecraft:smite",
-      "lvl": 5
+      "lvl": 10
+    },
+    {
+      "id": "minecraft:fire_aspect"
     }
   ],
   "name": "legendblade:tensazangetsured",
   "properties": {
-    "attack_base": 17.0,
+    "attack_base": 25.0,
     "max_damage": 80,
+    "slash_art": "legendblade:exmoondrive",
+    "special_effects": [
+      "legendblade:eternal"
+    ],
     "sword_type": [
       "bewitched"
     ]

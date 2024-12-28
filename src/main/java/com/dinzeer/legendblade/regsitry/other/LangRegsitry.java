@@ -62,13 +62,23 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("item.legendblade.fish","fish");
         REGISTRATE.addRawLang("item.legendblade.crowbar","crowbar");
         REGISTRATE.addRawLang("item.legendblade.undragon","undragon");
-
+        REGISTRATE.addRawLang("item.legendblade.sangeex","sangeex");
+        REGISTRATE.addRawLang("item.legendblade.nobleblade","noble blade");
+        REGISTRATE.addRawLang("item.legendblade.itan","itan");
+        REGISTRATE.addRawLang("item.legendblade.phantomofgods","phantomofgods");
+        REGISTRATE.addRawLang("item.legendblade.starriverblade","star river blade");
+        REGISTRATE.addRawLang("item.legendblade.shallot","shallot");
+        REGISTRATE.addRawLang("item.legendblade.desireblade","desire blade");
+        REGISTRATE.addRawLang("item.legendblade.wonderblade","wonder bladeX");
         REGISTRATE.addRawLang("item.legendblade.tensazangetsu","tensazangetsu");
         REGISTRATE.addRawLang("item.legendblade.tensazangetsured","tensazangetsu red");
         REGISTRATE.addRawLang("item.legendblade.breakarm","break arm");
         REGISTRATE.addRawLang("item.legendblade.allice","all ice");
         REGISTRATE.addRawLang("item.legendblade.fireiron","fire iron");
-
+        REGISTRATE.addRawLang("item.legendblade.tensazangetsunomoon","tensazangetsu nomoon");
+        REGISTRATE.addRawLang("item.legendblade.mrke","ke‘s blade");
+        REGISTRATE.addRawLang("item.legendblade.hu","hutao‘s blade");
+        REGISTRATE.addRawLang("item.legendblade.voidsword","void sword");
         REGISTRATE.addRawLang("item_group.legendblade.legendbladeitem","lengend blade item");
         REGISTRATE.addRawLang("se.legendblade.bad_blood","bad blood");
         REGISTRATE.addRawLang("se.legendblade.blade_attack","blade attack");
@@ -100,10 +110,20 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("se.legendblade.ice","ice!");
         REGISTRATE.addRawLang( "se.legendblade.icfbreaker","ice and fire breaker");
         REGISTRATE.addRawLang( "se.legendblade.bloodfox","blood fox");
+        REGISTRATE.addRawLang( "se.legendblade.voidmaker","void maker");
 
         REGISTRATE.addRawLang("se.legendblade.fireiron","fire iron!");
         REGISTRATE.addRawLang( "se.legendblade.breakarm","break arm");
         REGISTRATE.addRawLang( "se.legendblade.allice","all ice");
+        REGISTRATE.addRawLang("se.legendblade.eternal","eternal");
+        REGISTRATE.addRawLang( "se.legendblade.need","need");
+        REGISTRATE.addRawLang( "se.legendblade.maxsky","maxsky");
+        REGISTRATE.addRawLang( "se.legendblade.rainbow","rainbow");
+        REGISTRATE.addRawLang( "se.legendblade.shinening","shinening");
+        REGISTRATE.addRawLang( "se.legendblade.darkgod","darkgod");
+        REGISTRATE.addRawLang( "se.legendblade.zain","zain");
+        REGISTRATE.addRawLang( "se.legendblade.endurancetower","endurancetower");
+        REGISTRATE.addRawLang( "se.legendblade.sannight","san night");
 
         REGISTRATE.addRawLang("slash_art.legendblade.heart_slash","all slash");
         REGISTRATE.addRawLang("slash_art.legendblade.heart_slashc","super attack");
@@ -140,8 +160,15 @@ public class LangRegsitry {
         REGISTRATE.addRawLang("slash_art.legendblade.elbowstrike","elbowstrike");
         REGISTRATE.addRawLang("slash_art.legendblade.swordrain","swordrain");
 
+        REGISTRATE.addRawLang("slash_art.legendblade.exmoondrive","ex moondrive");
+        REGISTRATE.addRawLang("slash_art.legendblade.lastmoondrive","last moondrive");
+        REGISTRATE.addRawLang("slash_art.legendblade.sommon_sword_sommonex","sommon sword sommonex");
+        REGISTRATE.addRawLang( "slash_art.legendblade.sannight","san night");
+
         REGISTRATE.addRawLang("enchantment.level.15","XV");
         REGISTRATE.addRawLang("enchantment.level.10","X");
+        REGISTRATE.addRawLang("enchantment.level.0","128");
+        REGISTRATE.addRawLang("enchantment.level.128","128");
         REGISTRATE.addRawLang("effect.legendblade.hit_damage","hit damage");
         REGISTRATE.addRawLang("effect.legendblade.strength_damage","strength damage");
         REGISTRATE.addRawLang("effect.legendblade.sumeru","sumeru");

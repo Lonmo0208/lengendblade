@@ -47,7 +47,7 @@ public class Bloodthirsty extends SpecialEffect {
             Player player = (Player)event.getUser();
             int level = player.experienceLevel;
             if (SpecialEffect.isEffective(LBSpecialEffectsRegistry.Bloodthirsty.get(), level)) {
-               player.heal(4);
+               player.heal(10);
             }
         }
 

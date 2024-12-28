@@ -26,9 +26,10 @@ public class MoonDriveEntity extends EntityDrive {
         if (entity.isOnFire() && entity.isAlive()) {
             entity.extinguishFire();
         }
-        if (entity instanceof LivingEntity) {
+        if (entity instanceof LivingEntity a) {
             KnockBacks.cancel.action.accept((LivingEntity)entity);
             StunManager.setStun((LivingEntity)entity);
+            a.invulnerableTime=0;
         }
         this.level().explode(this, this.getX(), this.getY(), this.getZ(), 4, Level.ExplosionInteraction.NONE);
 

@@ -7,7 +7,7 @@
   ],
   "name": "legendblade:zhuzi",
   "properties": {
-    "attack_base": 13.0,
+    "attack_base": 8.0,
     "max_damage": 80,
     "sword_type": [
       "bewitched"

@@ -9,6 +9,8 @@ import mods.flammpfeil.slashblade.client.renderer.model.BladeModelManager;
 import mods.flammpfeil.slashblade.client.renderer.model.obj.WavefrontObject;
 import mods.flammpfeil.slashblade.client.renderer.util.BladeRenderState;
 import mods.flammpfeil.slashblade.client.renderer.util.MSAutoCloser;
+import mods.flammpfeil.slashblade.entity.EntityDrive;
+import mods.flammpfeil.slashblade.slasharts.Drive;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -22,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 
 @OnlyIn(Dist.CLIENT)
-public class MoonDriveRenderer<T extends MoonDriveEntity> extends EntityRenderer<T> {
+public class MoonDriveRenderer<T extends EntityDrive> extends EntityRenderer<T> {
     private static final ResourceLocation TEXTURE = Legendblade.prefix("model/util/ss.png");
     private static final ResourceLocation MODEL = Legendblade.prefix("model/util/moondrive.obj");
 

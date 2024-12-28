@@ -3,9 +3,12 @@ package com.dinzeer.legendblade.regsitry.slashblade;
 import com.dinzeer.legendblade.specialeffects.godfox.Blessing;
 import com.dinzeer.legendblade.specialeffects.versionone.*;
 import com.dinzeer.legendblade.specialeffects.versiontwo.Bloodfox;
+import com.dinzeer.legendblade.specialeffects.godfox.*;
+import com.dinzeer.legendblade.specialeffects.heartblade.*;
 import mods.flammpfeil.slashblade.registry.specialeffects.SpecialEffect;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import com.dinzeer.legendblade.specialeffects.versiontwo.*;
 
 import static com.dinzeer.legendblade.Legendblade.MODID;
 
@@ -33,7 +36,15 @@ public class LBSpecialEffectsRegistry {
     public static final RegistryObject<SpecialEffect> FragmentedEdge;
     public static final RegistryObject<SpecialEffect> bloodfox;
     public static final RegistryObject<SpecialEffect> RainBow;
-
+    public static final RegistryObject<SpecialEffect> Eternal;
+    public static final RegistryObject<SpecialEffect> Need;
+    public static final RegistryObject<SpecialEffect> MaxSky;
+    public static final RegistryObject<SpecialEffect> Shinening;
+    public static final RegistryObject<SpecialEffect> DarkGod;
+    public static final RegistryObject<SpecialEffect> Zain;
+    public static final RegistryObject<SpecialEffect> EnduranceTower;
+    public static final RegistryObject<SpecialEffect> SanNight;
+    public static final RegistryObject<SpecialEffect> VoidMaker;
     public LBSpecialEffectsRegistry() {
     }
 
@@ -46,12 +57,12 @@ public class LBSpecialEffectsRegistry {
         poison=REGISTRY_KEY2.register("poison", Poison::new);
         Feastful=REGISTRY_KEY2.register("feastful", Feastful::new);
         Shackles=REGISTRY_KEY2.register("shackles", Shackles::new);
-        Resentment=REGISTRY_KEY2.register("resentment", com.dinzeer.legendblade.specialeffects.versionone.Resentment::new);
+        Resentment=REGISTRY_KEY2.register("resentment", Resentment::new);
         Suppress=REGISTRY_KEY2.register("suppress", Suppress::new);
         Endless=REGISTRY_KEY2.register("endless", Endless::new);
-        Bloodthirsty=REGISTRY_KEY2.register("bloodthirsty", com.dinzeer.legendblade.specialeffects.versionone.Bloodthirsty::new);
-        BlessingSummonSword=REGISTRY_KEY2.register("blessingsummonsword", com.dinzeer.legendblade.specialeffects.godfox.BlessingSummonSword::new);
-        SummonSword=REGISTRY_KEY2.register("summonsword", com.dinzeer.legendblade.specialeffects.versionone.SummonSword::new);
+        Bloodthirsty=REGISTRY_KEY2.register("bloodthirsty", Bloodthirsty::new);
+        BlessingSummonSword=REGISTRY_KEY2.register("blessingsummonsword",BlessingSummonSword::new);
+        SummonSword=REGISTRY_KEY2.register("summonsword", SummonSword::new);
         FoxBlessing=REGISTRY_KEY2.register("foxbling", FoxBlessing::new);
         Liuli=REGISTRY_KEY2.register("liuli", Liuli::new);
         Liulione=REGISTRY_KEY2.register("liulione", Liulione::new);
@@ -60,6 +71,15 @@ public class LBSpecialEffectsRegistry {
         TheShineSummonSword=REGISTRY_KEY2.register("theshine",TheShine::new);
         FragmentedEdge=REGISTRY_KEY2.register("fragmentededge", FragmentedEdge::new);
         bloodfox=REGISTRY_KEY2.register("bloodfox", Bloodfox::new);
-        RainBow=REGISTRY_KEY2.register("rainbow", com.dinzeer.legendblade.specialeffects.versiontwo.RainBow::new);
+        RainBow=REGISTRY_KEY2.register("rainbow", RainBow::new);
+        Eternal=REGISTRY_KEY2.register("eternal", Eternal::new);
+        Need=REGISTRY_KEY2.register("need", Need::new);
+        MaxSky=REGISTRY_KEY2.register("maxsky", MaxSky::new);
+        Shinening=REGISTRY_KEY2.register("shinening", Shinening::new);
+        DarkGod=REGISTRY_KEY2.register("darkgod",DarkGod::new);
+        Zain=REGISTRY_KEY2.register("zain",Zain::new);
+        EnduranceTower=REGISTRY_KEY2.register("endurancetower", EnduranceTower::new);
+        SanNight=REGISTRY_KEY2.register("sannight",SanNight::new);
+        VoidMaker=REGISTRY_KEY2.register("voidmaker",VoidMaker::new);
     }
 }

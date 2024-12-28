@@ -1,5 +1,6 @@
 package com.dinzeer.legendblade.data;
 
+import com.dinzeer.legendblade.regsitry.other.LBModBlocks;
 import com.dinzeer.legendblade.regsitry.other.LBModItems;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
@@ -51,6 +52,24 @@ public class LegendBladeRecipeGen {
                 .pattern(" A ")
                 .define('A', SBItems.proudsoul)
                 .define('B', Items.WATER_BUCKET)
+                .save(pvd);
+        unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC,
+                LBModBlocks.wonder_reactor.get(), 1)::unlockedBy, Items.IRON_INGOT)
+                .pattern("AAA")
+                .pattern("BCB")
+                .pattern("AAA")
+                .define('A', SBItems.proudsoul_ingot)
+                .define('B', Items.LAPIS_BLOCK)
+                .define('C', Items.CLOCK)
+                .save(pvd);
+        unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC,
+                Items.DRAGON_EGG, 1)::unlockedBy, Items.IRON_INGOT)
+                .pattern("ACA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', Items.DIAMOND)
+                .define('B', Items.DRAGON_HEAD)
+                .define('C', Items.NETHER_STAR)
                 .save(pvd);
     }
 

@@ -27,7 +27,7 @@ public class PhantomThrust {
         }
 
 
-    public static void doSlash(LivingEntity playerIn, float speed,int tyr) {
+    public static void doThrust(LivingEntity playerIn, float speed) {
 
         SMoveUtil.sendDashMessage((Player) playerIn,0,speed);
 

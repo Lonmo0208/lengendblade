@@ -10,7 +10,7 @@
       "type": "slashblade:blade",
       "item": "slashblade:slashblade",
       "request": {
-        "kill": 10000,
+        "kill": 50000,
         "name": "legendblade:nihilexfake",
         "proud_soul": 50000,
         "refine": 20
@@ -20,7 +20,7 @@
       "type": "slashblade:blade",
       "item": "slashblade:slashblade",
       "request": {
-        "kill": 10000,
+        "kill": 50000,
         "name": "slashblade_addon:kirisaya",
         "proud_soul": 30000,
         "refine": 20

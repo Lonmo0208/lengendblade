@@ -1,6 +1,7 @@
 package com.dinzeer.legendblade.data;
 
 import cn.mmf.slashblade_addon.data.SlashBladeAddonBuiltInRegistry;
+import com.dinzeer.legendblade.regsitry.other.LBModBlocks;
 import com.dinzeer.legendblade.regsitry.other.LBModItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import dev.xkmc.l2complements.init.registrate.LCItems;
@@ -20,6 +21,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
 import twilightforest.init.TFItems;
@@ -768,7 +771,7 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
                 .define('B',SlashBladeIngredient.of(
                         RequestDefinition.Builder.newInstance()
                                 .name(LegendBuiltInRegsitry.NIHILEXFAKE.location())
-                                .killCount(10000)
+                                .killCount(50000)
                                 .proudSoul(50000)
                                 .refineCount(20)
                                 .build()
@@ -776,7 +779,7 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
                 .define('C',SlashBladeIngredient.of(
                         RequestDefinition.Builder.newInstance()
                                 .name(SlashBladeAddonBuiltInRegistry.KIRISAYA.location())
-                                .killCount(10000)
+                                .killCount(50000)
                                 .proudSoul(30000)
                                 .refineCount(20)
                                 .build()
@@ -1096,11 +1099,308 @@ public class LegendBladeRecipeProvioder extends RecipeProvider implements ICondi
                 .define('F',TFItems.ICE_BOW.get())
                 .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
 
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.tensazangetsu.location())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ADA")
+                .define('A', Items.DIAMOND_BLOCK)
+                .define('B', SBItems.proudsoul_trapezohedron)
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.zangetsu.location())
+                                .killCount(7200)
+                                .proudSoul(30000)
+                                .refineCount(30)
+                                .build()
+                ))
+                .define('D',SBItems.proudsoul_ingot)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.tensazangetsured.location())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ADA")
+                .define('A', Items.REDSTONE_BLOCK)
+                .define('B', SBItems.proudsoul_trapezohedron)
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.zangetsu.location())
+                                .killCount(7200)
+                                .proudSoul(30000)
+                                .refineCount(30)
+                                .build()
+                ))
+                .define('D',SBItems.proudsoul_ingot)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.tensazangetsunomoon.location())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ADA")
+                .define('A', Items.NETHERITE_BLOCK)
+                .define('B', SBItems.proudsoul_trapezohedron)
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.tensazangetsu.location())
+                                .killCount(50000)
+                                .proudSoul(300000)
+                                .refineCount(1000)
+                                .build()
+                ))
+                .define('D',Items.DRAGON_EGG)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.wonderblade.location())
+                .pattern("ABC")
+                .pattern("DEF")
+                .pattern("CGA")
+                .define('A', Items.GOLDEN_APPLE)
+                .define('B', Items.DIAMOND_BLOCK)
+                .define('C', Tags.Items.ORES_EMERALD)
+                .define('D',Items.GOLD_BLOCK)
+                .define('E', LBModBlocks.wonder_reactor.get())
+                .define('F', Items.REDSTONE_BLOCK)
+                .define('G', Items.NETHER_STAR)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.sangeex.location())
+                .pattern("ABA")
+                .pattern("ACA")
+                .pattern("ABA")
+                .define('A', SBItems.proudsoul_sphere)
+                .define('B', SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeBuiltInRegistry.SANGE.location())
+                                .refineCount(30)
+                                .build()
+                ))
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeBuiltInRegistry.YASHA_TRUE.location())
+                                .proudSoul(30000)
+                                .build()
+                ))
+
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.starriverblade.location())
+                .pattern("ABC")
+                .pattern("DED")
+                .pattern("CFG")
+                .define('A', Items.GOLDEN_SWORD)
+                .define('B', Items.YELLOW_BED)
+                .define('C', SBItems.proudsoul_sphere)
+                .define('D', Items.GLOWSTONE)
+                .define('E',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeBuiltInRegistry.SANGE.location())
+                                .proudSoul(30000)
+                                .refineCount(30)
+                                .addEnchantment(new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 5))
+                                .addEnchantment(new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3))
+                                .build()
+                ))
+                .define('F',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.wonderblade.location())
+                                .proudSoul(30000)
+                                .refineCount(60)
+                                .killCount(3000)
+                                .build()
+                ))
+                .define('G', Items.CACTUS)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.Itan.location())
+                .pattern("ABA")
+                .pattern("DCD")
+                .pattern("AEA")
+                .define('A', Items.PORKCHOP)
+                .define('B', Items.GRASS_BLOCK)
+                .define('C',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.wonderblade.location())
+                                .build()
+                ))
+                .define('D',SBItems.proudsoul_tiny)
+                .define('E',Items.IRON_SWORD)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.nobleblade.location())
+                .pattern("ABC")
+                .pattern("DED")
+                .pattern("FGF")
+                .define('A', SBItems.proudsoul_sphere)
+                .define('B', Items.SLIME_BALL)
+                .define('C', Items.PISTON)
+                .define('D', Items.JUKEBOX)
+                .define('E',
+                        SlashBladeIngredient.of(
+                                SBItems.slashblade_silverbamboo,RequestDefinition.Builder.newInstance()
+                                                .killCount(3000)
+                                                .addEnchantment(new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3))
+                                                .addSwordType(SwordType.BROKEN)
+                                        .build()
+                ))
+                .define('F',Items.DIAMOND_AXE)
+                .define('G', SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .refineCount(30)
+                                .build()
+                ))
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.shallot.location())
+                .pattern("  A")
+                .pattern("BCB")
+                .pattern("DE ")
+                .define('A', SBItems.proudsoul_tiny)
+                .define('B', SBItems.proudsoul_ingot)
+                .define('C',
+                        SlashBladeIngredient.of(
+                               RequestDefinition.Builder.newInstance()
+                                       .name(LegendBuiltInRegsitry.wonderblade.location())
+                                        .killCount(3000)
+
+                                        .build()
+                        ))
+                .define('D', Items.FLOWER_POT)
+                .define('E', Items.OAK_LEAVES)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.desireblade.location())
+                .pattern("ABB")
+                .pattern("ACD")
+                .pattern("EFE")
+                .define('A', SBItems.proudsoul_ingot)
+                .define('B', LBModItems.luxuria)
+                .define('C',
+                        SlashBladeIngredient.of(
+                                RequestDefinition.Builder.newInstance()
+                                        .name(LegendBuiltInRegsitry.asmodeus.location())
+                                        .killCount(3000)
+                                        .proudSoul(3000)
+                                        .refineCount(10)
+                                        .addEnchantment(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 3))
+                                        .addEnchantment(new EnchantmentDefinition(getEnchantmentID(Enchantments.FALL_PROTECTION), 1))
+                                        .build()
+                        ))
+                .define('D',    SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.wonderblade.location())
+                                .refineCount(35)
+                                .build()
+                ))
+
+                .define('E', Items.BLAZE_ROD)
+                .define('F', Items.PINK_BED)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.phantomOfGods.location())
+                .pattern("ABA")
+                .pattern("ACA")
+                .pattern("ADA")
+                .define('A', SBItems.proudsoul_ingot)
+                .define('B', Items.DRAGON_EGG)
+                .define('C',
+                        SlashBladeIngredient.of(
+                                RequestDefinition.Builder.newInstance()
+                                        .name(LegendBuiltInRegsitry.desireblade.location())
+                                        .killCount(10000)
+                                        .proudSoul(4200)
+                                        .refineCount(17)
+
+                                        .addEnchantment(new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 4))
+                                        .build()
+                        ))
+                .define('D',    SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.wonderblade.location())
+                                .refineCount(50)
+                                .build()
+                ))
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.mrke.location())
+                .pattern("AAA")
+                .pattern("BCB")
+                .pattern("ADA")
+                .define('A', Items.TNT)
+                .define('B', SBItems.proudsoul_tiny)
+                .define('C',
+                        SlashBladeIngredient.of(
+                                RequestDefinition.Builder.newInstance()
+                                        .name(LegendBuiltInRegsitry.wonderblade.location())
+                                        .killCount(1000)
+                                        .proudSoul(40000)
+                                        .refineCount(17)
+
+                                        .addEnchantment(new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 4))
+                                        .build()
+                        ))
+                .define('D', Items.DIAMOND_SWORD)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.zhuzi.location())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', Items.CACTUS)
+                .define('B',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeBuiltInRegistry.SANGE.location())
+                                .build()
+                ))
+
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.hu.location())
+                .pattern("DAD")
+                .pattern("ABA")
+                .pattern("CAC")
+                .define('A', Items.MAGMA_BLOCK)
+                .define('B',SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(SlashBladeBuiltInRegistry.SANGE.location())
+                                .build()
+                ))
+                .define('C', Items.LAVA_BUCKET)
+                .define('D', Items.FLINT_AND_STEEL)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
+        SlashBladeShapedRecipeBuilder.shaped(LegendBuiltInRegsitry.VoidSword.location())
+                .pattern("ABC")
+                .pattern("DEF")
+                .pattern("CGH")
+                .define('A', Items.REDSTONE_ORE)
+                .define('B',Items.GHAST_TEAR)
+                .define('C', SBItems.proudsoul_ingot)
+                .define('D', Items.OBSIDIAN)
+                .define('E', SlashBladeIngredient.of(
+                        SBItems.slashblade_silverbamboo,RequestDefinition.Builder.newInstance()
+                                        .proudSoul(8400)
+                                        .refineCount(42)
+                                        .killCount(3000)
+                                        .addEnchantment(new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3))
+                                        .addEnchantment(new EnchantmentDefinition(getEnchantmentID(Enchantments.THORNS), 3))
+                                        .addSwordType(SwordType.BROKEN)
+                                .build()
+                ))
+                .define('F', Items.NETHER_STAR)
+                .define('G', SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                                .name(LegendBuiltInRegsitry.wonderblade.location())
+                                .proudSoul(8400)
+                                .refineCount(42)
+                                .build()
+                ))
+                .define('H', Items.ENCHANTED_GOLDEN_APPLE)
+                .unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+
 
 
 
 
     }
+
+
+
 
 
 

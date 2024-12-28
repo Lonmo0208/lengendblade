@@ -11,6 +11,8 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import com.dinzeer.legendblade.item.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.block.Block;
 
 
 import static com.dinzeer.legendblade.Legendblade.MODID;
@@ -45,7 +47,6 @@ public class LBModItems {
 	public static final  ItemEntry<TooltipItem> soul_crystal;
 	public static final  ItemEntry<Item> water_gem;
 	public static final  ItemEntry<Item> dragon_gem;
-
 
 	static {
 

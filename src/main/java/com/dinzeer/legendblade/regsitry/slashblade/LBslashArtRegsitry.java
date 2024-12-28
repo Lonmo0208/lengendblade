@@ -38,7 +38,11 @@ public class LBslashArtRegsitry {
     public static final RegistryObject<SlashArts> SaveAll;
     public static final RegistryObject<SlashArts> Elbowstrike;
     public static final RegistryObject<SlashArts> swordRain;
-
+    public static final RegistryObject<SlashArts> EXmoonDrive;
+    public static final RegistryObject<SlashArts> LastMoondrive;
+    public static final RegistryObject<SlashArts> SommonSwordSommonEX;
+    public static final RegistryObject<SlashArts> SanNight;
+    public static final RegistryObject<SlashArts> getThrust;
     static {
         PROWESS=SLASH_ARTS.register("prowess", () -> new SlashArts((e) ->
                 LBComboRegsitry.PROWESS.getId()));
@@ -76,5 +80,10 @@ public class LBslashArtRegsitry {
         SaveAll =SLASH_ARTS.register("save_all",() -> new SlashArts((e) ->LBComboRegsitryA.saveall.getId()));
         Elbowstrike=SLASH_ARTS.register("elbowstrike",() -> new SlashArts((e) ->LBComboRegsitryA.elbowstrike.getId()));
         swordRain=SLASH_ARTS.register("swordrain",() -> new SlashArts((e) ->LBComboRegsitryA.swordRain.getId()));
+        EXmoonDrive=SLASH_ARTS.register("exmoondrive",()-> new SlashArts((e) ->LBComboRegsitryA.eXmoonDrive.getId()));
+        LastMoondrive=SLASH_ARTS.register("lastmoondrive",()-> new SlashArts((e) ->LBComboRegsitryA.lastMoondrive.getId()));
+        SommonSwordSommonEX=SLASH_ARTS.register("sommon_sword_sommonex",()-> new SlashArts((e) ->LBComboRegsitryA.sommonSwordSommonEX.getId()));
+        SanNight=SLASH_ARTS.register("sannight",()-> new SlashArts((e) ->LBComboRegsitryA.SAKURA_END_LEFTEX2.getId()));
+        getThrust=SLASH_ARTS.register("getthrust",()-> new SlashArts((e) ->LBComboRegsitryA.thrust.getId()));
     }
 }

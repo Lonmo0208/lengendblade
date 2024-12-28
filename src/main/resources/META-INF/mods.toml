@@ -4,7 +4,7 @@ loaderVersion="${loader_version_range}" #mandatory This is typically bumped ever
 license="${mod_license}"
 [[mods]]
 modId="legendblade"
-version="1.2.6"
+version="1.2.13"
 displayName="legendblade"
 authors="Dinzeer and TheFlareStar and tianyi and canyuesama"
 description='''Integrate and release three slavhblade addons from the Chinese MINECRAFT forum in versions 1.12.2 and 1.7.10 to version 1.20.1'''
@@ -27,7 +27,7 @@ description='''Integrate and release three slavhblade addons from the Chinese MI
 [[dependencies.legendblade]]
 modId="slashblade"
 mandatory=true
-versionRange="1.1.4"
+versionRange="1.1.11"
 ordering="NONE"
 side="BOTH"
 

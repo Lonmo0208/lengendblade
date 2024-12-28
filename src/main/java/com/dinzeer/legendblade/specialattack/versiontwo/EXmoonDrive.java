@@ -1,6 +1,7 @@
 package com.dinzeer.legendblade.specialattack.versiontwo;
 
 import com.dinzeer.legendblade.entity.MoonDriveEntity;
+import com.dinzeer.legendblade.entity.MoonDriveEntityEX;
 import com.dinzeer.legendblade.regsitry.other.LBEntiteRegristrys;
 import mods.flammpfeil.slashblade.capability.concentrationrank.ConcentrationRankCapabilityProvider;
 import mods.flammpfeil.slashblade.util.KnockBacks;
@@ -10,6 +11,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 
 public class EXmoonDrive {
+    //这个是普通版的高级月牙天冲，Last写最后的（
     public static void doSlash(LivingEntity playerIn, Vec3 centerOffset) {
 
         if (playerIn.level().isClientSide()) return;
@@ -37,7 +39,7 @@ public class EXmoonDrive {
             drive.setRotationRoll(90);
 
 
-            drive.setColor(16711680);
+            drive.setColor(12171706);
             drive.setIsCritical(true);
             drive.setKnockBack(KnockBacks.cancel);
             drive.setLifetime(20);

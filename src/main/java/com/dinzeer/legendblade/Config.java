@@ -41,6 +41,14 @@ public class Config
             .comment("soul crystal loot")
             .comment("魂缚晶的掉落要求血量（看基础值）")
             .define("soul_crystal", 200.0);
+    private static final ForgeConfigSpec.ConfigValue<Double> distance = BUILDER
+            .comment("damage repair distance max" )
+            .comment("平衡捍卫者最大削减")
+            .define("distance", 5.0);
+    private static final ForgeConfigSpec.ConfigValue<Double> BALANCE_DAMAGE_AMOUNT = BUILDER
+            .comment("damage repair distance min" )
+            .comment("平衡捍卫者削减")
+            .define("blanke_damage_amount", 0.2);
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean Open_damege_fix;
@@ -48,6 +56,8 @@ public class Config
     public static double damegeadddmaX;
     public static boolean sevenbladesKill;
     public static double soul_crystal;
+    public static double distanceget;
+    public static double BALANCE_DAMAGE_AMOUNT_GET;
     private static boolean validateItemName(final Object obj)
     {
         return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(new ResourceLocation(itemName));
@@ -61,5 +71,7 @@ public class Config
         damegeadddmaX=damegeaddmax.get();
         sevenbladesKill=sevenbladeskill.get();
         soul_crystal=Soul_crystal.get();
+        distanceget=distance.get();
+        BALANCE_DAMAGE_AMOUNT_GET=BALANCE_DAMAGE_AMOUNT.get();
     }
 }

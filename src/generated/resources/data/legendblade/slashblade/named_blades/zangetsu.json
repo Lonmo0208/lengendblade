@@ -28,7 +28,7 @@
   },
   "render": {
     "model": "legendblade:model/lostblade/zangetsu/zangetsu.obj",
-    "summon_sword_color": 54527,
+    "summon_sword_color": 16766464,
     "texture": "legendblade:model/lostblade/zangetsu/zangetsu.png"
   }
 }

@@ -5,6 +5,7 @@ import com.dinzeer.legendblade.regsitry.compat.ICFLBcompatRegsitry;
 import com.exfantasy.mclib.Utils.SlashBlade.SlashbladeUtils;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import mods.flammpfeil.slashblade.event.SlashBladeEvent;
+import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.registry.specialeffects.SpecialEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.damagesource.DamageSource;
@@ -27,11 +28,11 @@ public class Icfbreakers extends SpecialEffect {
     public static void apply(LivingHurtEvent event){
         if (ModList.get().isLoaded(IceAndFire.MODID)) {
 
+            LivingEntity target = event.getEntity();
 
-        LivingEntity target = event.getEntity();
         if (event.getSource().getEntity() instanceof Player player) {
             if (SpecialEffect.isEffective(ICFLBcompatRegsitry.icfbreaker.get(), player.experienceLevel)) {
-            if (SlashbladeUtils.hasSpecialEffect(player.getMainHandItem(),ICFLBcompatRegsitry.icfbreaker.getId().toString())) {
+            if (SlashbladeUtils.hasSpecialEffect(player.getMainHandItem(),"legendblade:icfbreaker")) {
 
                 if (ICFEntiyRegsitry.isICFENTITY(target)) {
                     event.setAmount(event.getAmount() * 2);

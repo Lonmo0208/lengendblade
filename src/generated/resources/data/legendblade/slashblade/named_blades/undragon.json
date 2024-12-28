@@ -22,6 +22,9 @@
     "attack_base": 32.0,
     "max_damage": 80,
     "slash_art": "legendblade:swordrain",
+    "special_effects": [
+      "legendblade:eternal"
+    ],
     "sword_type": [
       "bewitched"
     ]

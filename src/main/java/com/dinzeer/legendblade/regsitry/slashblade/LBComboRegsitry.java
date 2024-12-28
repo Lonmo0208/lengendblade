@@ -262,7 +262,7 @@ public class LBComboRegsitry {
                     .nextOfTimeout(entity -> Legendblade.prefix("all_reuse"))
                     .addTickAction(ComboState.TimeLineTickAction.getBuilder()
                             .put(1, (entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, false, 0.1F))
-                            .put(2, (entityIn) -> PhantomThrust.doSlash(entityIn,3F*3,2))
+                            .put(2, (entityIn) -> PhantomThrust.doSlash(entityIn,3F*3,true))
                             .build())
                     .addHitEffect(StunManager::setStun)
                     ::build);

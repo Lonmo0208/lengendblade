@@ -37,6 +37,11 @@ public class LBEntiteRegristrys {
     public static EntityType<DemonBladeFragments> dbf;
     public static final ResourceLocation srloc = new ResourceLocation(MODID, classToString(SwordRainEntity.class));
     public static EntityType<SwordRainEntity> sr;
+    public static final ResourceLocation MDEXLOC = new ResourceLocation(MODID, classToString(MoonDriveEntityEX.class));
+    public static EntityType<MoonDriveEntityEX> mdex;
+    public static final ResourceLocation SSEXSLOC = new ResourceLocation(MODID, classToString(SumonSwordEntityEXSeven.class));
+    public static EntityType<SumonSwordEntityEXSeven> ssexs;
+
     public static void register(RegisterEvent event){
 
         event.register(ForgeRegistries.Keys.ENTITY_TYPES, helper -> {
@@ -147,6 +152,31 @@ public class LBEntiteRegristrys {
             }
 
         });
+        event.register(ForgeRegistries.Keys.ENTITY_TYPES, helper -> {
+            {
+                EntityType<MoonDriveEntityEX> entity = mdex = EntityType.Builder
+                        .of(MoonDriveEntityEX::new, MobCategory.MISC)
+                        .sized(0.9F, 0.9F)
+                        .setTrackingRange(4)
+                        .setUpdateInterval(20).setCustomClientFactory(MoonDriveEntityEX::createInstance)
+                        .build(MDEXLOC.toString());
+                helper.register(MDEXLOC, entity);
+            }
+
+        });
+        event.register(ForgeRegistries.Keys.ENTITY_TYPES, helper -> {
+            {
+                EntityType<SumonSwordEntityEXSeven> entity = ssexs = EntityType.Builder
+                        .of(SumonSwordEntityEXSeven::new, MobCategory.MISC)
+                        .sized(0.9F, 0.9F)
+                        .setTrackingRange(4)
+                        .setUpdateInterval(20).setCustomClientFactory(SumonSwordEntityEXSeven::createInstance)
+                        .build(SSEXSLOC.toString());
+                helper.register(SSEXSLOC, entity);
+            }
+
+        });
+
     }
 
 

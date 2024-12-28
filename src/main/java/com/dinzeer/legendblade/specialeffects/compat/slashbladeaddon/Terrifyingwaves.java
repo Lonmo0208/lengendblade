@@ -33,7 +33,6 @@ public class Terrifyingwaves extends SpecialEffect {
             if (SpecialEffect.isEffective(SBALBSlashArtRegsitry.Terrifyingwaves.get(), level)) {
 
                 WaterDrive.doSlash(player,event.getRoll(),20, Vec3.ZERO,false,event.getDamage()+1,3F);
-                WaterDrive.doSlash(player,event.getRoll(),20, Vec3.ZERO,false,event.getDamage()+1,3F);
 
             }
         }
