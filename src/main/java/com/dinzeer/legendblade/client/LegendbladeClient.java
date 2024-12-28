@@ -39,4 +39,8 @@ public class LegendbladeClient {
         event.registerEntityRenderer(L2LBcompatRegsitry.HSS, SummonedSwordRenderer::new);
         }
     }
+    @SubscribeEvent
+    public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(BlackSlabe.LAYER_LOCATION, BlackSlabe::createBodyLayer);
+    }
 }

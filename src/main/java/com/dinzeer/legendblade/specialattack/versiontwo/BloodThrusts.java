@@ -25,19 +25,19 @@ public class BloodThrusts {
 
 
     public static void doSlash(LivingEntity playerIn, float speed) {
-
+        playerIn.hurt(new DamageSource(playerIn.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), playerIn), 4);
         playerIn.addEffect(new MobEffectInstance(Legendblade.EffectAbout.HIT_DAMAGE.get(),50,3));
         playerIn.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,50,1));
         playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,50,0));
-        SMoveUtil.sendDashMessage((Player) playerIn,0,speed);
 
+        playerIn.invulnerableTime=0;
+        playerIn.setDeltaMovement(0,0,0);
+        Legendblade.queueServerWork(2,()-> {
+
+                    SMoveUtil.sendDashMessage((Player) playerIn, 0, speed);
+                });
 
         execute( playerIn.level(),playerIn.getY(),playerIn.getY(),playerIn.getZ());
-        if (playerIn.getHealth()>4) {
-            playerIn.setHealth(playerIn.getHealth() - 4);
-        }else {
-            playerIn.hurt(new DamageSource(playerIn.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC_KILL), playerIn), 4);
-        }
 
     }
     public static void execute(LevelAccessor world, double x, double y, double z) {

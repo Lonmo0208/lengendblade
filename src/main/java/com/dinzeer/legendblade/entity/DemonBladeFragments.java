@@ -185,7 +185,7 @@ public class DemonBladeFragments extends EntityAbstractSummonedSword {
                         return result.getLocation();
                     });
             if (isBack()){
-                targetPos = getOwner().position();
+                if (getOwner()!=null) targetPos = getOwner().position();
             }
 
             Vec3 pos = this.getPosition(0.0f);

@@ -1,8 +1,7 @@
 package com.dinzeer.legendblade;
 
 import cn.mmf.slashblade_addon.SlashBladeAddon;
-import com.dinzeer.legendblade.effect.MoDaoEffect;
-import com.dinzeer.legendblade.effect.SumeruEffect;
+import com.dinzeer.legendblade.effect.*;
 import com.dinzeer.legendblade.entity.DemonBladeFragments;
 import com.dinzeer.legendblade.network.DemonBladeMessage;
 import com.dinzeer.legendblade.network.DemonBladeMessageA;
@@ -13,9 +12,6 @@ import com.dinzeer.legendblade.regsitry.slashblade.LBComboRegsitryA;
 import com.dinzeer.legendblade.regsitry.slashblade.LBSpecialEffectsRegistry;
 import com.dinzeer.legendblade.regsitry.slashblade.LBslashArtRegsitry;
 import com.exfantasy.mclib.Utils.Dash.DashMessage;
-import com.dinzeer.legendblade.effect.HitDamageEffect;
-import com.dinzeer.legendblade.effect.StrengthBoost;
-import com.dinzeer.legendblade.regsitry.other.LBModItems;
 import com.dinzeer.legendblade.regsitry.creativetab.ItemTab;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.mojang.logging.LogUtils;
@@ -24,12 +20,15 @@ import dev.xkmc.l2hostility.init.L2Hostility;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.util.thread.SidedThreadGroups;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.registries.DeferredRegister;
@@ -38,6 +37,19 @@ import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 import twilightforest.TwilightForestMod;
+import org.slf4j.Logger;
+
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.AbstractMap;
+import java.util.Collection;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 
 @Mod(Legendblade.MODID)
@@ -114,11 +126,32 @@ public class Legendblade {
 
 
     }
+    private static final Collection<AbstractMap.SimpleEntry<Runnable, Integer>> workQueue = new ConcurrentLinkedQueue<>();
+
+    public static void queueServerWork(int tick, Runnable action) {
+        if (Thread.currentThread().getThreadGroup() == SidedThreadGroups.SERVER)
+            workQueue.add(new AbstractMap.SimpleEntry<>(action, tick));
+    }
+
+    @SubscribeEvent
+    public void tick(TickEvent.ServerTickEvent event) {
+        if (event.phase == TickEvent.Phase.END) {
+            List<AbstractMap.SimpleEntry<Runnable, Integer>> actions = new ArrayList<>();
+            workQueue.forEach(work -> {
+                work.setValue(work.getValue() - 1);
+                if (work.getValue() == 0)
+                    actions.add(work);
+            });
+            actions.forEach(e -> e.getKey().run());
+            workQueue.removeAll(actions);
+        }
+    }
     public static class EffectAbout{
         public static final DeferredRegister<MobEffect> REGISTRY = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Legendblade.MODID);
         public static final RegistryObject<StrengthBoost> STRENGTH_BOOST = REGISTRY.register("strength_boost", StrengthBoost::new);
         public static final RegistryObject<HitDamageEffect> HIT_DAMAGE = REGISTRY.register("hit_damage", HitDamageEffect::new);
         public static final RegistryObject<SumeruEffect> SUMERU = REGISTRY.register("sumeru", SumeruEffect::new);
         public static final RegistryObject<MoDaoEffect> MO_DAO = REGISTRY.register("mo_dao", MoDaoEffect::new);
+        public static final RegistryObject<ImprisonMobEffect> IMPRISON = REGISTRY.register("imprison", ImprisonMobEffect::new);
     }
 }

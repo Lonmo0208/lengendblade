@@ -118,7 +118,7 @@ public class SevenSkillField extends Projectile {
             else    if  (getDuring()>10)
                 ParticleHelper.spawnHollowParticleCube(this.level(), ParticleTypes.DRAGON_BREATH, this.position(), (float) (size*( 0.05*getDuring())), 3);
             else  if (getDuring()<=10 && getDuring()!=1) {
-                ParticleHelper.spawnHollowParticleCube(this.level(), ParticleTypes.DRAGON_BREATH, this.position(), size * (5 * ((float) 1 / getDuring())), 3);
+                ParticleHelper.spawnHollowParticleCube(this.level(), ParticleTypes.DRAGON_BREATH, this.position(), (float) (size * (6 * ((int) 1 / getDuring()*10)*0.1)), 3);
                 if (getOwner() !=null){
                     ((LivingEntity) getOwner()).addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,4,10));
                     getOwner().lookAt(EntityAnchorArgument.Anchor.EYES, _center);
@@ -132,7 +132,7 @@ public class SevenSkillField extends Projectile {
                 if (getOwner()!=null) {
                     if (getOwner() instanceof Player player) {
                         if (player.level() instanceof ServerLevel level) {
-                            level.sendParticles(ParticleTypes.END_ROD,this.getX(), this.getY(), this.getZ(), 110,3,6,6,6);;
+                            level.sendParticles(ParticleTypes.END_ROD,this.getX(), this.getY(), this.getZ(), 110,12,8,8,8);;
                         }
                         List<Entity> _entfound1 = this.level().getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(this.getSIZE() * 6 / 2d), a -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
                         player.addEffect(new MobEffectInstance(Legendblade.EffectAbout.STRENGTH_BOOST.get(),20,3));

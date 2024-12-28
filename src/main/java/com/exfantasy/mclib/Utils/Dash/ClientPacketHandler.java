@@ -18,11 +18,13 @@ public class ClientPacketHandler {
         vmove(entity, msg.dy, msg.dashDistance);
     }
     public static void sendDemonBladeMessage(Player player) {
+        if (!player.level().isClientSide)return;
         DemonBladeMessage msg = new DemonBladeMessage(player.getId());
         Legendblade.INSTANCE.send(PacketDistributor.SERVER.noArg(), msg);
  }
  public static void sendDemonBladeMessageA(Player player) {
-        DemonBladeMessageA msg = new DemonBladeMessageA(player.getId());
+     if (!player.level().isClientSide)return;
+     DemonBladeMessageA msg = new DemonBladeMessageA(player.getId());
         Legendblade.INSTANCE.send(PacketDistributor.SERVER.noArg(), msg);
  }
 }

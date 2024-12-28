@@ -11,17 +11,18 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class DamageFixer {
 @SubscribeEvent
     public static void onDamage(LivingHurtEvent event) {
-      if (Config.Open_damege_fix)
+      if (Config.Open_damege_fix){
         if (event.getSource().getEntity() instanceof Player owner)
         {
             if (ForgeRegistries.ITEMS.getKey(owner.getMainHandItem().getItem()).toString().equals("slashblade:slashblade")) {
 
                 double distance = owner.getOnPos().getCenter().distanceTo(event.getEntity().getOnPos().getCenter());
-
-                if (distance < 5) {
-                    event.setAmount((float) (event.getAmount() * 0.5 * ((5 - distance) * 0.2)));
+                double maxDistance = Config.distanceget;
+                if (distance < maxDistance) {
+                    event.setAmount((float) (event.getAmount() * 0.5 * ((maxDistance - distance) * Config.BALANCE_DAMAGE_AMOUNT_GET)));
                 }
             }
+        }
         }
 }
 

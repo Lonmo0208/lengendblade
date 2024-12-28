@@ -54,6 +54,7 @@ public class DemonBladeMessage {
     public static void apply(LivingEntity entity) {
         ItemStack stack = entity.getMainHandItem();
         CompoundTag tag = stack.getTag();
+        if (entity.level().isClientSide)return;
 
         if (tag == null || !SlashbladeUtils.getStringNBT(tag, "translationKey").equals("item.legendblade.sevensword")) {
             return;
@@ -70,6 +71,7 @@ public class DemonBladeMessage {
         for (Entity entity2 : entitiesFound) {
             if (entity2 instanceof DemonBladeFragments demonBladeFragments) {
                 if (!demonBladeFragments.isBack()) {
+                    demonBladeFragments.setDelay(1);
                     demonBladeFragments.setFire(true);
                     hasFragments = true;
                 }
@@ -91,7 +93,7 @@ public class DemonBladeMessage {
                 ss.setOwner(entity);
                 ss.setColor(colorCode);
                 ss.setRoll(0);
-                ss.setDamage(entity.getAttributeValue(Attributes.ATTACK_DAMAGE)*1.9f);
+                ss.setDamage(entity.getAttributeValue(Attributes.ATTACK_DAMAGE)*2.1f);
                 // force riding
                 ss.startRiding(entity, true);
 
